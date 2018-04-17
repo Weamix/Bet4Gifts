@@ -1,3 +1,3 @@
 # Bet4Gifts
 
-ISN prroject y Weamix , Nobobys and Elkios
+ISN prroject by Weamix , Nobobys and Elkios
