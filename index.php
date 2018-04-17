@@ -32,7 +32,7 @@
 
       <footer>
 
-          <span>Project ISN, created by Maxime, Loic and Mathys</span>
+          <span>Project ISN, created by Maxime, Loic and Mathys  123</span>
 
       </footer>
 
