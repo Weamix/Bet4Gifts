@@ -32,7 +32,7 @@
 
       <footer>
 
-          <span>Projet d'Informatique et Science du Numérique, créé par Maxime, Loic et Mathys</span>
+          <span>Project ISN, created by Maxime, Loic and Mathys</span>
 
       </footer>
 
