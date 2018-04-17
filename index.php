@@ -23,7 +23,7 @@
 
               <h2>Bet4Gifts</h2>
               <hr>
-              <p>TEST ISN project in development on free sport forecasts: <br> accumulate points and win prizes! <br>Suivez l'évolution du projet sur Twitter <a href="https://twitter.com/Bet4Gifts" target="_blank">@Bet4Gifts</a></p>
+              <p>ISN project in development on free sport forecasts: <br> accumulate points and win prizes! <br>Suivez l'évolution du projet sur Twitter <a href="https://twitter.com/Bet4Gifts" target="_blank">@Bet4Gifts</a></p>
 
           </div>
 
@@ -32,7 +32,7 @@
 
       <footer>
 
-          <span>Project ISN, created by Maxime, Loic and Mathys  123</span>
+          <span>Project ISN, created by Maxime, Loic and Mathys</span>
 
       </footer>
 
