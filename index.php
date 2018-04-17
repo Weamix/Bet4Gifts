@@ -23,7 +23,7 @@
 
               <h2>Bet4Gifts</h2>
               <hr>
-              <p>Projet ISN en développement sur les pronostics sportifs gratuits : <br> accumulez des points et gagnez des cadeaux!<br>Suivez l'évolution du projet sur Twitter <a href="https://twitter.com/Bet4Gifts" target="_blank">@Bet4Gifts</a></p>
+              <p>ISN project in development on free sport forecasts: <br> accumulate points and win prizes! <br>Suivez l'évolution du projet sur Twitter <a href="https://twitter.com/Bet4Gifts" target="_blank">@Bet4Gifts</a></p>
 
           </div>
 
