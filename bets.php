@@ -1,3 +1,55 @@
+<?php
+
+  session_start();
+
+  $bdd = new PDO('mysql:host=localhost;dbname=isnmpweb_espace_membre', 'isnprojet', 'O1cuz98@');
+  if (isset($_GET['id']) AND $_GET['id'] > 0) {
+
+    if (isset($_POST['formbets'])) {
+
+      $number = 0;
+      for ($i=0; $i < 2; $i++) {
+
+        if (!empty($_POST[$i])) {
+          $number++;
+          $teamselected = $i;
+        }
+
+      }
+
+      if ($number == 0) {
+
+        if ($number == 1) {
+
+          if (!empty($_POST['amount'])) {
+
+            $getid = intval($_GET['id']);
+            $requser = $bdd->prepare("SELECT * FROM membres WHERE id = ?");
+            $requser->execute(array($getid));
+
+            $userinfo = $requser->fetch();
+
+            if ($_POST['amount'] > 0 AND $_POST['amount'] <= $userinfo['points']) {
+              # code...
+            }else {
+              $error = "Le montant saisi est supérieur à vos points actuels (ou inférieur 1)";
+            }
+
+          }else {
+            $error = "Veuillez saisir un montant !"
+          }
+
+        }else {
+          $error = "Veuillez ne sélectionner que un seul résultat !"
+        }
+
+      }else {
+        $error = "Veuillez sélectionner un résultat !"
+      }
+
+    }
+ ?>
+
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -18,10 +70,21 @@
           <input type="checkbox" name="2" value="">
         </label>
         <label for=""> Montant :
-          <input type="number" name="montant" value="" min="1" max="1000"> <input type="submit" name="" value="Parier !">
+          <input type="number" name="amount" value="" min="1" max="1000"> <input type="submit" name="formbets" value="Parier !">
         </label>
 
       </form>
 
+      <?php
+
+          if (isset($error)) {
+
+            echo $error;
+
+          }
+
+       ?>
+
   </body>
 </html>
+<?php } ?>
