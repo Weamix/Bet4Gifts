@@ -8,14 +8,14 @@ function point($pseudo, $pt)
     $sql->execute(array($pseudo));   
     $req = $sql->fetch();
     if ($req['pseudo']) {
-    	//on selectionne le nombre de point
+    	//on sélèctionne le nombre de points
     $sql = $bdd->prepare('SELECT points FROM membre WHERE pseudo = ?');
     	$sql->execute(array($pseudo));   
     	$req = $sql->fetch();
     	//on met tout sous forme de nombre entier
     	$point = (int) $req['points']; 
     	$pt = (int) $pt;
-    	//on ajoute les points gagner
+    	//on ajoute les points gagnés
     	$point += $pt;
     	//on sauve le tout dans la bdd
     	$sql = $bdd->prepare('UPDATE membre SET points = ? WHERE id = ?');
