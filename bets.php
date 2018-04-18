@@ -6,7 +6,7 @@
 
   echo "ID".$_GET['id'];
 
-  //if (isset($_GET['id']) AND $_GET['id'] > 0) {
+  if (isset($_GET['id']) AND $_GET['id'] > 0) {
 
     if (isset($_POST['formbets'])) {
 
@@ -39,15 +39,15 @@
             }
 
           }else {
-            $error = "Veuillez saisir un montant !"
+            $error = "Veuillez saisir un montant !";
           }
 
         }else {
-          $error = "Veuillez ne sélectionner que un seul résultat !"
+          $error = "Veuillez ne sélectionner que un seul résultat !";
         }
 
       }else {
-        $error = "Veuillez sélectionner un résultat !"
+        $error = "Veuillez sélectionner un résultat !";
       }
 
     }
@@ -90,4 +90,4 @@
 
   </body>
 </html>
-<?php //} ?>
+<?php } ?>
