@@ -7,15 +7,5 @@ mysql_select_db('isnmpweb_espace_membre',$db);
 
 
 // Tableau des meilleurs 
-$recup_membres =mysql_query( 'SELECT pseudo, points FROM membre ORDER BY points DESC LIMIT 100 ');  
-
- // Mise en forme des données à revoir 
-     echo $compteur."<br/>";      
-     echo $best_posteurs ["pseudo"]."<br/>"; 
-     echo $best_posteurs ["points"]."<br/>"; 
-     
-     $compteur++; 
-} 
-
-
+$recup_id =mysql_query( 'SELECT pseudo, points FROM membre ORDER BY points DESC LIMIT 100 ');  
 ?>
