@@ -15,6 +15,7 @@
 
         if (!empty($_POST[$i])) {
           $number++;
+          echo "ok".$i;
           $teamselected = $i;
         }
 
