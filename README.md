@@ -1,3 +1,7 @@
 # Bet4Gifts
 
-ISN prroject by Weamix , Nobobys and Elkios
+ISN project by Weamix , Nobobys and Elkios
+
+---
+
+Progression : 25%
