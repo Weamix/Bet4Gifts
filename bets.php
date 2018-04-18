@@ -3,6 +3,9 @@
   session_start();
 
   $bdd = new PDO('mysql:host=localhost;dbname=isnmpweb_espace_membre', 'isnprojet', 'O1cuz98@');
+
+  echo "ID".$_GET['id'];
+
   if (isset($_GET['id']) AND $_GET['id'] > 0) {
 
     if (isset($_POST['formbets'])) {
