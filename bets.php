@@ -17,6 +17,8 @@
           $number++;
           echo "ok".$i;
           $teamselected = $i;
+        }else {
+          echo "erreur";
         }
 
       }
