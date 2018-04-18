@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+  $bdd = new PDO('mysql:host=localhost;dbname=isnmpweb_espace_membre', 'isnprojet', 'O1cuz98@');
   
 function point($pseudo, $pt)
 {
