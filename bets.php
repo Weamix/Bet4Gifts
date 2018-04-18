@@ -6,7 +6,7 @@
 
   echo "ID".$_GET['id'];
 
-  if (isset($_GET['id']) AND $_GET['id'] > 0) {
+  //if (isset($_GET['id']) AND $_GET['id'] > 0) {
 
     if (isset($_POST['formbets'])) {
 
@@ -90,4 +90,4 @@
 
   </body>
 </html>
-<?php } ?>
+<?php //} ?>
