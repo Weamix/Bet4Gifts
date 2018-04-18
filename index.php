@@ -32,7 +32,7 @@
 
       <footer>
 
-          <span>Project ISN, created by <a href="https://twitter.com/weamix">@Maxime</a>, <a href="https://twitter.com/N0bodys_">@Loic</a> and<a href="https://twitter.com/Elkios_">@Mathys</a></span>
+          <span>Project ISN, created by <a href="https://twitter.com/weamix">@Maxime</a>, <a href="https://twitter.com/N0bodys_">@Loic</a> and<a href="https://twitter.com/Elkios_">@Mathys</a> </span>
 
       </footer>
 
