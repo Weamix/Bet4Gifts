@@ -18,7 +18,7 @@
           <input type="checkbox" name="2" value="">
         </label>
         <label for=""> Montant :
-          <input type="number" name="montant" value="" min="1"> <input type="submit" name="" value="">
+          <input type="number" name="montant" value="" min="1" max="1000"> <input type="submit" name="" value="Parier !">
         </label>
 
       </form>
