@@ -1,6 +1,6 @@
 <?php
 mysql_connect("localhost", "root", "");
-mysql_select_db("personnages");
+mysql_select_db("isnmpweb_espace_membre");
 $reponse = mysql_query('SELECT * FROM personnages ORDER BY experience');
 $rang = 0;
  
