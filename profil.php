@@ -31,6 +31,8 @@
     <br>
     <span>Email : <?php echo $userinfo['email']; ?></span>
     <br>
+      <span>Points : <?php echo $userinfo['points']; ?></span>
+    <br>
     <a href="#">Editer mon profil</a>
     <br>
     <a href="deconnexion.php">Se déconnecter</a>
