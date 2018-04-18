@@ -19,6 +19,7 @@
           $teamselected = $i;
         }else {
           echo "erreur";
+
         }
 
       }
