@@ -114,10 +114,10 @@
 
 
             <label for="email"> Email : </label>
-              <input type="email" name="email" value="<?php if(isset($email)) {echo $email;} ?>" id="email" placeholder="Votre Email">
+              <input type="email" name="email" value="<?php if(isset($email)) {echo $email;} ?>" id="email" placeholder="Your Email">
 
             <label for="confirmemail"> Confirm email : </label>
-              <input type="email" name="confirmemail" value="<?php if(isset($confirmemail)) {echo $confirmemail;} ?>" id="confirmemail" placeholder="Confirmez votre Email">
+              <input type="email" name="confirmemail" value="<?php if(isset($confirmemail)) {echo $confirmemail;} ?>" id="confirmemail" placeholder="Confirm email">
 
             <label for="password"> Password : </label>
             <input type="password" name="password" value="" id="password" placeholder="password">
@@ -126,7 +126,7 @@
             <input type="password" name="Confirm password" value="" id="confirmpassword" placeholder="Confirm password">
 
             <br>
-            <input type="submit" name="forminscription" value="Je m'inscris">
+            <input type="submit" name="forminscription" value="I join!">
 
             <span>Déjà un compte ? <a href="connexion.php">Sign in</a> !</span>
 
