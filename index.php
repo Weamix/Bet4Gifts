@@ -13,8 +13,8 @@
       <header class="full-background" id="full-background">
 
           <ul class="navbar">
-            <li> <a href="#">Accueil</a> </li>
-            <li> <a href="#">A propos</a> </li>
+            <li> <a href="#">Home</a> </li>
+            <li> <a href="#">About</a> </li>
             <li style="float:right;"> <a href="inscription.php">Sign-up</a> </li>
             <li style="float:right;"> <a href="connexion.php">Sign-in</a> </li>
           </ul>
