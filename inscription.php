@@ -109,7 +109,7 @@
           <form class="" action="" method="post">
 
             <label for="pseudo"> Username :
-                <input type="text" name="pseudo" value="<?php if(isset($pseudo)) {echo $pseudo;} ?>" id="pseudo" placeholder="Votre Pseudonyme">
+                <input type="text" name="pseudo" value="<?php if(isset($pseudo)) {echo $pseudo;} ?>" id="pseudo" placeholder="Your Username">
             </label>
 
 
