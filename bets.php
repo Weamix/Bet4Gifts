@@ -79,7 +79,7 @@
           <input type="checkbox" name="2" value="teamtwo">
         </label>
         <label for=""> Montant :
-          <input type="number" name="amount" value="" min="1" max=<?php echo '"'.$userinfo['points'].'"'; ?>> <input type="submit" name="formbets" value="Parier !">
+          <input type="number" name="amount" value="" min="1"> <input type="submit" name="formbets" value="Parier !">
         </label>
 
       </form>
