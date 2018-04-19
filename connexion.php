@@ -61,9 +61,9 @@
     <form class="" action="" method="post">
 
       <label for="emailconnect"> Email : </label> <input type="email" name="emailconnect" value="" id="emailconnect" placeholder="Votre Email">
-      <label for="passwordconnect"> Mot de Passe : </label> <input type="password" name="passwordconnect" value="" id="passwordconnect" placeholder="Votre Mot de Passe">
+      <label for="passwordconnect"> Password :</label> <input type="password" name="passwordconnect" value="" id="passwordconnect" placeholder="Votre Mot de Passe">
       <br>
-      <input type="submit" name="formconnexion" value="Se connecter">
+      <input type="submit" name="formconnexion" value="Sign up">
 
       <span>No account ? <a href="inscription.php">Sign up!</a></span>
 
