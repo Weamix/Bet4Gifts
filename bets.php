@@ -9,7 +9,7 @@
     if (isset($_POST['formbets'])) {
 
       $number = 0;
-      for ($i=0; $i <=2 ; $i++) {
+      for ($i=0; $i < 3 ; $i++) {
 
         echo "i =".$i."<br>";
         echo "POST : ".$_POST[$i];
