@@ -32,6 +32,7 @@
     <span>Email : <?php echo $userinfo['email']; ?></span>
     <br>
       <span>Points : <?php echo $userinfo['points']; ?></span>
+    <?php echo '<a href="bets.php?id='.$_GET['id'].'">Bet</a>'; ?>
     <br>
     <a href="#">Edit profil</a>
     <br>
