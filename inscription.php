@@ -128,7 +128,7 @@
             <br>
             <input type="submit" name="forminscription" value="I join!">
 
-            <span>Déjà un compte ? <a href="connexion.php">Sign in</a> !</span>
+            <span>You have already an account ? <a href="connexion.php">Sign in</a> !</span>
 
           </form>
 
