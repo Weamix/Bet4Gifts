@@ -6,4 +6,6 @@ ISN project by Weamix , Nobobys and Elkios
 
 Progression : 25%
 
-bet4gifts.web-edu.fr
+
+<a href="https://bet4gifts.web-edu.fr">Bet4Gifts: lien direct</a>
+
