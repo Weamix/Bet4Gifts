@@ -60,8 +60,8 @@
 
     <form class="" action="" method="post">
 
-      <label for="emailconnect"> Email : </label> <input type="email" name="emailconnect" value="" id="emailconnect" placeholder="Votre Email">
-      <label for="passwordconnect"> Password :</label> <input type="password" name="passwordconnect" value="" id="passwordconnect" placeholder="Votre Mot de Passe">
+      <label for="emailconnect"> Email : </label> <input type="email" name="emailconnect" value="" id="emailconnect" placeholder="Your email">
+      <label for="passwordconnect"> Password :</label> <input type="password" name="passwordconnect" value="" id="passwordconnect" placeholder="Your password">
       <br>
       <input type="submit" name="formconnexion" value="Sign up">
 
