@@ -34,7 +34,11 @@
 
             if ($_POST['amount'] > 0 AND $_POST['amount'] <= $userinfo['points']) {
 
-              
+              $categories = "football";
+              $team_one = htmlspecialchars($_POST['']);
+
+              $insertbet = $bdd->prepare("INSERT INTO bets(categories, team_one, team_two, bet, amount, match_end, author_id) VALUES(?, ?, ?, ?, ?, ?, ?)");
+              $insertbet->execute(array("football"));
 
             }else {
               $error = "Le montant saisi est supérieur à vos points actuels (ou inférieur 1)";
@@ -66,16 +70,16 @@
       <form class="" action="" method="post">
 
         <label for=""> Equipe 1
-          <input type="checkbox" name="1" value="">
+          <input type="checkbox" name="1" value="teamone">
         </label>
         <label for=""> Match Nul
-          <input type="checkbox" name="0" value="">
+          <input type="checkbox" name="0" value="equality">
         </label>
         <label for=""> Equipe 2
-          <input type="checkbox" name="2" value="">
+          <input type="checkbox" name="2" value="teamtwo">
         </label>
         <label for=""> Montant :
-          <input type="number" name="amount" value="" min="1" max="1000"> <input type="submit" name="formbets" value="Parier !">
+          <input type="number" name="amount" value="" min="1" max=<?php echo '"'.(int)$userinfo['points'].'"'; ?>> <input type="submit" name="formbets" value="Parier !">
         </label>
 
       </form>
