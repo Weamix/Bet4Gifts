@@ -12,6 +12,7 @@
       for ($i=0; $i < 3 ; $i++) {
 
         $i2 = (string)$i;
+        echo $_POST['1'];
 
         if (!empty($_POST[$i2])) {
           $number++;
