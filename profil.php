@@ -33,7 +33,7 @@
     <br>
       <span>Points : <?php echo $userinfo['points']; ?></span>
     <br>
-    <a href="#">Settings</a>
+    <a href="#">Edit profil</a>
     <br>
     <a href="deconnexion.php">Sign-out</a>
     <?php } ?>
