@@ -123,7 +123,7 @@
             <input type="password" name="password" value="" id="password" placeholder="password">
 
             <label for="confirmpassword"> Confirm password : </label>
-            <input type="password" name="Confirm password" value="" id="confirmpassword" placeholder="Confirm password">
+            <input type="password" name="confirmpassword" value="" id="confirmpassword" placeholder="Confirm password">
 
             <br>
             <input type="submit" name="forminscription" value="I join!">
