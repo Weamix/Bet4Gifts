@@ -13,7 +13,7 @@
 
         echo "i =".$i."<br>";
         echo "POST : ".$_POST[$i];
-        echo "POST : ".$_POST[strvar($i)];
+        echo "POST 2: ".$_POST[strvar($i)];
 
         if (!empty($_POST[strvar($i)])) {
           $number++;
