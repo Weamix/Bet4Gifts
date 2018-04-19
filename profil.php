@@ -18,7 +18,7 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8">
-    <title>Profil</title>
+    <title>Profile</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -33,7 +33,7 @@
     <br>
       <span>Points : <?php echo $userinfo['points']; ?></span>
     <br>
-    <a href="#">Editer mon profil</a>
+    <a href="#">Settings</a>
     <br>
     <a href="deconnexion.php">Sign-out</a>
     <?php } ?>
