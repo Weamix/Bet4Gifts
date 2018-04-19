@@ -33,7 +33,7 @@
 
                   $insertmembre = $bdd->prepare("INSERT INTO membres(pseudo, email, password) VALUES(?, ?, ?)");
                   $insertmembre->execute(array($pseudo, $email, $password));
-                  $_SESSION['accountcreated'] = "Votre compte à bien été créé !";
+                  $_SESSION['accountcreated'] = "Your account has been created !";
                   header("Location: connexion.php");
 
               }
