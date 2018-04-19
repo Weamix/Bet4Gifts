@@ -65,7 +65,7 @@
       <br>
       <input type="submit" name="formconnexion" value="Se connecter">
 
-      <span>No account ? <a href="inscription.php">Sign up!</a> !</span>
+      <span>No account ? <a href="inscription.php">Sign up!</a></span>
 
     </form>
 
