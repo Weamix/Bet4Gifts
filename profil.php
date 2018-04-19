@@ -18,7 +18,7 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8">
-    <title>Profile</title>
+    <title>Your profile</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -27,7 +27,7 @@
 
     <h2>Your profile <?php echo $userinfo['pseudo']; ?></h2>
     <br>
-    <span>Pseudonyme : <?php echo $userinfo['pseudo']; ?></span>
+    <span>Username : <?php echo $userinfo['pseudo']; ?></span>
     <br>
     <span>Email : <?php echo $userinfo['email']; ?></span>
     <br>
