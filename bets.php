@@ -34,16 +34,16 @@
 
             if ($_POST['amount'] > 0 AND $_POST['amount'] <= $userinfo['points']) {
 
-              $categories = "football";
-              $team_one = htmlspecialchars($_POST['1']);
-              $team_one = htmlspecialchars($_POST['2']);
-              $bet = htmlspecialchars($teamselected);
-              $amount = htmlspecialchars($_POST['amount']);
-              $match_end = null;
-              $author_id = htmlspecialchars($userinfo['id']);
+              //$categories = "football";
+             // $team_one = htmlspecialchars($_POST['1']);
+              //$team_one = htmlspecialchars($_POST['2']);
+              //$bet = htmlspecialchars($teamselected);
+              //$amount = htmlspecialchars($_POST['amount']);
+              //$match_end = null;
+              //$author_id = htmlspecialchars($userinfo['id']);
 
-              $insertbet = $bdd->prepare("INSERT INTO bets(categories, team_one, team_two, bet, amount, match_end, author_id) VALUES(?, ?, ?, ?, ?, ?, ?)");
-              $insertbet->execute(array($categories, $team_one, $team_two, $bet, $amount, $match_end, $author_id));
+              $insertbet = $bdd->prepare("INSERT INTO bets(categories, team_one, team_two, bet, amount, author_id) VALUES(?, ?, ?, ?, ?, ?)");
+              $insertbet->execute(array("football", "equipe1", "equipe2", 1, 200, 1));
 
             }else {
               $error = "Le montant saisi est supérieur à vos points actuels (ou inférieur 1)";
