@@ -25,7 +25,7 @@
 
     <?php if (isset($_SESSION['id']) AND $userinfo['id'] == $_SESSION['id']) { ?>
 
-    <h2>Profil de <?php echo $userinfo['pseudo']; ?></h2>
+    <h2>Your profile <?php echo $userinfo['pseudo']; ?></h2>
     <br>
     <span>Pseudonyme : <?php echo $userinfo['pseudo']; ?></span>
     <br>
