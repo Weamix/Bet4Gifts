@@ -33,7 +33,6 @@
 
             if ($_POST['amount'] > 0 AND $_POST['amount'] <= $userinfo['points']) {
 
-              $error = "Pari effectué avec succès !";
 
             }else {
               $error = "Le montant saisi est supérieur à vos points actuels (ou inférieur 1)";
