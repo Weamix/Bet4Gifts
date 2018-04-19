@@ -11,7 +11,9 @@
       $number = 0;
       for ($i=0; $i < 3 ; $i++) {
 
-        if (!empty($_POST["$i"])) {
+        $i2 = (string)$i;
+
+        if (!empty($_POST[$i2])) {
           $number++;
           echo "ok".$i;
           $teamselected = $i;
