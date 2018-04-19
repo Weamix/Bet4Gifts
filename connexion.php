@@ -54,7 +54,7 @@
 
     <div class="container_form_connexion">
 
-    <h2>Connexion</h2>
+    <h2>Sign up</h2>
 
     <hr>
 
@@ -65,7 +65,7 @@
       <br>
       <input type="submit" name="formconnexion" value="Se connecter">
 
-      <span>Pas de compte ? <a href="inscription.php">Inscris-toi</a> !</span>
+      <span>No account ? <a href="inscription.php">Sign up!</a> !</span>
 
     </form>
 
