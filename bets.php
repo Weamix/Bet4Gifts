@@ -12,6 +12,7 @@
       for ($i=0; $i <=2 ; $i++) {
 
         echo "i =".$i."<br>";
+        echo "POST : ".$_POST[$i];
 
         if (!empty($_POST[strvar($i)])) {
           $number++;
