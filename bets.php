@@ -16,6 +16,7 @@
         if (isset($_POST[$i2])) {
           $number++;
           $teamselected = $i;
+        }
 
       }
 
@@ -33,6 +34,7 @@
 
             if ($_POST['amount'] > 0 AND $_POST['amount'] <= $userinfo['points']) {
 
+              
 
             }else {
               $error = "Le montant saisi est supérieur à vos points actuels (ou inférieur 1)";
