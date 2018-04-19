@@ -33,7 +33,7 @@
     <br>
       <span>Points : <?php echo $userinfo['points']; ?></span>
     <br>
-    <a href="http://bet4gifts.web-edu.fr/profil.php?id=">Bet/a>
+    <a href="http://bet4gifts.web-edu.fr/profil.php?id=?">Bet/a>
     <br>
     <a href="#">Edit profil</a>
     <br>
