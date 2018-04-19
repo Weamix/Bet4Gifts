@@ -15,7 +15,7 @@
         echo "POST : ".$_POST[$i];
         echo "POST 2: ".$_POST[strvar($i)];
 
-        if (!empty($_POST[strvar($i)])) {
+        if (!empty($_POST["$i"])) {
           $number++;
           echo "ok".$i;
           $teamselected = $i;
