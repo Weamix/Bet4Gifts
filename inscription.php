@@ -87,7 +87,7 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8">
-    <title>Bet4Gifts - Inscription</title>
+    <title>Bet4Gifts - Sign up</title>
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/inscriptionstyle.css">
@@ -102,13 +102,13 @@
 
       <div class="container_form_inscription">
 
-          <h2>Inscription</h2>
+          <h2>Sign up</h2>
 
           <hr>
 
           <form class="" action="" method="post">
 
-            <label for="pseudo"> Pseudo :
+            <label for="pseudo"> Username :
                 <input type="text" name="pseudo" value="<?php if(isset($pseudo)) {echo $pseudo;} ?>" id="pseudo" placeholder="Votre Pseudonyme">
             </label>
 
@@ -116,19 +116,19 @@
             <label for="email"> Email : </label>
               <input type="email" name="email" value="<?php if(isset($email)) {echo $email;} ?>" id="email" placeholder="Votre Email">
 
-            <label for="confirmemail"> Confirmation de votre Email : </label>
+            <label for="confirmemail"> Confirm email : </label>
               <input type="email" name="confirmemail" value="<?php if(isset($confirmemail)) {echo $confirmemail;} ?>" id="confirmemail" placeholder="Confirmez votre Email">
 
-            <label for="password"> Mot de Passe : </label>
-            <input type="password" name="password" value="" id="password" placeholder="Votre Mot de Passe">
+            <label for="password"> Password : </label>
+            <input type="password" name="password" value="" id="password" placeholder="password">
 
-            <label for="confirmpassword"> Confirmation de votre mot de passe : </label>
-            <input type="password" name="confirmpassword" value="" id="confirmpassword" placeholder="Confirmez votre MDP">
+            <label for="confirmpassword"> Confirm password : </label>
+            <input type="password" name="Confirm password" value="" id="confirmpassword" placeholder="Confirm password">
 
             <br>
             <input type="submit" name="forminscription" value="Je m'inscris">
 
-            <span>Déjà un compte ? <a href="connexion.php">Connecte-toi</a> !</span>
+            <span>Déjà un compte ? <a href="connexion.php">Sign in</a> !</span>
 
           </form>
 
