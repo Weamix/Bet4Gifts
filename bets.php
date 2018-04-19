@@ -11,7 +11,7 @@
       $number = 0;
       for ($i=0; $i <=2 ; $i++) {
 
-        echo $i."<br>";
+        echo "i =".$i."<br>";
 
         if (!empty($_POST[strvar($i)])) {
           $number++;
