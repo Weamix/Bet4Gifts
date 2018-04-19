@@ -15,12 +15,7 @@
 
         if (isset($_POST[$i2])) {
           $number++;
-          echo "ok".$i;
           $teamselected = $i;
-        }else {
-          echo "erreur";
-
-        }
 
       }
 
@@ -37,7 +32,9 @@
             $userinfo = $requser->fetch();
 
             if ($_POST['amount'] > 0 AND $_POST['amount'] <= $userinfo['points']) {
-              # code...
+
+              $error = "Pari effectué avec succès !"
+
             }else {
               $error = "Le montant saisi est supérieur à vos points actuels (ou inférieur 1)";
             }
