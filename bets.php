@@ -4,14 +4,14 @@
 
   $bdd = new PDO('mysql:host=localhost;dbname=isnmpweb_espace_membre', 'isnprojet', 'O1cuz98@');
 
-  echo "ID".$_GET['id'];
-
   if (isset($_GET['id']) AND $_GET['id'] > 0) {
 
     if (isset($_POST['formbets'])) {
 
       $number = 0;
       for ($i=0; $i < 2; $i++) {
+
+        echo $i."<br>";
 
         if (!empty($_POST[$i])) {
           $number++;
