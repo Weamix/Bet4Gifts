@@ -54,7 +54,7 @@
 
     <div class="container_form_connexion">
 
-    <h2>Sign up</h2>
+    <h2>Sign in</h2>
 
     <hr>
 
