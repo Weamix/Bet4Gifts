@@ -35,7 +35,7 @@
     <br>
     <a href="#">Editer mon profil</a>
     <br>
-    <a href="deconnexion.php">Se déconnecter</a>
+    <a href="deconnexion.php">Sign-out</a>
     <?php } ?>
 
 
