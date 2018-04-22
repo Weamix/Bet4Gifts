@@ -69,6 +69,7 @@
   <head>
     <meta charset="utf-8">
     <title>Bets</title>
+    <link rel="icon" type="image/png" href="images/favicon.png" />
   </head>
   <body>
 
