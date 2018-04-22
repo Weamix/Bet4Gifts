@@ -94,7 +94,7 @@
           <input type="checkbox" name="2">
         </label>
         <label for=""> Montant :
-          <input type="number" name="amount" value="" min="1" <?php echo 'max="'.$userinfo['points'].'"' ?>> <input type="submit" name="formbets" value="Parier !">
+          <input type="number" name="amount" value="1" min="1" <?php echo 'max="'.$userinfo['points'].'"' ?>> <input type="submit" name="formbets" value="Parier !">
         </label>
 
       </form>
