@@ -24,7 +24,7 @@
   </head>
   <body>
 
-    <?php if (isset($_SESSION['id']) AND $userinfo['id'] == $_SESSION['id']) { ?>
+    <?php //if (isset($_SESSION['id']) AND $userinfo['id'] == $_SESSION['id']) { ?>
 
     <h2>Your profile <?php echo $userinfo['pseudo']; ?></h2>
     <br>
@@ -39,7 +39,7 @@
     <a href="#">Edit profil</a>
     <br>
     <a href="deconnexion.php">Sign out</a>
-    <?php } ?>
+    <?php //} ?>
 
 
 
