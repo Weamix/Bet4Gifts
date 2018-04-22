@@ -35,8 +35,8 @@
             if ($_POST['amount'] > 0 AND $_POST['amount'] <= $userinfo['points']) {
 
               $categories = "football";
-              $team_one = (string)$_POST['1'];
-              $team_one = (string)$_POST['2'];
+              $team_one = (string)$_POST['teamone'];
+              $team_one = (string)$_POST['teamtwo'];
               $bet = (int)$teamselected;
               $amount = (int)$_POST['amount'];
               //$match_end = null;
@@ -83,13 +83,15 @@
       <form class="" action="" method="post">
 
         <label for=""> Equipe 1
-          <input type="checkbox" name="1" value="teamone">
+          <input type="hidden" name="teamone" value="TeamOne">
+          <input type="checkbox" name="1">
         </label>
         <label for=""> Match Nul
           <input type="checkbox" name="0" value="equality">
         </label>
         <label for=""> Equipe 2
-          <input type="checkbox" name="2" value="teamtwo">
+          <input type="hidden" name="teamtwo" value="TeamTwo">
+          <input type="checkbox" name="2">
         </label>
         <label for=""> Montant :
           <input type="number" name="amount" value="" min="1"> <input type="submit" name="formbets" value="Parier !">
