@@ -36,7 +36,7 @@
 
               $categories = "football";
               $team_one = (string)$_POST['teamone'];
-              $team_one = (string)$_POST['teamtwo'];
+              $team_two = (string)$_POST['teamtwo'];
               $bet = (int)$teamselected;
               $amount = (int)$_POST['amount'];
               //$match_end = null;
