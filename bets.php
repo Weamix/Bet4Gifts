@@ -40,7 +40,7 @@
               $bet = (int)$teamselected;
               $amount = (int)$_POST['amount'];
               //$match_end = null;
-              //$author_id = htmlspecialchars($userinfo['id']);
+              $author_id = $userinfo['id'];
               echo $categories;
               echo $team_one;
               echo $team_two;
@@ -48,7 +48,7 @@
               echo $amount;
 
               $insertbet = $bdd->prepare("INSERT INTO bets(categories, team_one, team_two, bet, amount, author_id) VALUES(?, ?, ?, ?, ?, ?)");
-              $insertbet->execute(array($categories, $team_one, $team_two, $bet, $amount, 1));
+              $insertbet->execute(array($categories, $team_one, $team_two, $bet, $amount, $author_id));
 
             }else {
               $error = "Le montant saisi est supérieur à vos points actuels (ou inférieur 1)";
