@@ -6,8 +6,11 @@
 
   if (isset($_GET['id']) AND $_GET['id'] > 0) {
 
-    echo "Test :";
-    echo $_SESSION['id'];
+    $getid = intval($_GET['id']);
+    $requser = $bdd->prepare("SELECT * FROM membres WHERE id = ?");
+    $requser->execute(array($getid));
+
+    $userinfo = $requser->fetch();
 
     if (isset($_POST['formbets'])) {
 
@@ -28,12 +31,6 @@
         if ($number == 1) {
 
           if (!empty($_POST['amount'])) {
-
-            $getid = intval($_GET['id']);
-            $requser = $bdd->prepare("SELECT * FROM membres WHERE id = ?");
-            $requser->execute(array($getid));
-
-            $userinfo = $requser->fetch();
 
             if ($_POST['amount'] > 0 AND $_POST['amount'] <= $userinfo['points']) {
 
@@ -76,7 +73,7 @@
   </head>
   <body>
 
-   <?php //if (isset($_SESSION['id']) AND $userinfo['id'] == $_SESSION['id']) { ?>
+   <?php if(isset($_SESSION['id']) AND $userinfo['id'] == $_SESSION['id']) { ?>
 
       <form class="" action="" method="post">
 
@@ -95,7 +92,7 @@
 
       </form>
 
-    <?php //} ?>
+    <?php } ?>
 
       <?php
 
