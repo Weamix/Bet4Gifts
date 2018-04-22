@@ -6,6 +6,8 @@
 
   if (isset($_GET['id']) AND $_GET['id'] > 0) {
 
+    echo $_SESSION['id'];
+
     if (isset($_POST['formbets'])) {
 
       $number = 0;
