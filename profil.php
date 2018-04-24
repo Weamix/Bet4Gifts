@@ -44,6 +44,18 @@
 
         <h2>Matches in progress</h2>
 
+        <table>
+
+          <tr>
+            <th>Categories</th>
+            <th>Team 1</th>
+            <th>Team 2</th>
+            <th>Bet's Amount</th>
+            <th>Bet</th>
+            <th>Author ID</th>
+          </tr>
+
+
         <?php
 
           $reqbets = $bdd->prepare("SELECT * FROM bets WHERE author_id = ?");
@@ -52,14 +64,17 @@
           while ($bets = $reqbets->fetch()) {
          ?>
 
-         <strong>Catégories: </strong><?php echo $bets['categories'] ?><br>
-         <strong>Equipe 1: </strong><?php echo $bets['team_one'] ?><br>
-         <strong>Equipe 2: </strong><?php echo $bets['team_two'] ?><br>
-         <strong>Montant: </strong><?php echo $bets['amount'] ?><br>
-         <strong>Pari: </strong><?php echo $bets['bet'] ?><br>
-         <strong>Parieur ID: </strong><?php echo $bets['author_id'] ?><br>
-
+          <tr>
+             <td><?php echo $bets['categories'] ?></td>
+             <td><?php echo $bets['team_one'] ?></td>
+             <td><?php echo $bets['team_two'] ?></td>
+             <td><?php echo $bets['amount'] ?></td>
+             <td><?php echo $bets['bet'] ?></td>
+             <td><?php echo $bets['author_id'] ?></td>
+          </tr>
        <?php } $reqbets->closeCursor(); ?>
+
+       </table>
 
       </div>
 
