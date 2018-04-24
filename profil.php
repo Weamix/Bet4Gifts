@@ -51,7 +51,7 @@
 
           $listbets = $reqbets->fetch();
 
-          echo $listbets;
+          echo $listbets['author_id'];
 
          ?>
 
