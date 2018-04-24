@@ -52,9 +52,9 @@
           while ($bets = $reqbets->fetch()) {
          ?>
 
-         <strong>Catégories: </strong><?php echo $bets['cotegories'] ?><br>
-         <strong>Equipe 1: </strong><?php echo $bets['TeamOne'] ?><br>
-         <strong>Equipe 2: </strong><?php echo $bets['TeamTwo'] ?><br>
+         <strong>Catégories: </strong><?php echo $bets['categories'] ?><br>
+         <strong>Equipe 1: </strong><?php echo $bets['team_one'] ?><br>
+         <strong>Equipe 2: </strong><?php echo $bets['team_two'] ?><br>
          <strong>Montant: </strong><?php echo $bets['amount'] ?><br>
          <strong>Pari: </strong><?php echo $bets['bet'] ?><br>
          <strong>Parieur ID: </strong><?php echo $bets['author_id'] ?><br>
