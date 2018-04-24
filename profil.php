@@ -51,7 +51,7 @@
 
           $listbets = $reqbets->fetch();
 
-          echo $reqbets;
+          echo $listbets;
 
          ?>
 
