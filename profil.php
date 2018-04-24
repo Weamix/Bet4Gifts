@@ -51,7 +51,8 @@
 
           $listbets = $reqbets->fetch();
 
-          echo $listbets['author_id'];
+          echo sizeof($listbets);
+          echo $listbets['amount'];
 
          ?>
 
