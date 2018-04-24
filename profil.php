@@ -49,6 +49,8 @@
           $reqbets = $bdd->prepare("SELECT * FROM bets WHERE author_id = ?");
           $reqbets->execute(array($getid));
 
+          $listbets = $reqbets->fetch();
+
           echo $reqbets;
 
          ?>
