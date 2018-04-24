@@ -49,12 +49,17 @@
           $reqbets = $bdd->prepare("SELECT * FROM bets WHERE author_id = ?");
           $reqbets->execute(array($getid));
 
-          $listbets = $reqbets->fetch();
-
-          echo sizeof($listbets);
-          echo $listbets['amount'];
-
+          while ($bets = $reqbets->fetch()) {
          ?>
+
+         <strong>Catégories: </strong><?php echo $bets['cotegories'] ?><br>
+         <strong>Equipe 1: </strong><?php echo $bets['TeamOne'] ?><br>
+         <strong>Equipe 2: </strong><?php echo $bets['TeamTwo'] ?><br>
+         <strong>Montant: </strong><?php echo $bets['amount'] ?><br>
+         <strong>Pari: </strong><?php echo $bets['bet'] ?><br>
+         <strong>Parieur ID: </strong><?php echo $bets['author_id'] ?><br>
+
+       <?php } $reqbets->closeCursor(); ?>
 
       </div>
 
