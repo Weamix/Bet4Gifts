@@ -51,7 +51,7 @@
 
           $listbets = $reqbets->fetch();
 
-          $length = sizeof($listbets);
+          $length = sizeof($listbets[$getid]);
 
           echo "Size of : ";
           echo $length;
