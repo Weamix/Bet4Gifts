@@ -49,9 +49,9 @@
           $reqbets = $bdd->prepare("SELECT * FROM bets WHERE author_id = ?");
           $reqbets->execute(array($getid));
 
-          $listbets = $reqbets->fetch();
+          $listbets = $reqbets;
 
-          $length = sizeof($listbets[$getid]);
+          $length = sizeof($listbets);
 
           echo "Size of : ";
           echo $length;
