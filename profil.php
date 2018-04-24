@@ -49,16 +49,14 @@
           $reqbets = $bdd->prepare("SELECT * FROM bets WHERE author_id = ?");
           $reqbets->execute(array($getid));
 
-          $listbets = $reqbets;
-
-          $length = sizeof($listbets);
-
-          echo "Size of : ";
-          echo $length;
+          echo $reqbets;
 
          ?>
 
       </div>
+
+
+
 
     <?php } ?>
 
