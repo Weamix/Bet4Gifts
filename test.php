@@ -8,7 +8,7 @@
     $message='
     <html>
        <body style="margin: 0; padding: 0; background-color:#2c3e50;">
-          <div align="center"><img src="https://bet4gifts.web-edu.fr/images/favicon.png" alt="" width="100" height="100"></div>
+          <div align="center"><img src="https://bet4gifts.web-edu.fr/images/favicon.png" alt="" width="200" height="200"></div>
 
           <div align="center">
              <a href="https://bet4gifts.web-edu.fr/confirmation.php?pseudo='.urlencode($pseudo).'&key='.$key.'">Confirmez votre compte !</a>
