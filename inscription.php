@@ -55,8 +55,8 @@
                   </html>
                   ';
                   mail($email, "Confirmation de compte", $message, $header);
-                  
-                  $_SESSION['accountcreated'] = "Your account has been created ! Look at your mails to confirm !";
+
+                  $_SESSION['accountcreated'] = "Your account has been created ! Look at your mails to confirm ! (and your spams)";
                   header("Location: connexion.php");
 
 

@@ -48,7 +48,7 @@
   </head>
   <body onload="resizeHeaderHeight()">
 
-    <a href="index.php" class="logohome"> <img src="images/favicon.png" alt="" width="64" height="64"> </a>    
+    <a href="index.php" class="logohome"> <img src="images/favicon.png" alt="" width="64" height="64"> </a>
 
     <header class="full-background" id="full-background">
 
@@ -85,7 +85,16 @@
       <span class="accountCreatedMessage">
     <?php
       echo $_SESSION['accountcreated'];
-      $_SESSION['accountcreated'] = null;
+    ?>
+      </span>
+    <?php } ?>
+
+    <?php
+      if (isset($emailconfirmed)) {
+    ?>
+      <span class="accountCreatedMessage">
+    <?php
+      echo $emailconfirmed;
     ?>
       </span>
     <?php } ?>
