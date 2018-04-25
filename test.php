@@ -9,11 +9,13 @@
     <html>
        <body style="margin: 0; padding: 0; background-color:#2c3e50;">
           <br>
-          <div style="" align="center"><img src="https://bet4gifts.web-edu.fr/images/favicon.png" alt="" width="200" height="200"></div>
+          <div style="" align="center"><img src="https://bet4gifts.web-edu.fr/images/favicon.png" alt="" width="150" height="150"></div>
           <br>
           <hr style="width: 25%;">
           <br>
-          <span style="display: block; color: #FFF; font-size: 25px; font-weight: bold;">Your account was successfully created!</span>
+          <div align="center">
+            <span style="display: block; color: #FFF; font-size: 25px; font-weight: bold;">Your account was successfully created!</span>
+          </div>
           <br>
           <hr style="width: 25%;">
           <br>
@@ -24,6 +26,7 @@
             <hr style="width: 25%;">
             <br>
           </div>
+          <br>
           <div align="center">
             <a style="background-color: #27ae60; border-radius: 20px; padding: 16px 18px; color: #FFF; text-decoration: none; font-size: 15px;" href="https://bet4gifts.web-edu.fr/confirmation.php?pseudo='.urlencode($pseudo).'&key='.$key.'">Click me !</a>
           </div>
