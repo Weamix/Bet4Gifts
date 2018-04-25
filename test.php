@@ -13,6 +13,10 @@
           <br>
           <hr style="width: 25%;">
           <br>
+          <span style="display: block; color: #FFF; font-size: 25px; font-weight: bold;">Your account was successfully created!</span>
+          <br>
+          <hr style="width: 25%;">
+          <br>
           <div align="center">
             <span style="display: block; color: #FFF; font-size: 20px;">Your account was successfully created!</span>
             <span style="display: block; color: #FFF; font-size: 20px;">You are just one step to confirm your mail !</span>
