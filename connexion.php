@@ -26,11 +26,11 @@
 
         }
         else {
-           $erreur = "L'adresse email et le mot de passe ne correspondent pas !";
+           $error = "L'adresse email et le mot de passe ne correspondent pas !";
         }
      }
      else {
-        $erreur = "Tous les champs doivent être complétés !";
+        $error = "Tous les champs doivent être complétés !";
      }
   }
 
@@ -70,31 +70,22 @@
     </form>
 
     <?php
-      if (isset($erreur)) {
+      if (isset($error) OR isset($_SESSION['error'])) {
     ?>
       <span class="errorMessage">
     <?php
-      echo $erreur;
+      echo $error;
+      echo $_SESSION['error'];
     ?>
       </span>
     <?php } ?>
 
     <?php
-      if (isset($_SESSION['accountcreated'])) {
+      if (isset($_SESSION['valid'])) {
     ?>
       <span class="accountCreatedMessage">
     <?php
-      echo $_SESSION['accountcreated'];
-    ?>
-      </span>
-    <?php } ?>
-
-    <?php
-      if (isset($emailconfirmed)) {
-    ?>
-      <span class="accountCreatedMessage">
-    <?php
-      echo $emailconfirmed;
+      echo $_SESSION['valid'];
     ?>
       </span>
     <?php } ?>

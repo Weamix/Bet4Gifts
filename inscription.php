@@ -49,6 +49,7 @@
                   <html>
                      <body>
                         <div align="center">
+                           <img src="https://bet4gifts.web-edu.fr/images/favicon.png" alt="" width="100" height="100">
                            <a href="https://bet4gifts.web-edu.fr/confirmation.php?pseudo='.urlencode($pseudo).'&key='.$key.'">Confirmez votre compte !</a>
                         </div>
                      </body>
@@ -56,7 +57,7 @@
                   ';
                   mail($email, "Confirmation de compte", $message, $header);
 
-                  $_SESSION['accountcreated'] = "Your account has been created ! Look at your mails to confirm ! (and your spams)";
+                  $_SESSION['valid'] = "Your account has been created ! Look at your mails to confirm ! (and your spams)";
                   header("Location: connexion.php");
 
 
@@ -64,21 +65,21 @@
               }
 
               else {
-                $erreur = "Les deux mots de passes ne correspondent pas !";
+                $error = "Les deux mots de passes ne correspondent pas !";
               }
 
             }
 
             else {
 
-              $erreur = "Cette adresse email est déjà utilisé !";
+              $error = "Cette adresse email est déjà utilisé !";
 
             }
 
           }
 
           else {
-            $erreur = "Votre adresse mail n'est pas valide !";
+            $error = "Votre adresse mail n'est pas valide !";
           }
 
         }
@@ -86,14 +87,14 @@
 
 
         else {
-          $erreur = "Les deux adresses emails ne correspondent pas !";
+          $error = "Les deux adresses emails ne correspondent pas !";
         }
 
       }
 
       else {
 
-        $erreur = "Votre pseudo est beaucoup trop long ! (<255 caractères)";
+        $error = "Votre pseudo est beaucoup trop long ! (<255 caractères)";
 
       }
 
@@ -101,7 +102,7 @@
 
     else {
 
-      $erreur = "Certains champs sont vides ! Veuillez tous les remplir !";
+      $error = "Certains champs sont vides ! Veuillez tous les remplir !";
 
     }
 
@@ -158,11 +159,11 @@
           </form>
 
           <?php
-            if (isset($erreur)) {
+            if (isset($error)) {
           ?>
             <span class="errorMessage">
           <?php
-            echo $erreur;
+            echo $error;
           ?>
             </span>
           <?php } ?>
