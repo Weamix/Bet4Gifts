@@ -7,7 +7,10 @@
     $header.='Content-Transfer-Encoding: 8bit';
     $message='
     <html>
-       <body style="margin: 0; padding: 0; background-color:#2c3e50;">
+      <style>
+      @import url("https://fonts.googleapis.com/css?family=Lato");
+      </style>
+       <body style="margin: 0; padding: 0; background-color:#2c3e50; font-family: "Lato", sans-serif;">
           <br>
           <div style="" align="center"><img src="https://bet4gifts.web-edu.fr/images/favicon.png" alt="" width="150" height="150"></div>
           <br>
