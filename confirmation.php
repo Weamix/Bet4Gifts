@@ -4,6 +4,8 @@
 
   if (isset($_GET['pseudo'], $_GET['key']) AND !empty($_GET['pseudo']) AND !empty($_GET['key'])) {
 
+    echo "ISSET OK";
+
     $pseudo = htmlspecialchars(urlencode($_GET['pseudo']));
     $key = htmlspecialchars($_GET['key']);
 
