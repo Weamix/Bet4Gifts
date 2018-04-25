@@ -31,10 +31,35 @@
 
               if ($password == $confirmpassword) {
 
-                  $insertmembre = $bdd->prepare("INSERT INTO membres(pseudo, email, password) VALUES(?, ?, ?)");
-                  $insertmembre->execute(array($pseudo, $email, $password));
-                  $_SESSION['accountcreated'] = "Your account has been created !";
+                  $lengthkey = 16;
+                  $key = "";
+
+                  for ($i=1; $i<$lengthkey; $i++) {
+                    $key.= mt_rand(0,9);
+                  }
+
+                  $insertmembre = $bdd->prepare("INSERT INTO membres(pseudo, email, password, confirmkey) VALUES(?, ?, ?, ?)");
+                  $insertmembre->execute(array($pseudo, $email, $password, $key));
+
+                  $header="MIME-Version: 1.0\r\n";
+                  $header.='From:"Bet4Gifts"<noreply@bet4gifts.web-edu.fr>'."\n";
+                  $header.='Content-Type:text/html; charset="uft-8"'."\n";
+                  $header.='Content-Transfer-Encoding: 8bit';
+                  $message='
+                  <html>
+                     <body>
+                        <div align="center">
+                           <a href="https://bet4gifts.web-edu.fr/confirmation.php?pseudo='.urlencode($pseudo).'&key='.$key.'">Confirmez votre compte !</a>
+                        </div>
+                     </body>
+                  </html>
+                  ';
+                  mail($email, "Confirmation de compte", $message, $header);
+                  
+                  $_SESSION['accountcreated'] = "Your account has been created ! Look at your mails to confirm !";
                   header("Location: connexion.php");
+
+
 
               }
 
