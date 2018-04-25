@@ -46,14 +46,35 @@
                   $header.='Content-Type:text/html; charset="uft-8"'."\n";
                   $header.='Content-Transfer-Encoding: 8bit';
                   $message='
-                  <html>
-                     <body style="margin: 0; padding: 0; background-color:#2c3e50;">
-                        <div align="center"><img src="https://bet4gifts.web-edu.fr/images/favicon.png" alt="" width="100" height="100"></div>
-                        <div align="center">
-                           <a href="https://bet4gifts.web-edu.fr/confirmation.php?pseudo='.urlencode($pseudo).'&key='.$key.'">Confirmez votre compte !</a>
-                        </div>
-                     </body>
-                  </html>
+                    <html>
+                      <style>
+                        @import url(\'https://fonts.googleapis.com/css?family=Lato\');
+                      </style>
+                       <body style="margin: 0; padding: 0; background-color:#2c3e50; font-family: \'Lato\', sans-serif;">
+                          <br>
+                          <div style="" align="center"><img src="https://bet4gifts.web-edu.fr/images/favicon.png" alt="" width="150" height="150"></div>
+                          <br>
+                          <hr style="width: 25%;">
+                          <br>
+                          <div align="center">
+                            <span style="display: block; color: #FFF; font-size: 25px; font-weight: bold;">Your account was successfully created!</span>
+                          </div>
+                          <br>
+                          <hr style="width: 25%;">
+                          <br>
+                          <div align="center">
+                            <span style="display: block; color: #FFF; font-size: 20px;">Your account was successfully created!</span>
+                            <span style="display: block; color: #FFF; font-size: 20px;">You are just one step to confirm your mail !</span>
+                            <br>
+                            <hr style="width: 25%;">
+                            <br>
+                          </div>
+                          <br>
+                            <a style="background-color: #27ae60; border-radius: 20px; padding: 16px 18px; color: #FFF; text-decoration: none; font-size: 15px; text-transform: uppercase; font-weight: bold;" href="https://bet4gifts.web-edu.fr/confirmation.php?pseudo='.urlencode($pseudo).'&key='.$key.'">Click me !</a>
+                          </div>
+                          <br><br><br>
+                       </body>
+                    </html>
                   ';
                   mail($email, "Confirmation de compte", $message, $header);
 
