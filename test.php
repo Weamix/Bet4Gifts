@@ -18,9 +18,10 @@
             <span style="display: block; color: #FFF; font-size: 20px;">You are just one step to confirm your mail !</span>
             <br>
             <hr style="width: 25%;">
-            <br><br>
-            <a style="display: block; width: auto; background-color: #27ae60; border-radius: 20px; padding: 16px 18px; color: #FFF; text-decoration: none; font-size: 15px;" href="https://bet4gifts.web-edu.fr/confirmation.php?pseudo='.urlencode($pseudo).'&key='.$key.'">Confirmez votre compte !</a>
-            <br><br>
+            <br>
+          </div>
+          <div align="center">
+            <a style="background-color: #27ae60; border-radius: 20px; padding: 16px 18px; color: #FFF; text-decoration: none; font-size: 15px;" href="https://bet4gifts.web-edu.fr/confirmation.php?pseudo='.urlencode($pseudo).'&key='.$key.'">Click me !</a>
           </div>
        </body>
     </html>
