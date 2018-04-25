@@ -10,11 +10,13 @@
        <body style="margin: 0; padding: 0; background-color:#2c3e50;">
           <br>
           <div style="" align="center"><img src="https://bet4gifts.web-edu.fr/images/favicon.png" alt="" width="200" height="200"></div>
-
+          <br>
+          <hr style="width: 25%;">
+          <br>
           <div align="center">
-              <span style="display: block; color: #FFF; font-size: 20px;">Your account was successfully created!</span>
-              <span style="display: block; color: #FFF; font-size: 20px;">You are just one step to confirm your mail !</span>
-             <a style="color: #FFF; text-decoration: none; font-size: 25px;" href="https://bet4gifts.web-edu.fr/confirmation.php?pseudo='.urlencode($pseudo).'&key='.$key.'">Confirmez votre compte !</a>
+            <span style="display: block; color: #FFF; font-size: 20px;">Your account was successfully created!</span>
+            <span style="display: block; color: #FFF; font-size: 20px;">You are just one step to confirm your mail !</span>
+            <a style="background-color: #27ae60; border-radius: 20px; color: #FFF; text-decoration: none; font-size: 15px;" href="https://bet4gifts.web-edu.fr/confirmation.php?pseudo='.urlencode($pseudo).'&key='.$key.'">Confirmez votre compte !</a>
           </div>
        </body>
     </html>
