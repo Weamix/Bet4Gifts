@@ -19,16 +19,16 @@
 
         $updateuser = $bdd->prepare("UPDATE membres SET isconfirm = 1 WHERE pseudo = ? AND confirmkey = ?");
         $updateuser->execute(array($pseudo,$key));
-        $_SESSION['valid'] = "Votre compte a bien été confirmé !";
+        $_SESSION['valid'] = "Your accound has been confirmed !";
         header("Location: connexion.php");
 
       } else {
-        $_SESSION['error'] = "Votre compte a déjà été confirmé !";
+        $_SESSION['error'] = "Your accound has already been confirmed !";
         header("Location: connexion.php");
       }
 
     } else {
-      $_SESSION['error'] = "L'utilisateur n'existe pas !";
+      $_SESSION['error'] = "The user doesn't exist !";
       header("Location: connexion.php");
     }
   }
