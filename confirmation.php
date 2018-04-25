@@ -19,14 +19,17 @@
 
         $updateuserinfo = $bdd->prepare("UPDATE membres SET isconfirm = 1 WHERE pseudo = ? AND confirmkey = ?");
         $updateuserinfo->execute(array($pseudo, $key));
-        echo "Compte confirmé avec succès !";
+        $emailconfirmed = "Compte confirmé avec succès !";
+        header("Location: connexion.php");
 
       }else {
         $error = "Compte déjà confirmé !";
+        header("Location: connexion.php");
       }
 
     }else {
       $error = "Utilisateur inconnu !";
+      header("Location: connexion.php");
     }
 
 
