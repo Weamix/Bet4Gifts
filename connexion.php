@@ -76,6 +76,7 @@
     <?php
       echo $error;
       echo $_SESSION['error'];
+      $_SESSION['error'] = null;
     ?>
       </span>
     <?php } ?>
@@ -86,6 +87,7 @@
       <span class="accountCreatedMessage">
     <?php
       echo $_SESSION['valid'];
+      $_SESSION['valid'] = null;
     ?>
       </span>
     <?php } ?>
