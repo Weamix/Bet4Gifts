@@ -7,7 +7,9 @@
     echo "ISSET OK";
 
     $pseudo = htmlspecialchars(urlencode($_GET['pseudo']));
+    echo $pseudo;
     $key = htmlspecialchars($_GET['key']);
+    echo $key;
 
     $requser = $bdd->prepare("SELECT * FROM membres WHERE speudo = ? AND confirmkey = ?");
     $requser->execute(array($pseudo, $key));
