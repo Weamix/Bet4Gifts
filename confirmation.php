@@ -1,40 +1,23 @@
 <?php
+$bdd = new PDO('mysql:host=localhost;dbname=isnmpweb_espace_membre', 'isnprojet', 'O1cuz98@');
 
-  $bdd = new PDO('mysql:host=localhost;dbname=isnmpweb_espace_membre', 'isnprojet', 'O1cuz98@');
-
-  if (isset($_GET['pseudo'], $_GET['key']) AND !empty($_GET['pseudo']) AND !empty($_GET['key'])) {
-
-    echo "ISSET OK";
-
-    $pseudo = htmlspecialchars(urlencode($_GET['pseudo']));
-    echo $pseudo;
-    $key = htmlspecialchars($_GET['key']);
-    echo $key;
-
-    $requser = $bdd->prepare("SELECT * FROM membres WHERE speudo = ? AND confirmkey = ?");
-    $requser->execute(array($pseudo, $key));
-
-    $userexist = $requser->rowCount();
-    echo "USEREXIST = ".$userexist;
-
-    if ($userexist == 1) {
-
-      $userinfo = $requser->fetch();
-      if ($userinfo['isconfirm'] == 0) {
-
-        $updateuserinfo = $bdd->prepare("UPDATE membres SET isconfirm = 1 WHERE pseudo = ? AND confirmkey = ?");
-        $updateuserinfo->execute(array($pseudo, $key));
-        echo "Compte confirmé avec succès !";
-
-      }else {
-        echo "Compte déjà confirmé !";
-      }
-
-    }else {
-      echo "Utilisateur inconnu !";
+if(isset($_GET['pseudo'], $_GET['key']) AND !empty($_GET['pseudo']) AND !empty($_GET['key'])) {
+ $pseudo = htmlspecialchars(urldecode($_GET['pseudo']));
+ $key = htmlspecialchars($_GET['key']);
+ $requser = $bdd->prepare("SELECT * FROM membres WHERE pseudo = ? AND confirmkey = ?");
+ $requser->execute(array($pseudo, $key));
+ $userexist = $requser->rowCount();
+ if($userexist == 1) {
+    $user = $requser->fetch();
+    if($user['isconfirm'] == 0) {
+       $updateuser = $bdd->prepare("UPDATE membres SET isconfirm = 1 WHERE pseudo = ? AND confirmkey = ?");
+       $updateuser->execute(array($pseudo,$key));
+       echo "Votre compte a bien été confirmé !";
+    } else {
+       echo "Votre compte a déjà été confirmé !";
     }
-
-
-  }
-
- ?>
+ } else {
+    echo "L'utilisateur n'existe pas !";
+ }
+}
+?>
