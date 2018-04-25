@@ -25,12 +25,12 @@
         header("Location: connexion.php");
 
       }else {
-        $error = "Compte déjà confirmé !";
+        $erreur = "Compte déjà confirmé !";
         header("Location: connexion.php");
       }
 
     }else {
-      $error = "Utilisateur inconnu !";
+      $erreur = "Utilisateur inconnu !";
       header("Location: connexion.php");
     }
 
