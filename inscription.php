@@ -69,7 +69,8 @@
                             <hr style="width: 25%;">
                             <br>
                           </div>
-                          <br align="center">
+                          <div align="center">
+                          <br>
                             <a style="background-color: #27ae60; border-radius: 20px; padding: 16px 18px; color: #FFF; text-decoration: none; font-size: 15px; text-transform: uppercase; font-weight: bold;" href="https://bet4gifts.web-edu.fr/confirmation.php?pseudo='.urlencode($pseudo).'&key='.$key.'">Click me !</a>
                           </div>
                           <br><br><br>
