@@ -15,6 +15,7 @@
     $requser->execute(array($pseudo, $key));
 
     $userexist = $requser->rowCount();
+    echo $userexist;
 
     if ($userexist == 1) {
 
