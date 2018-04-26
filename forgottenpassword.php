@@ -55,7 +55,7 @@
                     </div>
                     <div align="center">
                     <br>
-                      <a style="background-color: #27ae60; border-radius: 20px; padding: 16px 18px; color: #FFF; text-decoration: none; font-size: 15px; text-transform: uppercase; font-weight: bold;" href="https://bet4gifts.web-edu.fr/changepassword.php?email='.urlencode($email).'&key='.$key.'">Click me !</a>
+                      <a style="background-color: #27ae60; border-radius: 20px; padding: 16px 18px; color: #FFF; text-decoration: none; font-size: 15px; text-transform: uppercase; font-weight: bold;" href="https://bet4gifts.web-edu.fr/changepassword.php?email='.$email.'&key='.$key.'">Click me !</a>
                     </div>
                     <br><br><br>
                  </body>
