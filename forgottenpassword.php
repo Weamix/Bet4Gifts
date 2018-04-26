@@ -63,7 +63,7 @@
             ';
             mail($email, "Forgotten password", $message, $header);
 
-            $valid = "An email you have been send to change your password ! (Look at your mails and your spams)";
+            $valid = "An email you have been sent to change your password ! (Look at your mails and your spams)";
 
           }else {
             $error = "This email adress doesn't exist !";
