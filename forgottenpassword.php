@@ -110,7 +110,7 @@
     <form class="" action="" method="post">
 
       <label for="emailconnect"> Email : </label> <input type="email" name="email" value="" id="emailconnect" placeholder="Your email">
-      <label for="passwordconnect"> Confirm email :</label> <input type="password" name="confirmemail" value="" id="emailconnect" placeholder="Cofnirm email">
+      <label for="passwordconnect"> Confirm email :</label> <input type="email" name="confirmemail" value="" id="emailconnect" placeholder="Cofnirm email">
       <br>
       <input type="submit" name="formforgottenpassword" value="Send mail !">
 
