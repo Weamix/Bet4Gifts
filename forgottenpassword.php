@@ -66,11 +66,11 @@
             $valid = "An email you have been sent to change your password ! (Look at your mails and your spams)";
 
           }else {
-            $error = "This email adress doesn't exist !";
+            $error = "This email address doesn't exist !";
           }
 
         }else {
-          $error = "Your email adress is invalid !";
+          $error = "Your email address is invalid !";
         }
 
       }else {
@@ -110,7 +110,7 @@
     <form class="" action="" method="post">
 
       <label for="emailconnect"> Email : </label> <input type="email" name="email" value="" id="emailconnect" placeholder="Your email">
-      <label for="passwordconnect"> Confirm email :</label> <input type="email" name="confirmemail" value="" id="emailconnect" placeholder="Cofnirm email">
+      <label for="passwordconnect"> Confirm email :</label> <input type="email" name="confirmemail" value="" id="emailconnect" placeholder="Confirm email">
       <br>
       <input type="submit" name="formforgottenpassword" value="Send mail !">
 
