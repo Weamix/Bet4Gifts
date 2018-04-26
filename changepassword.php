@@ -27,7 +27,7 @@
 
           if ($newpassword == $confirmnewpassword) {
 
-            if ($newpassword != $lastpassword) {
+            if ($newpasswordcrypt != $lastpassword) {
 
               $updateuser = $bdd->prepare("UPDATE membres SET password = ? WHERE email = ? AND confirmkey = ?");
               $updateuser->execute(array($newpasswordcrypt,$email,$key));
