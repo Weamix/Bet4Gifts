@@ -27,81 +27,91 @@
             $reqemail->execute(array($email));
             $emailexist = $reqemail->rowCount();
 
-            if($emailexist == 0){
+            $reqpseudo = $bdd->prepare("SELECT * FROM membres WHERE pseudo = ?");
+            $reqpseudo->execute(array($pseudo));
+            $pseudoexist = $reqpseudo->rowCount();
 
-              if ($password == $confirmpassword) {
+            if($pseudoexist == 0){
 
-                  $lengthkey = 16;
-                  $key = "";
+              if($emailexist == 0){
 
-                  for ($i=1; $i<$lengthkey; $i++) {
-                    $key.= mt_rand(0,9);
-                  }
+                if ($password == $confirmpassword) {
 
-                  $insertmembre = $bdd->prepare("INSERT INTO membres(pseudo, email, password, confirmkey) VALUES(?, ?, ?, ?)");
-                  $insertmembre->execute(array($pseudo, $email, $password, $key));
+                    $lengthkey = 16;
+                    $key = "";
 
-                  $header="MIME-Version: 1.0\r\n";
-                  $header.='From:"Bet4Gifts"<noreply@bet4gifts.web-edu.fr>'."\n";
-                  $header.='Content-Type:text/html; charset="uft-8"'."\n";
-                  $header.='Content-Transfer-Encoding: 8bit';
-                  $message='
-                    <html>
-                      <style>
-                        @import url(\'https://fonts.googleapis.com/css?family=Lato\');
-                      </style>
-                       <body style="margin: 0; padding: 0; background-color:#2c3e50; font-family: \'Lato\', sans-serif;">
-                          <br>
-                          <div style="" align="center"><img src="https://bet4gifts.web-edu.fr/images/favicon.png" alt="" width="150" height="150"></div>
-                          <br>
-                          <hr style="width: 25%;">
-                          <br>
-                          <div align="center">
-                            <span style="display: block; color: #FFF; font-size: 25px; font-weight: bold;">Your account was successfully created!</span>
-                          </div>
-                          <br>
-                          <hr style="width: 25%;">
-                          <br>
-                          <div align="center">
-                            <span style="display: block; color: #FFF; font-size: 20px;">Your account was successfully created!</span>
-                            <span style="display: block; color: #FFF; font-size: 20px;">You are just one step to confirm your mail !</span>
+                    for ($i=1; $i<$lengthkey; $i++) {
+                      $key.= mt_rand(0,9);
+                    }
+
+                    $insertmembre = $bdd->prepare("INSERT INTO membres(pseudo, email, password, confirmkey) VALUES(?, ?, ?, ?)");
+                    $insertmembre->execute(array($pseudo, $email, $password, $key));
+
+                    $header="MIME-Version: 1.0\r\n";
+                    $header.='From:"Bet4Gifts"<noreply@bet4gifts.web-edu.fr>'."\n";
+                    $header.='Content-Type:text/html; charset="uft-8"'."\n";
+                    $header.='Content-Transfer-Encoding: 8bit';
+                    $message='
+                      <html>
+                        <style>
+                          @import url(\'https://fonts.googleapis.com/css?family=Lato\');
+                        </style>
+                         <body style="margin: 0; padding: 0; background-color:#2c3e50; font-family: \'Lato\', sans-serif;">
+                            <br>
+                            <div style="" align="center"><img src="https://bet4gifts.web-edu.fr/images/favicon.png" alt="" width="150" height="150"></div>
                             <br>
                             <hr style="width: 25%;">
                             <br>
-                          </div>
-                          <div align="center">
-                          <br>
-                            <a style="background-color: #27ae60; border-radius: 20px; padding: 16px 18px; color: #FFF; text-decoration: none; font-size: 15px; text-transform: uppercase; font-weight: bold;" href="https://bet4gifts.web-edu.fr/confirmation.php?pseudo='.urlencode($pseudo).'&key='.$key.'">Click me !</a>
-                          </div>
-                          <br><br><br>
-                       </body>
-                    </html>
-                  ';
-                  mail($email, "Confirmation de compte", $message, $header);
+                            <div align="center">
+                              <span style="display: block; color: #FFF; font-size: 25px; font-weight: bold;">Your account was successfully created!</span>
+                            </div>
+                            <br>
+                            <hr style="width: 25%;">
+                            <br>
+                            <div align="center">
+                              <span style="display: block; color: #FFF; font-size: 20px;">Your account was successfully created!</span>
+                              <span style="display: block; color: #FFF; font-size: 20px;">You are just one step to confirm your mail !</span>
+                              <br>
+                              <hr style="width: 25%;">
+                              <br>
+                            </div>
+                            <div align="center">
+                            <br>
+                              <a style="background-color: #27ae60; border-radius: 20px; padding: 16px 18px; color: #FFF; text-decoration: none; font-size: 15px; text-transform: uppercase; font-weight: bold;" href="https://bet4gifts.web-edu.fr/confirmation.php?pseudo='.urlencode($pseudo).'&key='.$key.'">Click me !</a>
+                            </div>
+                            <br><br><br>
+                         </body>
+                      </html>
+                    ';
+                    mail($email, "Confirmation de compte", $message, $header);
 
-                  $_SESSION['valid'] = "Your account has been created ! Look at your mails to confirm ! (and your spams)";
-                  header("Location: connexion.php");
+                    $_SESSION['valid'] = "Your account has been created ! Look at your mails to confirm ! (and your spams)";
+                    header("Location: connexion.php");
 
 
+
+                }
+
+                else {
+                  $error = "The passwords don't match !";
+                }
 
               }
 
-              else {
-                $error = "Les deux mots de passes ne correspondent pas !";
-              }
-
+            }else {
+              $error = "This pseudo is already taken !";
             }
 
             else {
 
-              $error = "Cette adresse email est déjà utilisé !";
+              $error = "This email adress is already taken ! ";
 
             }
 
           }
 
           else {
-            $error = "Votre adresse mail n'est pas valide !";
+            $error = "Your email adress is invalid !";
           }
 
         }
@@ -109,14 +119,14 @@
 
 
         else {
-          $error = "Les deux adresses emails ne correspondent pas !";
+          $error = "The email addresses don't match !";
         }
 
       }
 
       else {
 
-        $error = "Votre pseudo est beaucoup trop long ! (<255 caractères)";
+        $error = "Your pseudo is far too long ! (<255 characters)";
 
       }
 
@@ -124,7 +134,7 @@
 
     else {
 
-      $error = "Certains champs sont vides ! Veuillez tous les remplir !";
+      $error = "Some fields are empty ! Please complete all fields !";
 
     }
 
