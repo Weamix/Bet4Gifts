@@ -66,7 +66,7 @@
             $_SESSION['valid'] = "Your account has been created ! Look at your mails to confirm ! (and your spams)";
 
           }else {
-            $error = "This email adress doesn't exist !"
+            $error = "This email adress doesn't exist !";
           }
 
         }else {
@@ -78,7 +78,7 @@
       }
 
     }else {
-      $error = "Some fields are empty ! Please complete all fields !"
+      $error = "Some fields are empty ! Please complete all fields !";
     }
 
   }
