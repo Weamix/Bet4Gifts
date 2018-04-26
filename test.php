@@ -37,7 +37,7 @@
        </body>
     </html>
     ';
-    mail("weamix16@gmail.com", "test mail", $message, $header);
+    mail("mailsamtv@gmail.com", "test mail", $message, $header);
   }
  ?>
 
