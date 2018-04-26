@@ -96,16 +96,12 @@
                   $error = "The passwords don't match !";
                 }
 
+              }else {
+              $error = "This email adress is already taken ! ";
               }
 
             }else {
               $error = "This pseudo is already taken !";
-            }
-
-            else {
-
-              $error = "This email adress is already taken ! ";
-
             }
 
           }
