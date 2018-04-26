@@ -75,8 +75,8 @@
 
     <form class="" action="" method="post">
 
-      <label for="emailconnect"> New password : </label> <input type="email" name="newpassword" value="" id="emailconnect" placeholder="New password">
-      <label for="passwordconnect"> Confirm new password :</label> <input type="email" name="confirmnewpassword" value="" id="emailconnect" placeholder="Confirm new password">
+      <label for="emailconnect"> New password : </label> <input type="password" name="newpassword" value="" id="emailconnect" placeholder="New password">
+      <label for="passwordconnect"> Confirm new password :</label> <input type="password" name="confirmnewpassword" value="" id="emailconnect" placeholder="Confirm new password">
       <br>
       <input type="submit" name="formchangepassword" value="Change password !">
 
