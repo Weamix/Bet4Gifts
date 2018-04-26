@@ -47,7 +47,7 @@
                     <hr style="width: 25%;">
                     <br>
                     <div align="center">
-                      <span style="display: block; color: #FFF; font-size: 20px;">"Forgot your password ?</span>
+                      <span style="display: block; color: #FFF; font-size: 20px;">Forgot your password ?</span>
                       <span style="display: block; color: #FFF; font-size: 20px;">Click on the button to change it !</span>
                       <br>
                       <hr style="width: 25%;">
@@ -63,7 +63,7 @@
             ';
             mail($email, "Forgotten password", $message, $header);
 
-            $_SESSION['valid'] = "Your account has been created ! Look at your mails to confirm ! (and your spams)";
+            $valid = "An email you have been send to change your password ! (Look at your mails and your spams)";
 
           }else {
             $error = "This email adress doesn't exist !";
