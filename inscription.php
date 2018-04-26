@@ -183,8 +183,6 @@
             <input type="submit" name="forminscription" value="I join!">
 
             <span>You have already an account ? <a href="connexion.php">Sign in</a> !</span>
-            <br>
-            <span>Forgotten password ? <a href="forgottenpassword.php">Change it !</a> !</span>
 
           </form>
 
