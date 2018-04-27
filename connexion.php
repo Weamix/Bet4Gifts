@@ -66,7 +66,7 @@
       <input type="submit" name="formconnexion" value="Sign up">
 
       <span>No account ? <a href="inscription.php">Sign up!</a></span>
-      <span>Forgotten password ? <a href="forgottenpassword.php">Change it !</a> !</span>
+      <span>Forgotten password ? <a href="forgottenpassword.php">Change it !</a></span>
 
     </form>
 
