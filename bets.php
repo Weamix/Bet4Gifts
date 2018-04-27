@@ -84,14 +84,14 @@
 
         <label for=""> Equipe 1
           <input type="hidden" name="teamone" value="TeamOne">
-          <input type="radio" name="1">
+          <input type="checkbox" name="1">
         </label>
         <label for=""> Match Nul
-          <input type="radio" name="0" value="equality">
+          <input type="checkbox" name="0" value="equality">
         </label>
         <label for=""> Equipe 2
           <input type="hidden" name="teamtwo" value="TeamTwo">
-          <input type="radio" name="2">
+          <input type="checkbox" name="2">
         </label>
         <label for=""> Montant :
           <input type="number" name="amount" value="1" min="1" <?php echo 'max="'.$userinfo['points'].'"' ?>> <input type="submit" name="formbets" value="Parier !">
