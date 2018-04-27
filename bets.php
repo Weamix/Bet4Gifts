@@ -1,6 +1,6 @@
 <?php
 
-  session_start();
+  /*session_start();
 
   $bdd = new PDO('mysql:host=localhost;dbname=isnmpweb_espace_membre', 'isnprojet', 'O1cuz98@');
 
@@ -66,7 +66,7 @@
         $error = "Veuillez sélectionner un résultat !";
       }
 
-    }
+    }*/
  ?>
 
 <!DOCTYPE html>
@@ -80,7 +80,7 @@
 
    <?php if(isset($_SESSION['id']) AND $userinfo['id'] == $_SESSION['id']) { ?>
 
-      <form class="" action="" method="post">
+      <form class="" action="test.php" method="post">
 
         <label for=""> Equipe 1
           <input type="hidden" name="teamone" value="TeamOne">
