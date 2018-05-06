@@ -39,13 +39,13 @@
       <form class="" action="test.php" method="post">
 
         <label for=""> Equipe 1
-          <input type="radio" name="betcheck" value="<?php echo $matchinformation['team_one']; ?>">
+          <input type="radio" name="betcheck" value="<?php //echo $matchinformation['team_one']; ?>">
         </label>
         <label for=""> Match Nul
           <input type="radio" name="betcheck" value="equality">
         </label>
         <label for=""> Equipe 2
-          <input type="radio" name="betcheck" value="<?php echo $matchinformation['team_two']; ?>">
+          <input type="radio" name="betcheck" value="<?php// echo $matchinformation['team_two']; ?>">
         </label>
         <br>
         <label for=""> Montant :
@@ -54,7 +54,7 @@
 
       </form>
 
-    <?php} else { header("Location: index.php"); }?>
+    <?php} //else { header("Location: index.php"); }?>
 
   </body>
 </html>
