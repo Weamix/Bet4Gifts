@@ -78,6 +78,23 @@
 
       </div>
 
+      <div class="bet">
+
+        <h2>Matches avaible</h2>
+
+        <div class="bet_container">
+
+          <span>EQUIPE 1 VS EQUIPE 2</span>
+          <br>
+          <span>Date: 2018-05-08</span>
+          <br>
+          <a href="#">Pariez !</a>
+
+        </div>
+
+
+      </div>
+
 
 
 
