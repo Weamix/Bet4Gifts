@@ -23,7 +23,7 @@
   </head>
   <body>
 
-   <?php if(isset($_SESSION['id']) AND $_GET['user'] == $_SESSION['id']) { ?>
+   <?php if(isset($_SESSION['id'])) { ?>
 
       <form class="" action="test.php" method="post">
 
