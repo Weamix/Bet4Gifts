@@ -54,20 +54,18 @@
               $date = $matchavaible['match_start'];
               $match_start = date('d-m-Y H:i', strtotime($date));
 
-            /*  echo '
-              <div class=\"bet_container\">
-               <span>'.$matchavaible['team_one'].' VS '.$matchavaible['team_two'].'</span>
-               <br>
-               <br>
-               <span>Categorie :'.$matchavaible['categories'].'</span>
-               <span>Début: '.$match_start.'</span>
-               <br>
-               <a href=\"bets.php?tone='.$matchavaible['team_one'].'&ttwo='.$matchavaible['team_two'].'&id='.$matchavaible['id'].'\">Pariez !</a>
+            ?>
+              <div class="bet_container">
+                <span><?php echo $matchavaible['team_one']; ?> VS <?php echo $matchavaible['team_two']; ?></span>
+                <br>
+                <br>
+                <span>Categorie : <?php echo $matchavaible['categories']; ?></span>
+                <span>Date: <?php echo $match_start; ?></span>
+                <br>
+                <a href="bets.php?tone=gkgdskuf&ttwo=dfghjk&id=1">Pariez !</a>
+                <a href="<?php echo 'bets.php?tone='.$matchavaible['team_one'].'&ttwo='.$matchavaible['team_two'].'&id='.$matchavaible['id'].'; ?>'>Pariez !</a>
               </div>
-               ';*/
-
-            }
-         ?>
+        <?php } ?>
 
 
       </div>
