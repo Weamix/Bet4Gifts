@@ -23,7 +23,7 @@
   </head>
   <body>
 
-   <?php if(isset($_SESSION['id']) AND $_GET['user'] == $_SESSION['id']) { ?>
+   <?php //if(isset($_SESSION['id']) AND $_GET['user'] == $_SESSION['id']) { ?>
 
       <form class="" action="test.php" method="post">
 
@@ -39,12 +39,12 @@
           <input type="checkbox" name="2">
         </label>
         <label for=""> Montant :
-          <input type="number" name="amount" value="1" min="1" <?php echo 'max="'.$userinfo['points'].'"' ?>> <input type="submit" name="formbets" value="Parier !">
+          <input type="number" name="amount" value="1" min="1"> <input type="submit" name="formbets" value="Parier !">
         </label>
 
       </form>
 
-    <?php} ?>
+    <?php//}?>
 
   </body>
 </html>
