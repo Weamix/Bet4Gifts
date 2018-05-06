@@ -88,7 +88,7 @@
           <br>
           <span>Date: 2018-05-08</span>
           <br>
-          <a href="#">Pariez !</a>
+          <a href="bets.php?tone=gkgdskuf&ttwo=dfghjk&id=1">Pariez !</a>
 
         </div>
 
