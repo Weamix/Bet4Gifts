@@ -11,7 +11,8 @@
     $requser->execute(array($getuserid));
     $userinfo = $requser->fetch();
 
-    echo "test";
+    echo $userinfo['id'];
+    echo $userinfo['speudo'];
 
 
 
