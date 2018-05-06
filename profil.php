@@ -82,15 +82,31 @@
 
         <h2>Matches avaible</h2>
 
-        <div class="bet_container">
+        <?php
 
-          <span>EQUIPE 1 VS EQUIPE 2</span>
-          <br>
-          <span>Date: 2018-05-08</span>
-          <br>
-          <a href="bets.php?tone=gkgdskuf&ttwo=dfghjk&id=1">Pariez !</a>
+            $reqmatchavaible = $bdd->prepare("SELECT * FROM matches WHERE categories = ? AND match_start > CURDATE()");
+            $reqmatchavaible->execute(array("football"));
 
-        </div>
+            while ($matchavaible = $reqmatchavaible->fetch()) {
+
+              $date = $matchavaible['match_start'];
+              $match_start = date('d-m-Y H:i', strtotime($date));
+
+              <td><?php echo $bets['categories'] ?></td>
+              echo '
+              <div class=\"bet_container\">
+               <span>'.$matchavaible['team_one'].' VS '.$matchavaible['team_two'].'</span>
+               <br>
+               <br>
+               <span>Categorie :'.$matchavaible['categories'].'</span>
+               <span>Début: '.$match_start.'</span>
+               <br>
+               <a href=\"bets.php?tone='.$matchavaible['team_one'].'&ttwo='.$matchavaible['team_two'].'&id='.$matchavaible['id'].'\">Pariez !</a>
+              </div>
+               ';
+
+            }
+         ?>
 
 
       </div>
