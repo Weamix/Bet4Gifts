@@ -28,7 +28,7 @@
   </head>
   <body>
 
-   <?php //if(isset($_SESSION['id']) AND $userinfo['id'] == $_SESSION['id']) { ?>
+   <?phpif(isset($_SESSION['id']) AND $userinfo['id'] == $_SESSION['id']) { ?>
 
       <form class="" action="test.php" method="post">
 
@@ -47,7 +47,7 @@
 
       </form>
 
-    <?php//} ?>
+    <?php} else { header("Location: index.php"); } ?>
 
   </body>
 </html>
