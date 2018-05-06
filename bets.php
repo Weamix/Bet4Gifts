@@ -11,13 +11,7 @@
     $requser->execute(array($getuserid));
     $userinfo = $requser->fetch();
 
-    //$teamone = $_GET['tone'];
-    //$teamtwo = $_GET['ttwo'];
-    //$matchid = $_GET['id'];
 
-    //$reqmatch = $bdd->prepare("SELECT * FROM matches WHERE id = ? AND team_one = ? AND team_two = ?");
-    //$reqmatch->execute(array($matchid, $teamone, $teamtwo));
-    //$matchinformation = $reqmatch->fetch();
 
   }else {
     header("Location: index.php");
@@ -39,22 +33,21 @@
       <form class="" action="test.php" method="post">
 
         <label for=""> Equipe 1
-          <input type="radio" name="betcheck" value="<?php //echo $matchinformation['team_one']; ?>">
+          <input type="radio" name="betcheck">
         </label>
         <label for=""> Match Nul
           <input type="radio" name="betcheck" value="equality">
         </label>
         <label for=""> Equipe 2
-          <input type="radio" name="betcheck" value="<?php// echo $matchinformation['team_two']; ?>">
+          <input type="radio" name="betcheck">
         </label>
-        <br>
         <label for=""> Montant :
           <input type="number" name="amount" value="1" min="1" <?php echo 'max="'.$userinfo['points'].'"' ?>> <input type="submit" name="formbets" value="Parier !">
         </label>
 
       </form>
 
-    <?php} //else { header("Location: index.php"); }?>
+    <?php} ?>
 
   </body>
 </html>
