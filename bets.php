@@ -54,7 +54,7 @@
 
       </form>
 
-    <?php} else { header("Location: index.php") }?>
+    <?php} else { header("Location: index.php"); }?>
 
   </body>
 </html>
