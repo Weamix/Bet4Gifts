@@ -40,44 +40,6 @@
       <br>
       <a href="deconnexion.php">Sign out</a>
 
-      <div class="betinprogress">
-
-        <h2>Matches in progress</h2>
-
-        <table>
-
-          <tr>
-            <th>Categories</th>
-            <th>Team 1</th>
-            <th>Team 2</th>
-            <th>Bet's Amount</th>
-            <th>Bet</th>
-            <th>Author ID</th>
-          </tr>
-
-
-        <?php
-
-          $reqbets = $bdd->prepare("SELECT * FROM bets WHERE author_id = ?");
-          $reqbets->execute(array($getid));
-
-          while ($bets = $reqbets->fetch()) {
-         ?>
-
-          <tr>
-             <td><?php echo $bets['categories'] ?></td>
-             <td><?php echo $bets['team_one'] ?></td>
-             <td><?php echo $bets['team_two'] ?></td>
-             <td><?php echo $bets['amount'] ?></td>
-             <td><?php echo $bets['bet'] ?></td>
-             <td><?php echo $bets['author_id'] ?></td>
-          </tr>
-       <?php } $reqbets->closeCursor(); ?>
-
-       </table>
-
-      </div>
-
       <div class="bet">
 
         <h2>Matches avaible</h2>
@@ -92,8 +54,7 @@
               $date = $matchavaible['match_start'];
               $match_start = date('d-m-Y H:i', strtotime($date));
 
-              <td><?php echo $bets['categories'] ?></td>
-              echo '
+            /*  echo '
               <div class=\"bet_container\">
                <span>'.$matchavaible['team_one'].' VS '.$matchavaible['team_two'].'</span>
                <br>
@@ -103,7 +64,7 @@
                <br>
                <a href=\"bets.php?tone='.$matchavaible['team_one'].'&ttwo='.$matchavaible['team_two'].'&id='.$matchavaible['id'].'\">Pariez !</a>
               </div>
-               ';
+               ';*/
 
             }
          ?>
