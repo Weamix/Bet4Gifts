@@ -11,6 +11,8 @@
     $requser->execute(array($getuserid));
     $userinfo = $requser->fetch();
 
+    echo "test";
+
 
 
   }else {
