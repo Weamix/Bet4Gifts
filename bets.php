@@ -4,13 +4,17 @@
 
   $bdd = new PDO('mysql:host=localhost;dbname=isnmpweb_espace_membre', 'isnprojet', 'O1cuz98@');
 
-  /*if (isset($_GET['id'], $_GET['tone'], $_GET['ttwo']) AND $_GET['id'] > 0 AND !empty($_GET['tone']) AND !empty($_GET['ttwo'])) {
+  if (isset($_GET['id'], $_GET['tone'], $_GET['ttwo'], $_GET['user']) AND $_GET['id'] > 0 AND !empty($_GET['tone']) AND !empty($_GET['ttwo'])) {
 
-    echo "test";
+    $getuserid = intval($_GET['user']);
+    $requser = $bdd->prepare("SELECT * FROM membres WHERE id = ?");
+    $requser->execute(array($getuserid));
+
+    $userinfo = $requser->fetch();
 
   }else {
     header("Location: index.php");
-  }*/
+  }
 
 ?>
 
@@ -23,7 +27,7 @@
   </head>
   <body>
 
-   <?php session_start(); if(isset($_SESSION['id'])) { ?>
+   <?phpif(isset($_SESSION['id']) AND $userinfo['id'] == $_SESSION['id']) { ?>
 
       <form class="" action="test.php" method="post">
 
@@ -39,12 +43,12 @@
           <input type="checkbox" name="2">
         </label>
         <label for=""> Montant :
-          <input type="number" name="amount" value="1" min="1"> <input type="submit" name="formbets" value="Parier !">
+          <input type="number" name="amount" value="1" min="1" <?php echo 'max="'.$userinfo['points'].'"' ?>> <input type="submit" name="formbets" value="Parier !">
         </label>
 
       </form>
 
-    <?php}?>
+    <?php} ?>
 
   </body>
 </html>
