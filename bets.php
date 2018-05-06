@@ -31,9 +31,7 @@
   </head>
   <body>
 
-   <?php if(isset($_SESSION['id']) AND $userinfo['id'] == $_SESSION['id']) { echo $_SESSION['id'];?>
-
-
+   <?php if(isset($_SESSION['id']) AND $userinfo['id'] == $_SESSION['id']) {?>
 
       <form class="" action="test.php" method="post">
 
