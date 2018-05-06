@@ -6,7 +6,7 @@
 
   if (isset($_GET['id'], $_GET['tone'], $_GET['ttwo']) AND $_GET['id'] > 0 AND !empty($_GET['tone']) AND !empty($_GET['ttwo'])) {
 
-
+    echo "test";
 
   }else {
     header("Location: index.php");
