@@ -23,7 +23,7 @@
   </head>
   <body>
 
-   <?php if(isset($_SESSION['id'])) { ?>
+   <?php session_start(); if(isset($_SESSION['id'])) { ?>
 
       <form class="" action="test.php" method="post">
 
