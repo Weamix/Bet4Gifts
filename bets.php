@@ -15,9 +15,9 @@
     $teamtwo = $_GET['ttwo'];
     $matchid = $_GET['id'];
 
-    $reqmatch = $bdd->prepare("SELECT * FROM matches WHERE id = ? AND team_one = ? AND team_two = ?");
-    $reqmatch->execute(array($matchid, $teamone, $teamtwo));
-    $matchinformation = $reqmatch->fetch();
+    //$reqmatch = $bdd->prepare("SELECT * FROM matches WHERE id = ? AND team_one = ? AND team_two = ?");
+    //$reqmatch->execute(array($matchid, $teamone, $teamtwo));
+    //$matchinformation = $reqmatch->fetch();
 
   }else {
     header("Location: index.php");
