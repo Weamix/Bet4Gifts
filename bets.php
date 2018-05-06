@@ -4,13 +4,9 @@
 
   $bdd = new PDO('mysql:host=localhost;dbname=isnmpweb_espace_membre', 'isnprojet', 'O1cuz98@');
 
-  if (isset($_GET['id'], $_GET['tone'], $_GET['ttwo']) AND $_GET['id'] > 0 AND !empty($_GET['tone']) AND !empty($_GET['ttwo'])) {
+  if (isset($_GET['id'], $_GET['tone'], $_GET['ttwo'], $_GET['user']) AND $_GET['id'] > 0 AND $_GET['user'] > 0 AND !empty($_GET['tone']) AND !empty($_GET['ttwo']) AND !empty($_GET['user']) {
 
-    $getid = intval($_GET['id']);
-    $requser = $bdd->prepare("SELECT * FROM membres WHERE id = ?");
-    $requser->execute(array($getid));
 
-    $userinfo = $requser->fetch();
 
   }else {
     header("Location: index.php");
