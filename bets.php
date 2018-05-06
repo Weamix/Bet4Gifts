@@ -1,10 +1,10 @@
 <?php
 
-  /*session_start();
+  session_start();
 
   $bdd = new PDO('mysql:host=localhost;dbname=isnmpweb_espace_membre', 'isnprojet', 'O1cuz98@');
 
-  if (isset($_GET['id']) AND $_GET['id'] > 0) {
+  if (isset($_GET['id'], $_GET['tone'], $_GET['ttwo']) AND $_GET['id'] > 0 AND !empty($_GET['tone']) AND !empty($_GET['ttwo'])) {
 
     $getid = intval($_GET['id']);
     $requser = $bdd->prepare("SELECT * FROM membres WHERE id = ?");
@@ -12,62 +12,11 @@
 
     $userinfo = $requser->fetch();
 
-    if (isset($_POST['formbets'])) {
+  }else {
+    header("Location: index.php");
+  }
 
-      $number = 0;
-      for ($i=0; $i < 3 ; $i++) {
-
-        $i2 = (string)$i;
-
-        if (isset($_POST[$i2])) {
-          $number++;
-          $teamselected = $i;
-        }
-
-      }
-
-      if ($number != 0) {
-
-        if ($number == 1) {
-
-          if (!empty($_POST['amount'])) {
-
-            if ($_POST['amount'] > 0 AND $_POST['amount'] <= $userinfo['points']) {
-
-              $categories = "football";
-              $team_one = (string)$_POST['teamone'];
-              $team_two = (string)$_POST['teamtwo'];
-              $bet = (int)$teamselected;
-              $amount = (int)$_POST['amount'];
-              //$match_end = null;
-              $author_id = $userinfo['id'];
-              echo $categories;
-              echo $team_one;
-              echo $team_two;
-              echo $bet;
-              echo $amount;
-
-              $insertbet = $bdd->prepare("INSERT INTO bets(categories, team_one, team_two, bet, amount, author_id) VALUES(?, ?, ?, ?, ?, ?)");
-              $insertbet->execute(array($categories, $team_one, $team_two, $bet, $amount, $author_id));
-
-            }else {
-              $error = "Le montant saisi est supérieur à vos points actuels (ou inférieur 1)";
-            }
-
-          }else {
-            $error = "Veuillez saisir un montant !";
-          }
-
-        }else {
-          $error = "Veuillez ne sélectionner que un seul résultat !";
-        }
-
-      }else {
-        $error = "Veuillez sélectionner un résultat !";
-      }
-
-    }*/
- ?>
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -78,7 +27,7 @@
   </head>
   <body>
 
-   <?php //if(isset($_SESSION['id']) AND $userinfo['id'] == $_SESSION['id']) { ?>
+   <?phpif(isset($_SESSION['id']) AND $userinfo['id'] == $_SESSION['id']) { ?>
 
       <form class="" action="test.php" method="post">
 
@@ -99,18 +48,7 @@
 
       </form>
 
-    <?php// } ?>
-
-      <?php
-
-        //  if (isset($error)) {
-
-          //  echo $error;
-
-        //  }
-
-       ?>
+    <?php} ?>
 
   </body>
 </html>
-<?php //} ?>
