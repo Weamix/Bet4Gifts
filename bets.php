@@ -11,9 +11,9 @@
     $requser->execute(array($getuserid));
     $userinfo = $requser->fetch();
 
-    $teamone = $_GET['tone'];
-    $teamtwo = $_GET['ttwo'];
-    $matchid = $_GET['id'];
+    //$teamone = $_GET['tone'];
+    //$teamtwo = $_GET['ttwo'];
+    //$matchid = $_GET['id'];
 
     //$reqmatch = $bdd->prepare("SELECT * FROM matches WHERE id = ? AND team_one = ? AND team_two = ?");
     //$reqmatch->execute(array($matchid, $teamone, $teamtwo));
