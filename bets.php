@@ -17,13 +17,6 @@
     $reqmatch = $bdd->prepare("SELECT * FROM matches WHERE id = ? AND team_one = ? AND team_two = ?");
     $reqmatch->execute(array($matchid, $matchteamone, $matchteamtwo));
     $matchinfo = $reqmatch->fetch();
-
-  }else {
-
-    header('Location: index.php');
-
-  }
-
 ?>
 
 <!DOCTYPE html>
@@ -53,3 +46,4 @@
 
   </body>
 </html>
+<?php }else { header('Location: index.php');} ?>
