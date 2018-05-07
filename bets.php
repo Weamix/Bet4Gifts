@@ -19,6 +19,25 @@
     $reqmatch->execute(array($matchid, $matchteamone, $matchteamtwo));
     $matchinfo = $reqmatch->fetch();
 
+    if (isset($_POST['formbet'])) {
+
+      if(!$_POST['choice']){
+
+        $error = 'Veuillez sélectionner un résultat pour parier !';
+
+      }else {
+
+        if (sizeof($_POST['choice']) == 1) {
+
+
+        }else {
+          $error = 'Veuillez ne sélectionner que un seul résultat !';
+        }
+
+      }
+
+    }
+
 ?>
 
 <html lang="fr">
@@ -46,9 +65,11 @@
           <label for="">Montant :
             <input type="number" name="amount" value="1" min="1" max="<?php echo $userinfo['points']; ?>">
           </label>
-          <input type="submit" name="" value="Pariez !">
+          <input type="submit" name="formbet" value="Pariez !">
 
         </form>
+
+        <?php if (isset($error)) { echo $error; } ?>
 
     <?php } ?>
 
