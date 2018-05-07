@@ -34,4 +34,4 @@
 
   </body>
 </html>
-<?php }else { header('Location: index.php');} ?>
+<?php }else { echo "test";} ?>
