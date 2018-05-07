@@ -7,11 +7,17 @@
 
   if (isset($_GET['id']) AND $_GET['id'] > 0) {
 
-    $getid = intval($_GET['id']);
+    $userid = intval($_GET['user']);
     $requser = $bdd->prepare("SELECT * FROM membres WHERE id = ?");
-    $requser->execute(array($getid));
-
+    $requser->execute(array($userid));
     $userinfo = $requser->fetch();
+
+    $matchid = intval($_GET['id']);
+    $matchteamone = $_GET['tone'];
+    $matchteamtwo = $_GET['ttwo'];
+    $reqmatch = $bdd->prepare("SELECT * FROM matches WHERE id = ? AND team_one = ? AND team_two = ?");
+    $reqmatch->execute(array($matchid, $matchteamone, $matchteamtwo));
+    $matchinfo = $reqmatch->fetch();
 
 ?>
 
