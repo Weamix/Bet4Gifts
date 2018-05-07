@@ -7,11 +7,17 @@
 
   if (isset($_GET['user'], $_GET['tone'], $_GET['ttwo'], $_GET['id']) AND $_GET['user'] > 0 AND $_GET['id'] > 0 AND !empty($_GET['tone']) AND !empty($_GET['ttwo'])) {
 
-    $getid = intval($_GET['user']);
+    $userid = intval($_GET['user']);
     $requser = $bdd->prepare("SELECT * FROM membres WHERE id = ?");
-    $requser->execute(array($getid));
-
+    $requser->execute(array($userid));
     $userinfo = $requser->fetch();
+
+    $matchid = intval($_GET['id']);
+    $matchteamone = $_GET['tone'];
+    $matchteamtwo = $_GET['ttwo'];
+    $reqmatch = $bdd->prepare("SELECT * FROM matches WHERE id = ? AND team_one = ? AND team_two = ?");
+    $reqmatch->execute(array($matchid, $matchteamone, $matchteamtwo));
+    $matchinfo = $reqmatch->fetch();
 
 ?>
 
@@ -26,7 +32,15 @@
 
     <?php if (isset($_SESSION['id']) AND $userinfo['id'] == $_SESSION['id']) { ?>
 
-        <p>TEST</p>
+        <label for=""><?php echo $matchinfo['tone']; ?>
+          <input type="radio" name="choice" value="">
+        </label>
+        <label for=""> Match nul
+          <input type="radio" name="choice" value="equality">
+        </label>
+        <label for=""><?php echo $matchinfo['ttwo']; ?>
+          <input type="radio" name="choice" value="">
+        </label>
 
     <?php } ?>
 
