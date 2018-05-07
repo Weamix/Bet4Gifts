@@ -32,13 +32,13 @@
 
     <?php if (isset($_SESSION['id']) AND $userinfo['id'] == $_SESSION['id']) { ?>
 
-        <label for=""><?php echo $matchteamone; ?>
+        <label for=""><?php echo $matchinfo['team_one']; ?>
           <input type="radio" name="choice" value="<?php echo $matchinfo['tone']; ?>">
         </label>
         <label for=""> Match nul
           <input type="radio" name="choice" value="equality">
         </label>
-        <label for=""><?php echo $matchinfo['ttwo']; ?>
+        <label for=""><?php echo $matchinfo['team_two']; ?>
           <input type="radio" name="choice" value="<?php echo $matchinfo['ttwo']; ?>">
         </label>
 
