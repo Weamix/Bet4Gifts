@@ -13,8 +13,8 @@
     $userinfo = $requser->fetch();
 
     $matchid = intval($_GET['id']);
-    $matchteamone = $_GET['tone'];
-    $matchteamtwo = $_GET['ttwo'];
+    $matchteamone = htmlspecialchars($_GET['tone']);
+    $matchteamtwo = htmlspecialchars($_GET['ttwo']);
     $reqmatch = $bdd->prepare("SELECT * FROM matches WHERE id = ? AND team_one = ? AND team_two = ?");
     $reqmatch->execute(array($matchid, $matchteamone, $matchteamtwo));
     $matchinfo = $reqmatch->fetch();
@@ -33,13 +33,13 @@
     <?php if (isset($_SESSION['id']) AND $userinfo['id'] == $_SESSION['id']) { ?>
 
         <label for=""><?php echo $matchinfo['tone']; ?>
-          <input type="radio" name="choice" value="">
+          <input type="radio" name="choice" value="<?php echo $matchinfo['tone']; ?>">
         </label>
         <label for=""> Match nul
           <input type="radio" name="choice" value="equality">
         </label>
         <label for=""><?php echo $matchinfo['ttwo']; ?>
-          <input type="radio" name="choice" value="">
+          <input type="radio" name="choice" value="<?php echo $matchinfo['ttwo']; ?>">
         </label>
 
     <?php } ?>
