@@ -45,7 +45,7 @@
 
                   $addbet = $bdd->prepare("INSERT INTO `bets`(`match_id`,`categories`, `team_one`, `team_two`, `match_start`, `match_end`, `amount`, `bet`, `author_id`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
                   $addbet->execute(array($matchinfo['id'], $matchinfo['categories'], $matchinfo['team_one'], $matchinfo['team_two'], $matchinfo['match_start'], $matchinfo['match_end'], intval($_POST['amount']), $bet, $userinfo['id']));
-                  $error = 'Parie validé !';
+                  $error = 'Pari validé !';
 
               }else {
                 $error = 'Vous ne pouvez pas parier plus que ce que vous avez sur votre compte !';
