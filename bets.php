@@ -44,7 +44,7 @@
             <input type="radio" name="choice[]" value="<?php echo $matchinfo['ttwo']; ?>">
           </label>
           <label for="">Montant :
-            <input type="number" name="amount" value="" min="1" max="<?php echo $userinfo['points']; ?>">
+            <input type="number" name="amount" value="1" min="1" max="<?php echo $userinfo['points']; ?>">
           </label>
           <input type="submit" name="" value="Pariez !">
 
