@@ -19,12 +19,12 @@
     $reqmatch->execute(array($matchid, $matchteamone, $matchteamtwo));
     $matchinfo = $reqmatch->fetch();
 
-    //$reqalreadybet = $bdd->prepare("SELECT * FROM bets WHERE match_id = ? AND team_one = ? AND team_two = ?");
-    //$reqalreadybet->execute(array($matchid, $matchinfo['team_one'], $matchinfo['team_two']));
-    //$alreadybet = $reqalreadybet->rowCount();
+    $reqalreadybet = $bdd->prepare("SELECT * FROM bets WHERE match_id = ? AND team_one = ? AND team_two = ?");
+    $reqalreadybet->execute(array($matchinfo['id'], $matchinfo['team_one'], $matchinfo['team_two']));
+    $alreadybet = $reqalreadybet->rowCount();
 
 
-    if ($alreadybet != 1) {
+    if ($alreadybet == 0) {
 
       if (isset($_POST['formbet'])) {
 
