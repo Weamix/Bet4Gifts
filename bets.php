@@ -19,44 +19,55 @@
     $reqmatch->execute(array($matchid, $matchteamone, $matchteamtwo));
     $matchinfo = $reqmatch->fetch();
 
-    if (isset($_POST['formbet'])) {
+    $reqalreadybet = $bdd->prepare("SELECT * FROM bets WHERE match_id = ? AND team_one = ? AND team_two = ?");
+    $reqalreadybet->execute($matchinfo['id'], $matchinfo['team_one'], $matchinfo['team_two']);
+    $alreadybet = $reqalreadybet->rowCount();
 
-      if(!$_POST['choice']){
+    if ($alreadybet != 1) {
 
-        $error = 'Veuillez sélectionner un résultat pour parier !';
+      if (isset($_POST['formbet'])) {
 
-      }else {
+        if(!$_POST['choice']){
 
-        if (sizeof($_POST['choice']) == 1) {
-
-          if (intval($_POST['amount']) > 0) {
-
-            if (intval($_POST['amount']) <= $userinfo['points']) {
-
-                foreach ($_POST['choice'] as $choice) {
-                  $bet = $choice;
-                }
-
-                $addbet = $bdd->prepare("INSERT INTO `bets`(`categories`, `team_one`, `team_two`, `match_start`, `match_end`, `amount`, `bet`, `author_id`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-                $addbet->execute(array($matchinfo['categories'], $matchinfo['team_one'], $matchinfo['team_two'], $matchinfo['match_start'], $matchinfo['match_end'], intval($_POST['amount']), $bet, $userinfo['id']));
-                $error = 'Parie validé !';
-
-            }else {
-              $error = 'Vous ne pouvez pas parier plus que ce que vous avez sur votre compte !';
-            }
-
-          }else {
-            $error = 'Veuillez spécifier un montant supérieur à 0 !';
-          }
-
+          $error = 'Veuillez sélectionner un résultat pour parier !';
 
         }else {
-          $error = 'Veuillez ne sélectionner que un seul résultat !';
+
+          if (sizeof($_POST['choice']) == 1) {
+
+            if (intval($_POST['amount']) > 0) {
+
+              if (intval($_POST['amount']) <= $userinfo['points']) {
+
+                  foreach ($_POST['choice'] as $choice) {
+                    $bet = $choice;
+                  }
+
+                  $addbet = $bdd->prepare("INSERT INTO `bets`(`categories`, `team_one`, `team_two`, `match_start`, `match_end`, `amount`, `bet`, `author_id`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+                  $addbet->execute(array($matchinfo['categories'], $matchinfo['team_one'], $matchinfo['team_two'], $matchinfo['match_start'], $matchinfo['match_end'], intval($_POST['amount']), $bet, $userinfo['id']));
+                  $error = 'Parie validé !';
+
+              }else {
+                $error = 'Vous ne pouvez pas parier plus que ce que vous avez sur votre compte !';
+              }
+
+            }else {
+              $error = 'Veuillez spécifier un montant supérieur à 0 !';
+            }
+
+
+          }else {
+            $error = 'Veuillez ne sélectionner que un seul résultat !';
+          }
+
         }
 
       }
 
+    }else {
+      header("Location : index.php");
     }
+
 
 ?>
 

@@ -14,7 +14,7 @@
 <html>
   <head lang="fr">
     <meta charset="utf-8">
-    <title>Accueil</title>
+    <title>Home</title>
     <link rel="stylesheet" href="style/style.css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="icon" type="image/png" href="images/favicon.png" />
