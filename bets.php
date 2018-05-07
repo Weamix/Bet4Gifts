@@ -33,6 +33,8 @@
 
             if (intval($_POST['amount']) <= $userinfo['points']) {
 
+                $addbet = $bdd->prepare("INSERT INTO `bets`(`id`, `categories`, `team_one`, `team_two`, `match_start`, `match_end`, `amount`, `bet`, `author_id`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+                $addbet->execute(array($matchinfo['categories'], $matchinfo['team_one'], $matchinfo['team_two'], $matchinfo['match_start'], $matchinfo['match_end'], intval($_POST['amount']), $_POST['choice'], $userinfo['id']));
                 $error = 'Parie validé !';
 
             }else {
@@ -57,7 +59,7 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8">
-    <title>Your profile</title>
+    <title>Bets</title>
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <link rel="stylesheet" href="style/profilstyle.css">
   </head>
