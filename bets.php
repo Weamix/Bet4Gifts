@@ -23,6 +23,8 @@
     $reqalreadybet->execute($matchid, $matchinfo['team_one'], $matchinfo['team_two']);
     $alreadybet = $reqalreadybet->rowCount();
 
+    echo $alreadybet;
+
     if ($alreadybet != 1) {
 
       if (isset($_POST['formbet'])) {
