@@ -32,7 +32,7 @@
 
     <?php if (isset($_SESSION['id']) AND $userinfo['id'] == $_SESSION['id']) { ?>
 
-        <label for=""><?php echo $matchinfo['tone']; ?>
+        <label for=""><?php echo $matchteamone; ?>
           <input type="radio" name="choice" value="<?php echo $matchinfo['tone']; ?>">
         </label>
         <label for=""> Match nul
