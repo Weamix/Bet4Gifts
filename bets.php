@@ -29,6 +29,20 @@
 
         if (sizeof($_POST['choice']) == 1) {
 
+          if (intval($_POST['amount']) > 0) {
+
+            if (intval($_POST['amount']) <= $userinfo['points']) {
+
+                $error = 'Parie validé !';
+
+            }else {
+              $error = 'Vous ne pouvez pas parier plus que ce que vous avez sur votre compte !';
+            }
+
+          }else {
+            $error = 'Veuillez spécifier un montant supérieur à 0 !';
+          }
+
 
         }else {
           $error = 'Veuillez ne sélectionner que un seul résultat !';
