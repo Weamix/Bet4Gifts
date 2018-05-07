@@ -6,7 +6,7 @@
 
   if (isset($_GET['user'], $_GET['tone']), $_GET['ttwo'], $_GET['id'] AND $_GET['id'] > 0 AND $_GET['user'] > 0) AND !empty($_GET['tone']) AND !empty($_GET['ttwo'])) {
 
-    $userid = intval($_GET['user']);
+    /*$userid = intval($_GET['user']);
     $requser = $bdd->prepare("SELECT * FROM membres WHERE id = ?");
     $requser->execute(array($userid));
     $userinfo = $requser->fetch();
@@ -16,7 +16,7 @@
     $matchteamtwo = $_GET['ttwo'];
     $reqmatch = $bdd->prepare("SELECT * FROM matches WHERE id = ? AND team_one = ? AND team_two = ?");
     $reqmatch->execute(array($matchid, $matchteamone, $matchteamtwo));
-    $matchinfo = $reqmatch->fetch();
+    $matchinfo = $reqmatch->fetch();*/
 ?>
 
 <!DOCTYPE html>
