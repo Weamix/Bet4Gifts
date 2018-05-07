@@ -35,6 +35,20 @@
   </head>
   <body>
 
+    <?php if (isset($_SESSION['id']) AND $_SESSION['id'] == $userinfo['id']) {?>
+
+        <label for=""><?php echo $matchinfo['team_one']; ?>
+          <input type="radio" name="choice" value="<?php echo $matchinfo['team_one']; ?>">
+        </label>
+        <label for="">Match nul
+          <input type="radio" name="choice" value="equality">
+        </label>
+        <label for=""><?php echo $matchinfo['team_two']; ?>
+          <input type="radio" name="choice" value="<?php echo $matchinfo['team_two']; ?>">
+        </label>
+
+    <?php } ?>
+
 
 
   </body>
