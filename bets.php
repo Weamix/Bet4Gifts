@@ -21,7 +21,7 @@
 
     $reqalreadybet = $bdd->prepare("SELECT * FROM bets WHERE match_id = ? AND team_one = ? AND team_two = ?");
     $reqalreadybet->execute(array($matchinfo['id'], $matchinfo['team_one'], $matchinfo['team_two']));
-    $alreadybet = 1;
+    $reqalreadybet->rowCount();
 
     if ($alreadybet == 0) {
 
@@ -64,9 +64,9 @@
 
       }
 
-    }/*else {
-      header("Location : index.php");
-    }*/
+    }else {
+      header("Location: index.php");
+    }
 
 
 ?>
