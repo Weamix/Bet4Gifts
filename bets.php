@@ -20,7 +20,7 @@
     $matchinfo = $reqmatch->fetch();
 
     $reqalreadybet = $bdd->prepare("SELECT * FROM bets WHERE match_id = ? AND team_one = ? AND team_two = ?");
-    $reqalreadybet->execute($matchinfo['id'], $matchinfo['team_one'], $matchinfo['team_two']);
+    $reqalreadybet->execute($matchid, $matchinfo['team_one'], $matchinfo['team_two']);
     $alreadybet = $reqalreadybet->rowCount();
 
     if ($alreadybet != 1) {
