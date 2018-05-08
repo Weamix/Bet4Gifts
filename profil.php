@@ -77,7 +77,7 @@
           $reqmatchbetincoming = $bdd->prepare('SELECT * FROM bets WHERE author_id = ? AND match_start < CURDATE()');
           $reqmatchbetincoming->execute(array($userinfo['id']));
 
-          while ($matchbetincoming = $reqalreadybet->fetch()) {
+          while ($matchbetincoming = $reqmatchbetincoming->fetch()) {
 
             $date = $matchbetincoming['match_start'];
             $match_start = date('d-m-Y H:i', strtotime($date));
