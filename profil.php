@@ -42,7 +42,7 @@
 
       <div class="bet">
 
-        <h2>Matches avaible</h2>
+        <h2>Matches available</h2>
 
         <?php
 
@@ -61,7 +61,7 @@
               $match_start = date('d-m-Y H:i', strtotime($date));
 
             ?>
-              <div class="bet_container">
+              <div class="container_bet_avaible">
                 <span><?php echo $matchavaible['team_one']; ?> VS <?php echo $matchavaible['team_two']; ?></span>
                 <br>
                 <br>
