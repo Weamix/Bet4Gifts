@@ -72,6 +72,31 @@
               </div>
         <?php } } ?>
 
+        <?php
+
+          $reqmatchbetincoming = $bdd->prepare('SELECT * FROM bets WHERE author_id = ? AND match_start < CURDATE()');
+          $reqmatchbetincoming->execute(array($userinfo['id']));
+
+          while ($matchbetincoming = $reqalreadybet->fetch()) {
+
+            $date = $matchbetincoming['match_start'];
+            $match_start = date('d-m-Y H:i', strtotime($date));
+
+        ?>
+
+        <div class="container_bet_available">
+          <span><?php echo $matchbetincoming['team_one']; ?> VS <?php echo $matchbetincoming['team_two']; ?></span>
+          <br>
+          <br>
+          <span>Categorie : <?php echo $matchbetincoming['categories']; ?></span>
+          <span>Date: <?php echo $match_start; ?></span>
+          <br>
+          <span>Résultat parié : <?php echo $matchbetincoming['bet']; ?></span>
+        </div>
+
+
+        <?php } ?>
+
 
       </div>
 
