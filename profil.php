@@ -143,8 +143,18 @@
 
             if ($matchbetfinished['bet'] == $matchresult['result']) {
 
-            /*  $gain = floor(intval($matchbetfinished['amount']) * 1.10);
-              $newPointsvalue = intval($userinfo['points']) + $gain;*/
+              //$gain = floor(intval($matchbetfinished['amount']) * 1.10);
+              $newPointsvalue = intval($userinfo['points']) + $gain;
+
+              if ($matchbetfinished['pointrecup'] == 0) {
+
+                  $reqaddpoints = $bdd->prepare('UPDATE membres SET points = ? WHERE id = ? AND pseudo = ?');
+                  $reqaddpoints->execute(array($newPointsvalue, $userinfo['id'], $userinfo['pseudo']));
+
+                  $reqsetrecuppoints = $bdd->prepare('UPDATE bets SET pointrecup = ? WHERE author_id = ? AND team_one = ? AND team_two = ?');
+                  $reqsetrecuppoints->execute(array(1 ,$userinfo['id'], $matchbetfinished['team_one'], $matchbetfinished['team_two']));
+
+              }
 
         ?>
 
@@ -155,7 +165,7 @@
               <span>Categorie : <?php echo $matchbetfinished['categories']; ?></span>
               <span>Finished !</span>
               <br>
-              <span>Résultat: <?php echo $matchresult['result']; ?></span>
+              <span>Résultat: <?php echo $matchresult['result'] ?></span>
               <span>Résultat parié : <?php echo $matchbetfinished['bet']; ?></span>
               <span>Gain : <?php echo $gain; ?></span>
               <br>
@@ -163,27 +173,26 @@
             </div>
 
 
-        <?php}
-          ?>
+        <?php}else { ?>
 
-          <!--<div class="container_bet_available">
+          <div class="container_bet_available">
             <span><?php echo $matchbetfinished['team_one']; ?> VS <?php echo $matchbetfinished['team_two']; ?></span>
             <br>
             <br>
             <span>Categorie : <?php echo $matchbetfinished['categories']; ?></span>
             <span>Finished !</span>
             <br>
-            <span>Résultat: <?php echo $matchresult['result']; ?></span>
+            <span>Résultat: <?php echo $matchresult['result'] ?></span>
             <span>Résultat parié : <?php echo $matchbetfinished['bet']; ?></span>
             <span>Gain : 0</span>
             <br>
             <span>Vous avez perdu !</span>
-          </div>-->
+          </div>
 
-        <?php }?>
+        <?php } }?>
       </div>
 
-      <?php if (isset($_SESSION['valid'])) { echo "<div class=\"validMessage\"><span>".$_SESSION['valid']."</span><a href=\"#\">Close</a></div>"; $_SESSION['valid'] == null;} ?>
+      <?php if (isset($_SESSION['valid'])) { echo "<div class=\"validMessage\"><span>".$_SESSION['valid']."</span><a href=\"#\">Close</a></div>"; } ?>
 
     <?php } ?>
 
