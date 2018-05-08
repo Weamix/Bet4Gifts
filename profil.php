@@ -152,7 +152,7 @@
                   $reqaddpoints->execute(array($newPointsvalue, $userinfo['id'], $userinfo['pseudo']));
 
                   $reqsetrecuppoints = $bdd->prepare('UPDATE bets SET pointrecup = 1 WHERE author_id = ? AND team_one = ? AND tem_two = ?');
-                  $reqsetrecuppoints->execute(array($userinfo['id'], $matchbetfinished['team_one'], $matchbetfinished['team_two']));
+                  $reqsetrecuppoints->execute(array(intval($userinfo['id']), $matchbetfinished['team_one'], $matchbetfinished['team_two']));
 
               }
 
