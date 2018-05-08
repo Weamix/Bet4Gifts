@@ -175,9 +175,6 @@
 
         <?php}else {
 
-          //$reqsetrecuppoints = $bdd->prepare('UPDATE bets SET pointrecup = ? WHERE author_id = ? AND team_one = ? AND team_two = ?');
-          //$reqsetrecuppoints->execute(array(1 ,$userinfo['id'], $matchbetfinished['team_one'], $matchbetfinished['team_two']));
-
         ?>
 
           <div class="container_bet_available">
@@ -197,7 +194,7 @@
         <?php } }?>
       </div>
 
-      <?php if (isset($_SESSION['valid'])) { echo "<div class=\"validMessage\"><span>".$_SESSION['valid']."</span><a href=\"#\">Close</a></div>"; } ?>
+      <?php if (isset($_SESSION['valid'])) { echo "<div class=\"validMessage\"><span>".$_SESSION['valid']."</span><a href=\"#\">Close</a></div>"; $_SESSION['valid'] == null;} ?>
 
     <?php } ?>
 
