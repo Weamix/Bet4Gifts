@@ -135,7 +135,6 @@
 
           while ($matchbetfinished = $reqmatchbetfinished->fetch()) {
 
-            echo $matchbetfinished['match_id'];
             $reqmatchresult = $bdd->prepare("SELECT result FROM matches WHERE id = ?");
             $reqmatchresult->execute(array(intval($matchbetfinished['match_id'])));
             $matchresult = $reqmatchresult->fetch();
