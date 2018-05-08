@@ -163,11 +163,7 @@
             </div>
 
 
-        <?php}elseif ($matchbetfinished['bet'] != $matchresult['result']) {
-          // code...
-        } {
-          // code...
-        }{ ?>
+        <?php}elseif ($matchbetfinished['bet'] == $matchresult['result']){ ?>
 
           <div class="container_bet_available">
             <span><?php echo $matchbetfinished['team_one']; ?> VS <?php echo $matchbetfinished['team_two']; ?></span>
