@@ -156,7 +156,7 @@
                   $reqsetrecuppoints = $bdd->prepare('UPDATE bets SET pointrecup = ? WHERE author_id = ? AND team_one = ? AND team_two = ?');
                   $reqsetrecuppoints->execute(array(1 ,$userinfo['id'], $matchbetfinished['team_one'], $matchbetfinished['team_two']));
 
-              }
+
 
         ?>
 
@@ -175,7 +175,7 @@
             </div>
 
 
-        <?php}else { ?>
+        <?php} }else { ?>
 
           <div class="container_bet_available">
             <span><?php echo $matchbetfinished['team_one']; ?> VS <?php echo $matchbetfinished['team_two']; ?></span>
