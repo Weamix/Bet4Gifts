@@ -135,8 +135,8 @@
 
           while ($matchbetfinished = $reqmatchbetfinished->fetch()) {
 
-            $reqmatchresult = mysql_query("SELECT result FROM matches WHERE id = 1");
-            $matchresult = $reqmatchresult->fetch();
+            //$reqmatchresult = mysql_query("SELECT result FROM matches WHERE id = 1");
+            //$matchresult = $reqmatchresult->fetch();
 
             $date = $matchbetfinished['match_start'];
             $match_start = date('d-m-Y H:i', strtotime($date));
