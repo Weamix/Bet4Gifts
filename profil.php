@@ -141,6 +141,9 @@
             $date = $matchbetfinished['match_start'];
             $match_start = date('d-m-Y H:i', strtotime($date));
 
+            echo "bet = ".$matchbetfinished['bet'];
+            echo "resultat = ".$matchresult['result'];
+
             if ($matchbetfinished['bet'] == $matchresult['result']) {
 
               //$gain = floor(intval($matchbetfinished['amount']) * 1.10);
