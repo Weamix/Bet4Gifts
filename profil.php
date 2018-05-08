@@ -172,7 +172,7 @@
             <span>Categorie : <?php echo $matchbetfinished['categories']; ?></span>
             <span>Finished !</span>
             <br>
-            <span>Résultat: <?php echo $matchresult['result'] ?></span>
+            <span>Résultat: <?php echo $matchresult['result']; ?></span>
             <span>Résultat parié : <?php echo $matchbetfinished['bet']; ?></span>
             <span>Gain : 0</span>
             <br>
