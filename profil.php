@@ -103,7 +103,7 @@
 
         <?php
 
-          $reqmatchbetfinished = $bdd->prepare('SELECT * FROM bets WHERE author_id = ? AND match_end < CURDATE()');
+          $reqmatchbetfinished = $bdd->prepare('SELECT * FROM bets WHERE author_id = ? AND match_end > CURDATE()');
           $reqmatchbetfinished->execute(array($userinfo['id']));
 
           while ($matchbetfinished = $reqmatchbetfinished->fetch()) {
