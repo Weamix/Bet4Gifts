@@ -142,6 +142,8 @@
             $date = $matchbetfinished['match_start'];
             $match_start = date('d-m-Y H:i', strtotime($date));
 
+            echo $matchresult['id'];
+
             if ($matchbetfinished['bet'] == $matchresult['result']) {
 
               $gain = intval($matchbetfinished['amount']) * 1.10;
