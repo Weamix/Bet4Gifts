@@ -144,6 +144,17 @@
             if ($matchbetfinished['bet'] == $matchresult['result']) {
 
               $gain = intval($matchbetfinished['amount']) * 1.10;
+              $newPointsvalue = intval($userinfo['points']) + $gain;
+
+              if ($matchbetfinished['pointrecup'] == 0) {
+
+                  $reqaddpoints = $bdd->prepare('UPDATE membres SET points = ? WHERE id = ? AND pseudo = ?');
+                  $reqaddpoints->execute(array($newPointsvalue, $userinfo['id'], $userinfo['pseudo']));
+
+                  $reqsetrecuppoints = $bdd->prepare('UPDATE bets SET recuppoints = 1 WHERE author_id = ? AND team_one = ? AND tem_two = ?');
+                  $reqsetrecuppoints->execute(array($userinfo['id'], $matchbetfinished['team_one'], $matchbetfinished['team_two']));
+
+              }
 
         ?>
 
@@ -162,7 +173,7 @@
             </div>
 
 
-        <?php } else { ?>
+        <?php} else { ?>
 
           <div class="container_bet_available">
             <span><?php echo $matchbetfinished['team_one']; ?> VS <?php echo $matchbetfinished['team_two']; ?></span>
