@@ -76,7 +76,7 @@
 
         <?php
 
-          $reqmatchbetincoming = $bdd->prepare('SELECT * FROM bets WHERE author_id = ? AND match_start > CURRENT_DATE');
+          $reqmatchbetincoming = $bdd->prepare('SELECT * FROM bets WHERE author_id = ? AND match_start < CURRENT_DATE');
           $reqmatchbetincoming->execute(array($userinfo['id']));
 
           while ($matchbetupcoming = $reqmatchbetincoming->fetch()) {
@@ -94,6 +94,33 @@
           <span>Date: <?php echo $match_start; ?></span>
           <br>
           <span>Résultat parié : <?php echo $matchbetupcoming['bet']; ?></span>
+        </div>
+
+
+        <?php } ?>
+
+        <h2>Matchs bet in progress</h2>
+
+        <?php
+
+          $reqmatchbetinprogress = $bdd->prepare('SELECT * FROM bets WHERE author_id = ? AND match_start < CURRENT_DATE');
+          $reqmatchbetinprogress->execute(array($userinfo['id']));
+
+          while ($matchbetinprogress = $reqmatchbetinprogress->fetch()) {
+
+            $date = $matchbetinprogress['match_start'];
+            $match_start = date('d-m-Y H:i', strtotime($date));
+
+        ?>
+
+        <div class="container_bet_available">
+          <span><?php echo $matchbetinprogress['team_one']; ?> VS <?php echo $matchbetinprogress['team_two']; ?></span>
+          <br>
+          <br>
+          <span>Categorie : <?php echo $matchbetinprogress['categories']; ?></span>
+          <span>En cours !</span>
+          <br>
+          <span>Résultat parié : <?php echo $matchbetinprogress['bet']; ?></span>
         </div>
 
 
