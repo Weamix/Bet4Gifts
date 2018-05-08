@@ -103,7 +103,7 @@
 
         <?php
 
-          $reqmatchbetinprogress = $bdd->prepare('SELECT * FROM bets WHERE author_id = ? AND match_start < CURRENT_TIMESTAMP');
+          $reqmatchbetinprogress = $bdd->prepare('SELECT * FROM bets WHERE author_id = ? AND match_start < CURRENT_TIMESTAMP AND match_end < CURRENT_TIMESTAMP');
           $reqmatchbetinprogress->execute(array($userinfo['id']));
 
           while ($matchbetinprogress = $reqmatchbetinprogress->fetch()) {
