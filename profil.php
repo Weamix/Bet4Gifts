@@ -176,7 +176,12 @@
             </div>
 
 
-        <?php}else { ?>
+        <?php}else {
+
+          echo "bet = ".$matchbetfinished['bet'];
+          echo "resultat = ".$matchresult['result'];
+
+          ?>
 
           <div class="container_bet_available">
             <span><?php echo $matchbetfinished['team_one']; ?> VS <?php echo $matchbetfinished['team_two']; ?></span>
