@@ -146,8 +146,6 @@
               //$gain = floor(intval($matchbetfinished['amount']) * 1.10);
               $newPointsvalue = intval($userinfo['points']) + $gain;
 
-              echo $matchbetfinished['pointrecup'];
-
               if ($matchbetfinished['pointrecup'] == 0) {
 
                   $reqaddpoints = $bdd->prepare('UPDATE membres SET points = ? WHERE id = ? AND pseudo = ?');
