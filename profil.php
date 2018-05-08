@@ -135,14 +135,14 @@
 
           while ($matchbetfinished = $reqmatchbetfinished->fetch()) {
 
-            $reqmatchresult = $bdd->prepare('SELECT * FROM matches WHERE team_one = ? AND team_two = ?');
-            $reqmatchresult->execute(array($matchbetfinished['team_two'], $matchbetfinished['team_two']));
+            $reqmatchresult = $bdd->prepare('SELECT * FROM matches WHERE id = ? AND team_one = ? AND team_two = ?');
+            $reqmatchresult->execute(array(intval($matchbetfinished['match_id']), $matchbetfinished['team_two'], $matchbetfinished['team_two']));
             $matchresult = $reqmatchresult->fetch();
 
             $date = $matchbetfinished['match_start'];
             $match_start = date('d-m-Y H:i', strtotime($date));
 
-            echo "test = ".$matchresult['id'];
+            echo "test = "$matchresult['id'];
 
             if ($matchbetfinished['bet'] == $matchresult['result']) {
 
