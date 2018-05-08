@@ -51,6 +51,12 @@
 
             while ($matchavaible = $reqmatchavaible->fetch()) {
 
+              $reqalreadybet = $bdd->prepare("SELECT * FROM bets WHERE match_id = ? AND team_one = ? AND team_two = ?");
+              $reqalreadybet->execute(array($matchavaible['id'], $matchavaible['team_one'], $matchavaible['team_two']));
+              $alreadybet = $reqalreadybet->rowCount();
+
+              if ($alreadybet != 1) {
+
               $date = $matchavaible['match_start'];
               $match_start = date('d-m-Y H:i', strtotime($date));
 
@@ -64,7 +70,7 @@
                 <br>
                 <a href="<?php echo 'bets.php?user='.$userinfo['id'].'&tone='.$matchavaible['team_one'].'&ttwo='.$matchavaible['team_two'].'&id='.$matchavaible['id']; ?>">Pariez !</a>
               </div>
-        <?php } ?>
+        <?php } } ?>
 
 
       </div>
