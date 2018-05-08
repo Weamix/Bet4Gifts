@@ -1,4 +1,4 @@
-.bet_container{
+.container_bet_available{
 
   width: 50%;
   height: auto;
@@ -7,7 +7,7 @@
 
 }
 
-.container_bet_avaible span{
+.container_bet_available span{
 
   display: block;
 

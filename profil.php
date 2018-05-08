@@ -61,7 +61,7 @@
               $match_start = date('d-m-Y H:i', strtotime($date));
 
             ?>
-              <div class="container_bet_avaible">
+              <div class="container_bet_available">
                 <span><?php echo $matchavaible['team_one']; ?> VS <?php echo $matchavaible['team_two']; ?></span>
                 <br>
                 <br>
