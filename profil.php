@@ -46,7 +46,7 @@
 
         <?php
 
-            $reqmatchavaible = $bdd->prepare("SELECT * FROM matches WHERE categories = ? AND match_start < CURDATE()");
+            $reqmatchavaible = $bdd->prepare("SELECT * FROM matches WHERE categories = ? AND match_start <= CURDATE()");
             $reqmatchavaible->execute(array("football"));
 
             while ($matchavaible = $reqmatchavaible->fetch()) {
