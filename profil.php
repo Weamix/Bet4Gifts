@@ -163,13 +163,10 @@
             </div>
 
 
-        <?php}elseif ($matchbetfinished['bet'] == $matchresult['result']){
-
-          echo $matchbetfinished['bet'];
-          echo $matchresult['result'];
+        <?php}
           ?>
 
-          <div class="container_bet_available">
+          <!--<div class="container_bet_available">
             <span><?php echo $matchbetfinished['team_one']; ?> VS <?php echo $matchbetfinished['team_two']; ?></span>
             <br>
             <br>
@@ -181,9 +178,9 @@
             <span>Gain : 0</span>
             <br>
             <span>Vous avez perdu !</span>
-          </div>
+          </div>-->
 
-        <?php } }?>
+        <?php }?>
       </div>
 
       <?php if (isset($_SESSION['valid'])) { echo "<div class=\"validMessage\"><span>".$_SESSION['valid']."</span><a href=\"#\">Close</a></div>"; $_SESSION['valid'] == null;} ?>
