@@ -50,7 +50,8 @@
 
                   $reqremovepoint = $bdd->prepare("UPDATE membres SET points = ? WHERE id = ? AND pseudo = ?");
                   $reqremovepoint->execute(array($updatepoints, $userinfo['id'], $userinfo['pseudo']));
-                  $error = 'Pari validé !';
+                  $_SESSION['valid'] = "Pari effectué avec succès !";
+                  header('Location: index.php');
 
               }else {
                 $error = 'Vous ne pouvez pas parier plus que ce que vous avez sur votre compte !';

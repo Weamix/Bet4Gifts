@@ -21,6 +21,7 @@
     <title>Your profile</title>
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <link rel="stylesheet" href="style/profilstyle.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   </head>
   <body>
 
@@ -180,12 +181,9 @@
           </div>
 
         <?php } }?>
-
-
       </div>
 
-
-
+      <?php if (isset($_SESSION['valid'])) { echo "<div class=\"validMessage\">".$_SESSION['valid']."<a href=\"#\"></a>Close</div>"; } ?>
 
     <?php } ?>
 

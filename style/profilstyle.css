@@ -1,3 +1,5 @@
+body{ font-style: 'Lato', Sans-Serif}
+
 .container_bet_available{
 
   width: 50%;
@@ -10,5 +12,25 @@
 .container_bet_available span{
 
   display: block;
+
+}
+
+.validMessage{
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #27ae60;
+  color: #FFF;
+  font-size: 18px;
+
+}
+
+.validMessage a{
+
+  position: relative;
+  right: 0;
 
 }
