@@ -46,7 +46,7 @@
 
         <?php
 
-            $reqmatchavaible = $bdd->prepare("SELECT * FROM matches WHERE categories = ? AND match_start > CURRENT_TIMESTAMP()");
+            $reqmatchavaible = $bdd->prepare("SELECT * FROM matches WHERE categories = ? AND match_start > CURRENT_TIMESTAMP");
             $reqmatchavaible->execute(array("football"));
 
             while ($matchavaible = $reqmatchavaible->fetch()) {
@@ -76,7 +76,7 @@
 
         <?php
 
-          $reqmatchbetincoming = $bdd->prepare('SELECT * FROM bets WHERE author_id = ? AND match_start < CURRENT_TIMESTAMP()');
+          $reqmatchbetincoming = $bdd->prepare('SELECT * FROM bets WHERE author_id = ? AND match_start < CURRENT_TIMESTAMP');
           $reqmatchbetincoming->execute(array($userinfo['id']));
 
           while ($matchbetupcoming = $reqmatchbetincoming->fetch()) {
@@ -103,7 +103,7 @@
 
         <?php
 
-          $reqmatchbetinprogress = $bdd->prepare('SELECT * FROM bets WHERE author_id = ? AND match_start > CURRENT_TIMESTAMP()');
+          $reqmatchbetinprogress = $bdd->prepare('SELECT * FROM bets WHERE author_id = ? AND match_start > CURRENT_TIMESTAMP');
           $reqmatchbetinprogress->execute(array($userinfo['id']));
 
           while ($matchbetinprogress = $reqmatchbetinprogress->fetch()) {
@@ -130,7 +130,7 @@
 
         <?php
 
-          $reqmatchbetfinished = $bdd->prepare('SELECT * FROM bets WHERE author_id = ? AND match_end < CURDATE()');
+          $reqmatchbetfinished = $bdd->prepare('SELECT * FROM bets WHERE author_id = ? AND match_end < CURRENT_TIMESTAMP');
           $reqmatchbetfinished->execute(array($userinfo['id']));
 
           while ($matchbetfinished = $reqmatchbetfinished->fetch()) {
