@@ -183,7 +183,7 @@
         <?php } }?>
       </div>
 
-      <?php if (isset($_SESSION['valid'])) { echo "<div class=\"validMessage\">".$_SESSION['valid']."<a href=\"#\"></a>Close</div>"; } ?>
+      <?php if (isset($_SESSION['valid'])) { echo "<div class=\"validMessage\"><span>".$_SESSION['valid']."</span><a href=\"#\">Close</a></div>"; } ?>
 
     <?php } ?>
 
