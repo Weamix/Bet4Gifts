@@ -72,6 +72,8 @@
               </div>
         <?php } } ?>
 
+        <h2>Bet in coming</h2>
+
         <?php
 
           $reqmatchbetincoming = $bdd->prepare('SELECT * FROM bets WHERE author_id = ? AND match_start < CURDATE()');
