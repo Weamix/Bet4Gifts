@@ -76,7 +76,7 @@
 
         <?php
 
-          $reqmatchbetincoming = $bdd->prepare('SELECT * FROM bets WHERE author_id = ? AND match_start < CURRENT_TIMESTAMP');
+          $reqmatchbetincoming = $bdd->prepare('SELECT * FROM bets WHERE author_id = ? AND match_start > CURRENT_TIMESTAMP');
           $reqmatchbetincoming->execute(array($userinfo['id']));
 
           while ($matchbetupcoming = $reqmatchbetincoming->fetch()) {
