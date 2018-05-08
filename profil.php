@@ -126,7 +126,7 @@
               <br>
               <br>
               <span>Categorie : <?php echo $matchbetfinished['categories']; ?></span>
-              <span>Finished !; ?></span>
+              <span>Finished !</span>
               <br>
               <span>Résultat: <?php echo $matchresult['result'] ?></span>
               <span>Résultat parié : <?php echo $matchbetfinished['bet']; ?></span>
@@ -143,7 +143,7 @@
             <br>
             <br>
             <span>Categorie : <?php echo $matchbetfinished['categories']; ?></span>
-            <span>Finished !; ?></span>
+            <span>Finished !</span>
             <br>
             <span>Résultat: <?php echo $matchresult['result'] ?></span>
             <span>Résultat parié : <?php echo $matchbetfinished['bet']; ?></span>
