@@ -20,7 +20,6 @@
     <meta charset="utf-8">
     <title>Your profile</title>
     <link rel="icon" type="image/png" href="images/favicon.png" />
-    <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/profilstyle.css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   </head>
