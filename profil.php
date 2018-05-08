@@ -72,32 +72,87 @@
               </div>
         <?php } } ?>
 
-        <h2>Bet in coming</h2>
+        <h2>Matchs bet upcoming</h2>
 
         <?php
 
           $reqmatchbetincoming = $bdd->prepare('SELECT * FROM bets WHERE author_id = ? AND match_start > CURDATE()');
           $reqmatchbetincoming->execute(array($userinfo['id']));
 
-          while ($matchbetincoming = $reqmatchbetincoming->fetch()) {
+          while ($matchbetupcoming = $reqmatchbetincoming->fetch()) {
 
-            $date = $matchbetincoming['match_start'];
+            $date = $matchbetupcoming['match_start'];
             $match_start = date('d-m-Y H:i', strtotime($date));
 
         ?>
 
         <div class="container_bet_available">
-          <span><?php echo $matchbetincoming['team_one']; ?> VS <?php echo $matchbetincoming['team_two']; ?></span>
+          <span><?php echo $matchbetupcoming['team_one']; ?> VS <?php echo $matchbetupcoming['team_two']; ?></span>
           <br>
           <br>
-          <span>Categorie : <?php echo $matchbetincoming['categories']; ?></span>
+          <span>Categorie : <?php echo $matchbetupcoming['categories']; ?></span>
           <span>Date: <?php echo $match_start; ?></span>
           <br>
-          <span>Résultat parié : <?php echo $matchbetincoming['bet']; ?></span>
+          <span>Résultat parié : <?php echo $matchbetupcoming['bet']; ?></span>
         </div>
 
 
         <?php } ?>
+
+        <h2>Matchs bet finished</h2>
+
+        <?php
+
+          $reqmatchbetfinished = $bdd->prepare('SELECT * FROM bets WHERE author_id = ? AND match_end < CURDATE()');
+          $reqmatchbetfinished->execute(array($userinfo['id']));
+
+          while ($matchbetfinished = $reqmatchbetfinished->fetch()) {
+
+            $reqmatchresult = $bdd->prepare('SELECT * FROM matches WHERE id = ? AND team_one = ? AND team_two = ?');
+            $reqmatchresult->execute(array($matchbetfinished['id'], $matchbetfinished['team_two'], $matchbetfinished['team_two']));
+            $matchresult = $reqmatchresult->fetch();
+
+            $date = $matchbetfinished['match_start'];
+            $match_start = date('d-m-Y H:i', strtotime($date));
+
+            if ($matchbetfinished['bet'] == $matchresult['result']) {
+
+              $gain = intval($matchbetfinished['amount']) * 1.10;
+
+        ?>
+
+            <div class="container_bet_available">
+              <span><?php echo $matchbetfinished['team_one']; ?> VS <?php echo $matchbetfinished['team_two']; ?></span>
+              <br>
+              <br>
+              <span>Categorie : <?php echo $matchbetfinished['categories']; ?></span>
+              <span>Finished !; ?></span>
+              <br>
+              <span>Résultat: <?php echo $matchresult['result'] ?></span>
+              <span>Résultat parié : <?php echo $matchbetfinished['bet']; ?></span>
+              <span>Gain : <?php echo $gain; ?></span>
+              <br>
+              <span>Vous avez gagné !</span>
+            </div>
+
+
+        <?php } else { ?>
+
+          <div class="container_bet_available">
+            <span><?php echo $matchbetfinished['team_one']; ?> VS <?php echo $matchbetfinished['team_two']; ?></span>
+            <br>
+            <br>
+            <span>Categorie : <?php echo $matchbetfinished['categories']; ?></span>
+            <span>Finished !; ?></span>
+            <br>
+            <span>Résultat: <?php echo $matchresult['result'] ?></span>
+            <span>Résultat parié : <?php echo $matchbetfinished['bet']; ?></span>
+            <span>Gain : 0</span>
+            <br>
+            <span>Vous avez perdu !</span>
+          </div>
+
+        <?php } }?>
 
 
       </div>
