@@ -143,7 +143,7 @@
 
             if ($matchbetfinished['bet'] == $matchresult['result']) {
 
-              $gain = intval($matchbetfinished['amount']) * 1.10;
+              $gain = floor(intval($matchbetfinished['amount']) * 1.10);
               $newPointsvalue = intval($userinfo['points']) + $gain;
 
               if ($matchbetfinished['pointrecup'] == 0) {
