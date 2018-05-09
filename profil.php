@@ -127,77 +127,7 @@
 
         <h2>Matchs bet finished</h2>
 
-        <?php
 
-          $reqmatchbetfinished = $bdd->prepare('SELECT * FROM bets WHERE author_id = ? AND match_end <= CURRENT_TIMESTAMP');
-          $reqmatchbetfinished->execute(array($userinfo['id']));
-
-          while ($matchbetfinished = $reqmatchbetfinished->fetch()) {
-
-            $reqmatchresult = $bdd->prepare("SELECT result FROM matches WHERE id = ?");
-            $reqmatchresult->execute(array(intval($matchbetfinished['match_id'])));
-            $matchresult = $reqmatchresult->fetch();
-
-            $date = $matchbetfinished['match_start'];
-            $match_start = date('d-m-Y H:i', strtotime($date));
-
-            echo "bet = ".$matchbetfinished['bet'];
-            echo "resultat = ".$matchresult['result'];
-
-            if ($matchbetfinished['bet'] == $matchresult['result']) {
-
-              //$gain = floor(intval($matchbetfinished['amount']) * 1.10);
-              //$newPointsvalue = intval($userinfo['points']) + $gain;
-
-              /*if ($matchbetfinished['pointrecup'] == 0) {
-
-                  $reqaddpoints = $bdd->prepare('UPDATE membres SET points = ? WHERE id = ? AND pseudo = ?');
-                  $reqaddpoints->execute(array($newPointsvalue, $userinfo['id'], $userinfo['pseudo']));
-
-                  $reqsetrecuppoints = $bdd->prepare('UPDATE bets SET pointrecup = ? WHERE author_id = ? AND team_one = ? AND team_two = ?');
-                  $reqsetrecuppoints->execute(array(1 ,$userinfo['id'], $matchbetfinished['team_one'], $matchbetfinished['team_two']));
-
-              }*/
-
-        ?>
-
-            <div class="container_bet_available">
-              <span><?php echo $matchbetfinished['team_one']; ?> VS <?php echo $matchbetfinished['team_two']; ?></span>
-              <br>
-              <br>
-              <span>Categorie : <?php echo $matchbetfinished['categories']; ?></span>
-              <span>Finished !</span>
-              <br>
-              <span>Résultat: <?php echo $matchresult['result'] ?></span>
-              <span>Résultat parié : <?php echo $matchbetfinished['bet']; ?></span>
-              <span>Gain : <?php echo $gain; ?></span>
-              <br>
-              <span>Vous avez gagné !</span>
-            </div>
-
-
-        <?php}else {
-
-          echo "bet = ".$matchbetfinished['bet'];
-          echo "resultat = ".$matchresult['result'];
-
-          ?>
-
-          <div class="container_bet_available">
-            <span><?php echo $matchbetfinished['team_one']; ?> VS <?php echo $matchbetfinished['team_two']; ?></span>
-            <br>
-            <br>
-            <span>Categorie : <?php echo $matchbetfinished['categories']; ?></span>
-            <span>Finished !</span>
-            <br>
-            <span>Résultat: <?php echo $matchresult['result'] ?></span>
-            <span>Résultat parié : <?php echo $matchbetfinished['bet']; ?></span>
-            <span>Gain : 0</span>
-            <br>
-            <span>Vous avez perdu !</span>
-          </div>
-
-        <?php } }?>
       </div>
 
       <?php if (isset($_SESSION['valid'])) { echo "<div class=\"validMessage\"><span>".$_SESSION['valid']."</span><a href=\"#\">Close</a></div>"; } ?>
