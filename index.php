@@ -1,10 +1,10 @@
 <?php
 
-  session_start();
+  session_start(); //permet d'utiliser les variables de SESSION
 
   if (isset($_SESSION['id'])) {
 
-    header("Location: profil.php?id=".$_SESSION['id']);
+    header("Location: profil.php?id=".$_SESSION['id']); // On verifie si un session est en cours pour l'utilisateur , si OUI on le renvoie vers sa page de profil !
 
   }
 
