@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <?php
 
-  session_start();
+  session_start(); //permet d'utiliser les variables de SESSION
 
-  $bdd = new PDO('mysql:host=localhost;dbname=isnmpweb_espace_membre', 'isnprojet', 'O1cuz98@');
+  $bdd = new PDO('mysql:host=localhost;dbname=isnmpweb_espace_membre', 'isnprojet', 'O1cuz98@'); // On se connecte à la BDD
 
   if(isset($_POST['formconnexion'])) {
 
@@ -72,15 +72,11 @@
 
     <?php
       if (isset($error) OR isset($_SESSION['error'])) {
+
+        echo '<span class="errorMessage">'.$error.$_SESSION['error'].'</span>';
+        $_SESSION["error"] = null;
+      }
     ?>
-      <span class="errorMessage">
-    <?php
-      echo $error;
-      echo $_SESSION['error'];
-      $_SESSION['error'] = null;
-    ?>
-      </span>
-    <?php } ?>
 
     <?php
       if (isset($_SESSION['valid'])) {
