@@ -5,4 +5,7 @@ form{
   left: 50%;
   transform: translate(-50%, -50%);
 
+  width: auto + 200px;
+  height: 300px;
+
 }
