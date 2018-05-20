@@ -82,6 +82,7 @@
     <meta charset="utf-8">
     <title>Bets</title>
     <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="style/betsstyle.css">
   </head>
   <body>
