@@ -196,7 +196,7 @@
 
       </div>
 
-      <?php if (isset($_SESSION['valid'])) { echo "<div class=\"validMessage\"><span>".$_SESSION['valid']."</span><a href=\"#\">Close</a></div>"; $_SESSION['valid'] = null;} ?>
+      <?php if (isset($_SESSION['valid'])) { echo '<div class="validMessage"><span>".$_SESSION['valid']."</span><a href="#">Close</a></div>'; $_SESSION['valid'] = null;} ?>
 
     <?php } ?>
 
