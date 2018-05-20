@@ -5,28 +5,28 @@
 
   $bdd = new PDO('mysql:host=localhost;dbname=isnmpweb_espace_membre', 'isnprojet', 'O1cuz98@'); // On se connecte à la BDD
 
-  if(isset($_POST['formconnexion'])) {
+  if(isset($_POST['formconnexion'])) { // On vérifie si le bouton SUBMIT du formulaire a été cliqué !
 
-     $emailconnect = htmlspecialchars($_POST['emailconnect']);
-     $passwordconnect = sha1($_POST['passwordconnect']);
+     $emailconnect = htmlspecialchars($_POST['emailconnect']); //On sécurise l'email de l'utilisateur
+     $passwordconnect = sha1($_POST['passwordconnect']); //On crypte le mot de passe
 
-     if(!empty( $emailconnect) AND !empty($passwordconnect)) {
+     if(!empty( $emailconnect) AND !empty($passwordconnect)) { // On vérifie si l'email et le mot de passe sont spécifiés.
 
-        $requser = $bdd->prepare("SELECT * FROM membres WHERE email = ? AND password = ?");
-        $requser->execute(array( $emailconnect, $passwordconnect));
-        $userexist = $requser->rowCount();
+        $requser = $bdd->prepare("SELECT * FROM membres WHERE email = ? AND password = ?"); //On prépare la requête SQL
+        $requser->execute(array( $emailconnect, $passwordconnect)); // On l'execute avec les bonnes variables
+        $userexist = $requser->rowCount(); // On regarde le nombre de ligne dans la BDD qui respecte les conditions de la requête
 
-        if($userexist == 1) {
+        if($userexist == 1) { // On vérifie si l'utilisateur existe !
 
-           $userinfo = $requser->fetch();
-           $_SESSION['id'] = $userinfo['id'];
-           $_SESSION['pseudo'] = $userinfo['pseudo'];
-           $_SESSION['mail'] = $userinfo['mail'];
-           header("Location: profil.php?id=".$_SESSION['id']);
+           $userinfo = $requser->fetch();//Permet de récupérer les informations de la requête
+           $_SESSION['id'] = $userinfo['id']; //On définie l'identifiant de la SESSION
+           $_SESSION['pseudo'] = $userinfo['pseudo']; //On définie le pseudo de l'utilisateur associé à la SESSION
+           $_SESSION['mail'] = $userinfo['mail']; //On définie le mail de l'utilisateur associé à la SESSION
+           header("Location: profil.php?id=".$_SESSION['id']); // On redirige l'utilisateur va sa page de profil
 
         }
         else {
-           $error = "L'adresse email et le mot de passe ne correspondent pas !";
+           $error = "L'adresse email et le mot de passe ne correspondent pas !"; //On définie le message de l'erreur
         }
      }
      else {
