@@ -19,5 +19,6 @@ label[for='amount'], input[type=number], input[type=submit]{
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
+  margin: 0;
 
 }
