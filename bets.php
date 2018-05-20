@@ -82,7 +82,7 @@
     <meta charset="utf-8">
     <title>Bets</title>
     <link rel="icon" type="image/png" href="images/favicon.png" />
-    <link rel="stylesheet" href="style/profilstyle.css">
+    <link rel="stylesheet" href="style/betstyle.css">
   </head>
   <body>
 
