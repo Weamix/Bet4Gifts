@@ -23,24 +23,24 @@
     $reqalreadybet->execute(array($matchinfo['id'], $matchinfo['team_one'], $matchinfo['team_two']));
     $alreadybet = $reqalreadybet->rowCount();
 
-    if ($alreadybet == 0) {
+    if ($alreadybet == 0) { //On vérifie si l'utilisateur a déjà parié sur ce match
 
-      if (isset($_POST['formbet'])) {
+      if (isset($_POST['formbet'])) { // On vérifie si le bouton SUBMIT du formulaire a été cliqué !
 
-        if(!$_POST['choice']){
+        if(!$_POST['choice']){  //On vérifie si l'utilisateur a choisi une équipe sur qui parier
 
           $error = 'Veuillez sélectionner un résultat pour parier !';
 
         }else {
 
-          if (sizeof($_POST['choice']) == 1) {
+          if (sizeof($_POST['choice']) == 1) { //On vérifie si l'utilisateur n'a sélectionné que 1 seul résultat
 
-            if (intval($_POST['amount']) > 0) {
+            if (intval($_POST['amount']) > 0) { //On vérifie que le montant est supérieur à 0
 
-              if (intval($_POST['amount']) <= $userinfo['points']) {
+              if (intval($_POST['amount']) <= $userinfo['points']) { //On vérifie si le montant est inférieur ou égal aux points actuels du joueur
 
                   foreach ($_POST['choice'] as $choice) {
-                    $bet = $choice;
+                    $bet = $choice; // On défini la variable $bet sur le choix de l'utilisateur
                   }
 
                   $addbet = $bdd->prepare("INSERT INTO `bets`(`match_id`, `categories`, `team_one`, `team_two`, `match_start`, `match_end`, `amount`, `bet`, `author_id`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
@@ -54,7 +54,7 @@
                   header('Location: index.php');
 
               }else {
-                $error = 'Vous ne pouvez pas parier plus que ce que vous avez sur votre compte !';
+                $error = 'Vous ne pouvez pas parier plus que ce que vous avez sur votre compte !'; //On défini un message d'erreur
               }
 
             }else {
