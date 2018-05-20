@@ -56,21 +56,20 @@
 
               if ($alreadybet != 1) {
 
-                $date = $matchavaible['match_start'];
-                $match_start = date('d-m-Y H:i', strtotime($date));
+              $date = $matchavaible['match_start'];
+              $match_start = date('d-m-Y H:i', strtotime($date));
 
-                echo '
-                  <div class="container_bet_available">
-                    <span>'.$matchavaible['team_one'].' VS '.echo $matchavaible['team_two'].'</span><br><br>
-                    <span>'.$matchavaible['categories'].'</span>
-                    <span>Date: '.$match_start'.</span><br>
-                    <a href="bets.php?user='.$userinfo['id'].'&tone='.$matchavaible['team_one'].'&ttwo='.$matchavaible['team_two'].'&id='.$matchavaible['id'].'">Pariez !</a>
-                  </div>
-                '
-              }
-          }
-
-        ?>
+            ?>
+              <div class="container_bet_available">
+                <span><?php echo $matchavaible['team_one']; ?> VS <?php echo $matchavaible['team_two']; ?></span>
+                <br>
+                <br>
+                <span>Categorie : <?php echo $matchavaible['categories']; ?></span>
+                <span>Date: <?php echo $match_start; ?></span>
+                <br>
+                <a href="<?php echo 'bets.php?user='.$userinfo['id'].'&tone='.$matchavaible['team_one'].'&ttwo='.$matchavaible['team_two'].'&id='.$matchavaible['id']; ?>">Pariez !</a>
+              </div>
+        <?php } } ?>
 
         <h2>Matchs bet upcoming</h2>
 
