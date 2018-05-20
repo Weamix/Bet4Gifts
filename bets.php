@@ -105,9 +105,10 @@
           </label>
           <input type="submit" name="formbet" value="Pariez !">
 
+          <?php if (isset($error)) { echo $error; } ?>
+
         </form>
 
-        <?php if (isset($error)) { echo $error; } ?>
 
     <?php } ?>
 
