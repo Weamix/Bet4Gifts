@@ -6,3 +6,9 @@ form{
   transform: translate(-50%, -50%);
 
 }
+
+label input[type=number]{
+
+  display: block;
+
+}
