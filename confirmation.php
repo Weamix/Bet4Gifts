@@ -3,7 +3,7 @@
   session_start();
   $bdd = new PDO('mysql:host=localhost;dbname=isnmpweb_espace_membre', 'isnprojet', 'O1cuz98@');
 
-  if(isset($_GET['pseudo'], $_GET['key']) AND !empty($_GET['pseudo']) AND !empty($_GET['key'])) {
+  if(isset($_GET['pseudo'], $_GET['key']) AND !empty($_GET['pseudo']) AND !empty($_GET['key'])) { //On vérifie si les informations de l'URL sont remplies
 
     $pseudo = htmlspecialchars($_GET['pseudo']); //On sécurise les variables
     $key = htmlspecialchars($_GET['key']);
@@ -20,16 +20,16 @@
         $updateuser = $bdd->prepare("UPDATE membres SET isconfirm = 1 WHERE pseudo = ? AND confirmkey = ?");
         $updateuser->execute(array($pseudo,$key));
         $_SESSION['valid'] = "Your accound has been confirmed !"; //On définit un message de validité !
-        header("Location: connexion.php");
+        header("Location: connexion.php"); //On redirige l'utilistauer vers la page de connexion !
 
       } else {
-        $_SESSION['error'] = "Your accound has already been confirmed !"; //On définit un message d'erreur !
-        header("Location: connexion.php");
+        $_SESSION['error'] = "Your account has already been confirmed !"; //On définit un message d'erreur !
+        header("Location: inscription.php");
       }
 
     } else {
       $_SESSION['error'] = "The user doesn't exist !";
-      header("Location: connexion.php");
+      header("Location: inscription.php");
     }
   }
 ?>

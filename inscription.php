@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <?php
 
-  session_start();
+  session_start(); //permet d'utiliser les variables de SESSION
 
   $bdd = new PDO('mysql:host=localhost;dbname=isnmpweb_espace_membre', 'isnprojet', 'O1cuz98@');
 
-  if (isset($_POST['forminscription'])) {
+  if (isset($_POST['forminscription'])) { // On vérifie si le bouton SUBMIT du formulaire a été cliqué !
 
     $pseudo = htmlspecialchars($_POST['pseudo']); //On sécurise les variables
     $email = htmlspecialchars($_POST['email']);
@@ -31,9 +31,9 @@
             $reqpseudo->execute(array($pseudo));
             $pseudoexist = $reqpseudo->rowCount();
 
-            if($pseudoexist == 0){ //On vérifie si le pseudo est déjà utilisé
+            if($pseudoexist == 0){ //On vérifie si le pseudo n'est pas déjà utilisé
 
-              if($emailexist == 0){ //On vérifie si un compte existe déjà avec cette adresse mail
+              if($emailexist == 0){ //On vérifie si un compte n'existe pas déjà avec cette adresse mail
 
                 if ($password == $confirmpassword) { //On vérifie si les deux MDP sont identiques
 
@@ -83,7 +83,7 @@
                          </body>
                       </html>
                     '; //On définit le message du mail
-                    mail($email, "Confirmation de compte", $message, $header); //On envoie un mail avec les informations précédements définies
+                    mail($email, "Confirm your account !", $message, $header); //On envoie un mail avec les informations précédements définies
 
                     $_SESSION['valid'] = "Your account has been created ! Look at your mails to confirm ! (and your spams)"; //On définit un message de validité
                     header("Location: connexion.php"); //On redirige l'utilisateur vers la page de connexion
