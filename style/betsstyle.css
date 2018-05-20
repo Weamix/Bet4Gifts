@@ -9,7 +9,7 @@ form{
 
 
 
-label[for='amount']{
+label[for='amount'], input[type=number]{
 
   display: block;
 
