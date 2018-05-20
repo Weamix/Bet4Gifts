@@ -5,13 +5,13 @@
 
   $bdd = new PDO('mysql:host=localhost;dbname=isnmpweb_espace_membre', 'isnprojet', 'O1cuz98@');
 
-  if (isset($_GET['id']) AND $_GET['id'] > 0) {
+  if (isset($_GET['id']) AND $_GET['id'] > 0) { //On vérifie si les informations de l'URL sont remplies
 
     $getid = intval($_GET['id']);
-    $requser = $bdd->prepare("SELECT * FROM membres WHERE id = ?");
-    $requser->execute(array($getid));
+    $requser = $bdd->prepare("SELECT * FROM membres WHERE id = ?"); //On prépare la requête SQL
+    $requser->execute(array($getid)); //On l'execute avec les bonnes valeurs
 
-    $userinfo = $requser->fetch();
+    $userinfo = $requser->fetch(); //Permet de récupérer les informations de la requête
 
 ?>
 
