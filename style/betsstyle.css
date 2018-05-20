@@ -9,11 +9,12 @@ form{
 
 
 
-label[for='amount'], input[type=number]{
+label[for='amount'], input[type=number], input[type=submit]{
 
   display: block;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
+  text-align: center;
 
 }
