@@ -14,7 +14,7 @@
 
       if ($email == $confirmemail) { // On vérifie que les deux emails sont identiques
 
-        if (filter_var($email, FILTER_VALIDATE_EMAIL)) { //On vérifie que que l'email entré par l'utilisateur est valide
+        if (filter_var($email, FILTER_VALIDATE_EMAIL)) { //On vérifie que l'email entré par l'utilisateur est valide
 
           $reqemail = $bdd->prepare("SELECT * FROM membres WHERE email = ?"); //On prépare la requête SQL
           $reqemail->execute(array($email)); // On l'execute avec les bonnes variables
