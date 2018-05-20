@@ -11,6 +11,7 @@ input{ margin: 0 0 20px 0; }
 
 label{ margin: 0 20px; }
 
+label[for='amount']{   margin: 0; }
 
 label[for='amount'], input[type=number], input[type=submit]{
 
@@ -19,6 +20,5 @@ label[for='amount'], input[type=number], input[type=submit]{
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  margin: 0;
 
 }
