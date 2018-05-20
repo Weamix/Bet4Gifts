@@ -57,7 +57,7 @@
               if ($alreadybet != 1) {
 
               $date = $matchavaible['match_start'];
-              $match_start = date('d-m-Y H:i', strtotime($date)); // On définit le format de la DATE
+              $match_start = date('d-m-Y H:i', strtotime($date));
 
             ?>
               <div class="container_bet_available">
@@ -141,12 +141,12 @@
             $date = $matchbetfinished['match_start'];
             $match_start = date('d-m-Y H:i', strtotime($date));
 
-            if ($matchbetfinished['bet'] == $matchresult['result']) { // on vérifie si le résultat du match et le BET sont identiques
+            if ($matchbetfinished['bet'] == $matchresult['result']) {
 
-              $gain = floor(intval($matchbetfinished['amount']) * 1.10); //On définit le gain du joueur en fct de sa mise
-              $newPointsvalue = intval($userinfo['points']) + $gain; //On redefinit le nombre de points du joueur
+              $gain = floor(intval($matchbetfinished['amount']) * 1.10);
+              $newPointsvalue = intval($userinfo['points']) + $gain;
 
-              if ($matchbetfinished['pointrecup'] == 0) { //On vérifie que le joueur n'a pas encore récupéré ses points
+              if ($matchbetfinished['pointrecup'] == 0) {
 
                 $reqaddpoints = $bdd->prepare('UPDATE membres SET points = ? WHERE id = ? AND pseudo = ?');
                 $reqaddpoints->execute(array($newPointsvalue, $userinfo['id'], $userinfo['pseudo']));
@@ -196,7 +196,7 @@
 
       </div>
 
-      <?php if (isset($_SESSION['valid'])) { echo '<div class="validMessage"><span>".$_SESSION['valid']."</span><a href="#">Close</a></div>'; $_SESSION['valid'] = null;} ?>
+      <?php if (isset($_SESSION['valid'])) { echo "<div class=\"validMessage\"><span>".$_SESSION['valid']."</span><a href=\"#\">Close</a></div>"; $_SESSION['valid'] = null;} ?>
 
     <?php } ?>
 
