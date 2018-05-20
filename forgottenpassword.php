@@ -25,7 +25,7 @@
 
           if ($emailexist == 1) { //On vérifie qu'il existe bien un compte avec cette adresse mail
 
-            $header="MIME-Version: 1.0\r\n"; // On définie l'HEADER du mail
+            $header="MIME-Version: 1.0\r\n"; // On définit l'HEADER du mail
             $header.='From:"Bet4Gifts"<noreply@bet4gifts.web-edu.fr>'."\n";
             $header.='Content-Type:text/html; charset="uft-8"'."\n";
             $header.='Content-Transfer-Encoding: 8bit';
@@ -60,13 +60,13 @@
                     <br><br><br>
                  </body>
               </html>
-            '; // On définie le message du mail
-            mail($email, "Forgotten password", $message, $header); //On envoie un mail avec les informtiions définies ci-dessus
+            '; // On définite le message du mail
+            mail($email, "Forgotten password", $message, $header); //On envoie un mail avec les informations définies ci-dessus
 
-            $valid = "An email you have been sent to change your password ! (Look at your mails and your spams)"; //On défini le message de validité
+            $valid = "An email you have been sent to change your password ! (Look at your mails and your spams)"; //On définit le message de validité
 
           }else {
-            $error = "This email address doesn't exist !"; //On défini un message d'erreur
+            $error = "This email address doesn't exist !"; //On définit un message d'erreur
           }
 
         }else {

@@ -19,14 +19,14 @@
         if($userexist == 1) { // On vérifie si l'utilisateur existe !
 
            $userinfo = $requser->fetch();//Permet de récupérer les informations de la requête
-           $_SESSION['id'] = $userinfo['id']; //On définie l'identifiant de la SESSION
-           $_SESSION['pseudo'] = $userinfo['pseudo']; //On définie le pseudo de l'utilisateur associé à la SESSION
-           $_SESSION['mail'] = $userinfo['mail']; //On définie le mail de l'utilisateur associé à la SESSION
+           $_SESSION['id'] = $userinfo['id']; //On définit l'identifiant de la SESSION
+           $_SESSION['pseudo'] = $userinfo['pseudo']; //On définit le pseudo de l'utilisateur associé à la SESSION
+           $_SESSION['mail'] = $userinfo['mail']; //On définit le mail de l'utilisateur associé à la SESSION
            header("Location: profil.php?id=".$_SESSION['id']); // On redirige l'utilisateur va sa page de profil
 
         }
         else {
-           $error = "L'adresse email et le mot de passe ne correspondent pas !"; //On définie le message de l'erreur
+           $error = "L'adresse email et le mot de passe ne correspondent pas !"; //On définit le message de l'erreur
         }
      }
      else {
