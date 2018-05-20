@@ -31,7 +31,7 @@
             $reqpseudo->execute(array($pseudo));
             $pseudoexist = $reqpseudo->rowCount();
 
-            if($pseudoexist == 0){ //On vérifie si le pseudo n'est pas déjà utilisé
+            if($pseudoexist == 0){ //On vérifie si le pseudo n'est pas déjà utilisé 
 
               if($emailexist == 0){ //On vérifie si un compte n'existe pas déjà avec cette adresse mail
 
