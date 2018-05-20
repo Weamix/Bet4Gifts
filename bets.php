@@ -99,7 +99,7 @@
           <label for=""><?php echo $matchinfo['team_two']; ?>
             <input type="radio" name="choice[]" value="<?php echo $matchinfo['team_two']; ?>">
           </label>
-          <label for="">Montant :
+          <label for="amount">Montant :
             <input type="number" name="amount" value="1" min="1" max="<?php echo $userinfo['points']; ?>">
           </label>
           <input type="submit" name="formbet" value="Pariez !">

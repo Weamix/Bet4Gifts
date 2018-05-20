@@ -7,8 +7,11 @@ form{
 
 }
 
-label input[type=number]{
+
+
+label[for='amount'], input[type=number]{
 
   display: block;
+  text
 
 }
