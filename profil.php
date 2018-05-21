@@ -27,17 +27,21 @@
 
     <?php if (isset($_SESSION['id']) AND $userinfo['id'] == $_SESSION['id']) { ?>
 
-      <h2>Your profile <?php echo $userinfo['pseudo']; ?></h2>
-      <br>
-      <span>Username : <?php echo $userinfo['pseudo']; ?></span>
-      <br>
-      <span>Email : <?php echo $userinfo['email']; ?></span>
-      <br>
-        <span>Points : <?php echo $userinfo['points']; ?></span>
-      <br>
-      <a href="#">Edit profil</a>
-      <br>
-      <a href="deconnexion.php">Sign out</a>
+      <div class="profil_information">
+
+        <h2>Your profile <?php echo $userinfo['pseudo']; ?></h2>
+        <br>
+        <span>Username : <?php echo $userinfo['pseudo']; ?></span>
+        <br>
+        <span>Email : <?php echo $userinfo['email']; ?></span>
+        <br>
+          <span>Points : <?php echo $userinfo['points']; ?></span>
+        <br>
+        <a href="#">Edit profil</a>
+        <br>
+        <a href="deconnexion.php">Sign out</a>
+
+      </div>
 
       <div class="bet">
 
