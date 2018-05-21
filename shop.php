@@ -1,6 +1,6 @@
 -<?php 
 try {
-    $db = new PDO('mysql:host=adresse;dbname=nom_de_ta_base', $user='nom_util', $pass='mot_de_passe');
+    $db = new PDO('mysql:host=localhost;dbname=isnmpweb_espace_membre', 'isnprojet', 'O1cuz98@');
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 } catch (PDOException $e) {
