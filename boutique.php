@@ -12,7 +12,7 @@ foreach($array as $item){
     echo '
    <tr>
        <td>'.$array['Nom_prod'].'</td>
-       <td>'.$array['prix'].'€</td>
+       <td>'.$array['prix'].'points</td>
        <td><a href="#">Acheter</a></td>
    </tr><br />
 </table>';}?>
