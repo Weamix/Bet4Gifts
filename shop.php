@@ -8,6 +8,7 @@ try {
     die();
 }
 $sql = $conn->query("SELECT nom_produit, prix FROM maboutique");
+$data = $sql->fetch();
 - 
 -$array = array("cle_steam_aleatoire" => $sql['nom_produit'], "prix" => $sql['prix']);
 -echo '<table>
