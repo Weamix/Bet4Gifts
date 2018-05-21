@@ -5,7 +5,7 @@
 
   $bdd = new PDO('mysql:host=localhost;dbname=isnmpweb_espace_membre', 'isnprojet', 'O1cuz98@'); // On se connecte à la BDD
 
-  if(isset($_POST['formforgottenpassword'])) { // On vérifie si le bouton SUBMIT du formulaire a été cliqué !
+  if(isset($_POST['formforgottenpassword'])) { // On vérifie si le bouton SUBMIT du formulaire a été cliqué
 
     $email = htmlspecialchars($_POST['email']); //On sécurise l'email de l'utilisateur
     $confirmemail = htmlspecialchars($_POST['confirmemail']);
@@ -17,8 +17,8 @@
         if (filter_var($email, FILTER_VALIDATE_EMAIL)) { //On vérifie que l'email entré par l'utilisateur est valide
 
           $reqemail = $bdd->prepare("SELECT * FROM membres WHERE email = ?"); //On prépare la requête SQL
-          $reqemail->execute(array($email)); // On l'execute avec les bonnes variables
-          $emailexist = $reqemail->rowCount(); // On regarde le nombre de ligne dans la BDD qui respecte les conditions de la requête
+          $reqemail->execute(array($email)); // On l'exécute avec les bonnes variables
+          $emailexist = $reqemail->rowCount(); // On regarde le nombre de lignes dans la BDD qui respectent les conditions de la requête
           $userinfo = $reqemail->fetch(); //Permet de récupérer les informations de la requête
 
           $key = htmlspecialchars($userinfo['confirmkey']); // on sécurise la variable key
@@ -60,7 +60,7 @@
                     <br><br><br>
                  </body>
               </html>
-            '; // On définite le message du mail
+            '; // On définit le message du mail
             mail($email, "Forgotten password", $message, $header); //On envoie un mail avec les informations définies ci-dessus
 
             $valid = "An email you have been sent to change your password ! (Look at your mails and your spams)"; //On définit le message de validité
