@@ -4,7 +4,7 @@
 
   if (isset($_SESSION['id'])) {
 
-    header("Location: profil.php?id=".$_SESSION['id']); // On verifie si un session est en cours pour l'utilisateur , si OUI on le renvoie vers sa page de profil !
+    header("Location: profil.php?id=".$_SESSION['id']); // On verifie si une session est en cours pour l'utilisateur , si OUI on le renvoie vers sa page de profil !
 
   }
 
