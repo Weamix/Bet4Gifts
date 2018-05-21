@@ -180,7 +180,7 @@
             <input type="password" name="confirmpassword" value="" id="confirmpassword" placeholder="Confirm password">
 
             <br>
-            <input type="submit" name="forminscription" value="I join!">
+            <input type="submit" name="forminscription" value="Create your account!">
 
             <span>Already have an account? <a href="connexion.php">Sign in</a> !</span>
 
