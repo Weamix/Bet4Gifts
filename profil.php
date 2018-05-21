@@ -9,7 +9,7 @@
 
     $getid = intval($_GET['id']);
     $requser = $bdd->prepare("SELECT * FROM membres WHERE id = ?"); //On prépare la requête SQL
-    $requser->execute(array($getid)); //On l'execute avec les bonnes valeurs
+    $requser->execute(array($getid)); //On l'exécute avec les bonnes valeurs
 
     $userinfo = $requser->fetch(); //Permet de récupérer les informations de la requête
 
@@ -160,7 +160,7 @@
             if ($matchbetfinished['bet'] == $matchresult['result']) { // on vérifie si le résultat du match et le BET sont identiques
 
               $gain = floor(intval($matchbetfinished['amount']) * 1.10); //On définit le gain du joueur en fct de sa mise
-              $newPointsvalue = intval($userinfo['points']) + $gain; //On redefinit le nombre de points du joueur
+              $newPointsvalue = intval($userinfo['points']) + $gain; //On redéfinit le nombre de points du joueur
 
               if ($matchbetfinished['pointrecup'] == 0) { //On vérifie que le joueur n'a pas encore récupéré ses points
 
