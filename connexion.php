@@ -63,7 +63,7 @@
       <label for="emailconnect"> Email Address : </label> <input type="email" name="emailconnect" value="" id="emailconnect" placeholder="Your email">
       <label for="passwordconnect"> Password :</label> <input type="password" name="passwordconnect" value="" id="passwordconnect" placeholder="Your password">
       <br>
-      <input type="submit" name="formconnexion" value="Sign up">
+      <input type="submit" name="formconnexion" value="LOG IN">
 
       <span>Don't have an account? <a href="inscription.php">Create an account</a></span>
       <span>Forgot your password? <a href="forgottenpassword.php">Reset password</a></span>
