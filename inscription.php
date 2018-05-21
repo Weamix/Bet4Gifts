@@ -141,7 +141,7 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8">
-    <title>Bet4Gifts - Sign up</title>
+    <title>Bet4Gifts - Create account</title>
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/inscriptionstyle.css">
