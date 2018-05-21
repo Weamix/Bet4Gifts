@@ -160,7 +160,7 @@
 
           <hr>
 
-          <form class="" action="" method="post"> // création du formulaire: variable form avec la méthode post qui permet de récupérer les données entrées dans le champ de formulaire par l'utilisateur
+          <form class="" action="" method="post"> // création du formulaire, variable form avec la méthode post qui permet de récupérer les données entrées dans le champ de formulaire par l'utilisateur
 
             <label for="pseudo"> Username :
                 <input type="text" name="pseudo" value="<?php if(isset($pseudo)) {echo $pseudo;} ?>" id="pseudo" placeholder="Your Username">
