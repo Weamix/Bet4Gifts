@@ -5,24 +5,24 @@
 
   $bdd = new PDO('mysql:host=localhost;dbname=isnmpweb_espace_membre', 'isnprojet', 'O1cuz98@'); // On se connecte à la BDD
 
-  if(isset($_POST['formconnexion'])) { // On vérifie si le bouton SUBMIT du formulaire a été cliqué !
+  if(isset($_POST['formconnexion'])) { // On vérifie si le bouton SUBMIT du formulaire a été cliqué
 
      $emailconnect = htmlspecialchars($_POST['emailconnect']); //On sécurise l'email de l'utilisateur
      $passwordconnect = sha1($_POST['passwordconnect']); //On crypte le mot de passe
 
-     if(!empty( $emailconnect) AND !empty($passwordconnect)) { // On vérifie si l'email et le mot de passe sont spécifiés.
+     if(!empty( $emailconnect) AND !empty($passwordconnect)) { // On vérifie si l'email et le mot de passe sont spécifiés
 
         $requser = $bdd->prepare("SELECT * FROM membres WHERE email = ? AND password = ?"); //On prépare la requête SQL
         $requser->execute(array( $emailconnect, $passwordconnect)); // On l'execute avec les bonnes variables
-        $userexist = $requser->rowCount(); // On regarde le nombre de ligne dans la BDD qui respecte les conditions de la requête
+        $userexist = $requser->rowCount(); // On regarde le nombre de lignes dans la BDD qui respectent les conditions de la requête
 
-        if($userexist == 1) { // On vérifie si l'utilisateur existe !
+        if($userexist == 1) { // On vérifie si l'utilisateur existe
 
            $userinfo = $requser->fetch();//Permet de récupérer les informations de la requête
            $_SESSION['id'] = $userinfo['id']; //On définit l'identifiant de la SESSION
            $_SESSION['pseudo'] = $userinfo['pseudo']; //On définit le pseudo de l'utilisateur associé à la SESSION
            $_SESSION['mail'] = $userinfo['mail']; //On définit le mail de l'utilisateur associé à la SESSION
-           header("Location: profil.php?id=".$_SESSION['id']); // On redirige l'utilisateur va sa page de profil
+           header("Location: profil.php?id=".$_SESSION['id']); // On redirige l'utilisateur vers sa page de profil
 
         }
         else {
@@ -72,12 +72,12 @@
 
     <?php
       if (isset($error) OR isset($_SESSION['error'])) {
-        echo '<span class="errorMessage">'.$error.$_SESSION['error'].'</span>'; // On vérifie si la variable ERROR est SET , si OUI on affiche le message à l'utilisateur !
+        echo '<span class="errorMessage">'.$error.$_SESSION['error'].'</span>'; // On vérifie si la variable ERROR est SET , si OUI on affiche le message à l'utilisateur
         $_SESSION["error"] = null;
       }
 
       if (isset($_SESSION['valid'])) {
-        echo '<span class="accountCreatedMessage">'.$_SESSION['valid'].'</span>'; // On vérifie si la variable VALID est SET , si OUI on affiche le message à l'utilisateur !
+        echo '<span class="accountCreatedMessage">'.$_SESSION['valid'].'</span>'; // On vérifie si la variable VALID est SET , si OUI on affiche le message à l'utilisateur
         $_SESSION['valid'] = null;
       }
     ?>
