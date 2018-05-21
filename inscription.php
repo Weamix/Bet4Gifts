@@ -179,7 +179,7 @@
             <input type="password" name="confirmpassword" value="" id="confirmpassword" placeholder="Confirm password">
 
             <br>
-            <input type="submit" name="forminscription" value="Create your account!"> // bouton pour valider le formulaire
+            <input type="submit" name="forminscription" value="Create your account!"> <!--  bouton pour valider le formulaire --> 
 
             <span>Already have an account? <a href="connexion.php">Sign in</a> !</span>
 
