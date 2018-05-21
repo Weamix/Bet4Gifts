@@ -25,19 +25,17 @@
   </head>
   <body>
 
-    <?php if (isset($_SESSION['id']) AND $userinfo['id'] == $_SESSION['id']) { ?>
+    <?php if (isset($_SESSION['id']) AND $userinfo['id'] == $_SESSION['id']) { //On vérifie si une session est active et sinon l'id de la session est égale à l'ID de l'URL?>
 
       <div class="profil_information">
 
-        <h2>Your profile <?php echo $userinfo['pseudo']; ?></h2>
+        <h2>Your profile <?php echo $userinfo['pseudo']; ?></h2> <!-- On affiche les informations du joueur -->
         <br>
         <span>Username : <?php echo $userinfo['pseudo']; ?></span>
         <br>
         <span>Email : <?php echo $userinfo['email']; ?></span>
         <br>
           <span>Points : <?php echo $userinfo['points']; ?></span>
-        <br>
-        <a href="#">Edit profil</a>
         <br>
         <a href="deconnexion.php">Sign out</a>
 
