@@ -27,8 +27,8 @@
           <ul class="navbar">
             <li> <a href="#">Home</a> </li>
             <li> <a href="#">About</a> </li>
-            <li style="float:right;"> <a href="inscription.php">Login</a> </li>
-            <li style="float:right;"> <a href="connexion.php">Register</a> </li>
+            <li style="float:right;"> <a href="inscription.php">Register</a> </li>
+            <li style="float:right;"> <a href="connexion.php">Login</a> </li>
           </ul>
 
           <div class="header_information">
