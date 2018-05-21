@@ -8,8 +8,8 @@
     $pseudo = htmlspecialchars($_GET['pseudo']); //On sécurise les variables
     $key = htmlspecialchars($_GET['key']);
     $requser = $bdd->prepare("SELECT * FROM membres WHERE pseudo = ? AND confirmkey = ?"); //On prépare la requête SQL
-    $requser->execute(array($pseudo, $key)); //On l'execute avec les bonnes valeurs
-    $userexist = $requser->rowCount(); // On regarde le nombre de ligne dans la BDD qui respecte les conditions de la requête
+    $requser->execute(array($pseudo, $key)); //On l'exécute avec les bonnes valeurs
+    $userexist = $requser->rowCount(); // On regarde le nombre de lignes dans la BDD qui respectent les conditions de la requête
 
     if($userexist == 1) { //On vérifie si l'utilisateur existe
 
@@ -19,11 +19,11 @@
 
         $updateuser = $bdd->prepare("UPDATE membres SET isconfirm = 1 WHERE pseudo = ? AND confirmkey = ?");
         $updateuser->execute(array($pseudo,$key));
-        $_SESSION['valid'] = "Your accound has been confirmed !"; //On définit un message de validité !
-        header("Location: connexion.php"); //On redirige l'utilistauer vers la page de connexion !
+        $_SESSION['valid'] = "Your accound has been confirmed !"; //On définit un message de validité
+        header("Location: connexion.php"); //On redirige l'utilistauer vers la page de connexion
 
       } else {
-        $_SESSION['error'] = "Your account has already been confirmed !"; //On définit un message d'erreur !
+        $_SESSION['error'] = "Your account has already been confirmed !"; //On définit un message d'erreur
         header("Location: inscription.php");
       }
 
