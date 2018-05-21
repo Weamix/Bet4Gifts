@@ -156,7 +156,7 @@
 
       <div class="container_form_inscription">
 
-          <h2>Sign up</h2>
+          <h2>Create account</h2>
 
           <hr>
 
@@ -182,7 +182,7 @@
             <br>
             <input type="submit" name="forminscription" value="I join!">
 
-            <span>You have already an account ? <a href="connexion.php">Sign in</a> !</span>
+            <span>Already have an account? <a href="connexion.php">Sign in</a> !</span>
 
           </form>
 
