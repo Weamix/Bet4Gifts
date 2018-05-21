@@ -3,21 +3,21 @@
 
   session_start(); //permet d'utiliser les variables de SESSION
 
-  $bdd = new PDO('mysql:host=localhost;dbname=isnmpweb_espace_membre', 'isnprojet', 'O1cuz98@');
+  $bdd = new PDO('mysql:host=localhost;dbname=isnmpweb_espace_membre', 'isnprojet', 'O1cuz98@'); // connexion à la BDD
 
   if (isset($_POST['forminscription'])) { // On vérifie si le bouton SUBMIT du formulaire a été cliqué !
 
-    $pseudo = htmlspecialchars($_POST['pseudo']); //On sécurise les variables
+    $pseudo = htmlspecialchars($_POST['pseudo']); // on sécurise nos variables et on les simplifie
     $email = htmlspecialchars($_POST['email']);
     $confirmemail = htmlspecialchars($_POST['confirmemail']);
     $password = sha1($_POST['password']); // On crypte le mot de passe
     $confirmpassword = sha1($_POST['confirmpassword']);
 
-    if (!empty($_POST['pseudo']) AND !empty($_POST['email']) AND !empty($_POST['confirmemail']) AND !empty($_POST['password']) AND !empty($_POST['confirmpassword'])) { //On vérifie que tous les champs sont spécifiés
+    if (!empty($_POST['pseudo']) AND !empty($_POST['email']) AND !empty($_POST['confirmemail']) AND !empty($_POST['password']) AND !empty($_POST['confirmpassword'])) { //on vérifie si tout  les champs ont bien été complétés (s'ils ne sont pas vides, différent de vide)
 
       $pseudolength = strlen($pseudo);
 
-      if ($pseudolength <= 255) { //On vérifie si le pseudo spécifié est inférieur ou egal à 255 caratères
+      if ($pseudolength <= 255) { //On vérifie si le pseudo spécifié est inférieur ou égal à 255 caratères
 
         if ($email == $confirmemail) { //On vérifie que les deux mails sont identiques
 
@@ -45,7 +45,7 @@
                     }
 
                     $insertmembre = $bdd->prepare("INSERT INTO membres(pseudo, email, password, confirmkey) VALUES(?, ?, ?, ?)"); //On prépare la requête SQL
-                    $insertmembre->execute(array($pseudo, $email, $password, $key)); //On l'execute avec les bonnes valeurs
+                    $insertmembre->execute(array($pseudo, $email, $password, $key)); //On l'execute avec les bonnes valeurs (insertion du membre dans la BDD)
 
                     $header="MIME-Version: 1.0\r\n"; //On définie le HEADER du mails
                     $header.='From:"Bet4Gifts"<noreply@bet4gifts.web-edu.fr>'."\n";
@@ -130,7 +130,7 @@
 
     else {
 
-      $error = "Some fields are empty ! Please complete all fields !";
+      $error = "Some fields are empty ! Please complete all fields !"; // on stocke l'erreur dans une variable
 
     }
 
@@ -160,7 +160,7 @@
 
           <hr>
 
-          <form class="" action="" method="post">
+          <form class="" action="" method="post"> // création du formulaire: variable « form » avec la méthode « post » qui permet de récupérer  les données entrés dans le champ de formulaire par l'utilisateur.
 
             <label for="pseudo"> Username :
                 <input type="text" name="pseudo" value="<?php if(isset($pseudo)) {echo $pseudo;} ?>" id="pseudo" placeholder="Your Username">
@@ -168,7 +168,7 @@
 
 
             <label for="email"> Email : </label>
-              <input type="email" name="email" value="<?php if(isset($email)) {echo $email;} ?>" id="email" placeholder="Your Email">
+              <input type="email" name="email" value="<?php if(isset($email)) {echo $email;} ?>" id="email" placeholder="Your Email"> // élément HTML qui permet à l'utilisateur de rentrer des données dans une case
 
             <label for="confirmemail"> Confirm email : </label>
               <input type="email" name="confirmemail" value="<?php if(isset($confirmemail)) {echo $confirmemail;} ?>" id="confirmemail" placeholder="Confirm email">
@@ -180,14 +180,14 @@
             <input type="password" name="confirmpassword" value="" id="confirmpassword" placeholder="Confirm password">
 
             <br>
-            <input type="submit" name="forminscription" value="Create your account!">
+            <input type="submit" name="forminscription" value="Create your account!"> // bouton pour valider le formulaire
 
             <span>Already have an account? <a href="connexion.php">Sign in</a> !</span>
 
           </form>
 
           <?php
-            if (isset($error) OR isset($_SESSION['error'])) {
+            if (isset($error) OR isset($_SESSION['error'])) { // message d'erreur si tous les champs ne sont pas complétés
               echo '<span class="errorMessage">'.$error.$_SESSION['error'].'</span>'; // On vérifie si la variable ERROR est SET , si OUI on affiche le message à l'utilisateur !
               $_SESSION["error"] = null;
             }
