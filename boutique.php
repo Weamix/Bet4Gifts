@@ -1,6 +1,6 @@
 <?php $sql = mysql_query("SELECT nom_produit, prix FROM maboutique");
  
-$array = array("Nom_prod" => $sql['nom_produit'], "prix" => $sql['prix']);
+$array = array("nom_produit" => $sql['nom_produit'], "prix" => $sql['prix']);
 echo '<table>
    <caption>La Boutique</caption>
    <tr>
@@ -11,7 +11,7 @@ echo '<table>
 foreach($array as $item){
     echo '
    <tr>
-       <td>'.$array['Nom_prod'].'</td>
+       <td>'.$array['nom_produit'].'</td>
        <td>'.$array['prix'].'points</td>
        <td><a href="#">Acheter</a></td>
    </tr><br />
