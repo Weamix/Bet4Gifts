@@ -3,27 +3,27 @@
 
   session_start(); //permet d'utiliser les variables de SESSION
 
-  $bdd = new PDO('mysql:host=localhost;dbname=isnmpweb_espace_membre', 'isnprojet', 'O1cuz98@'); // On se connecte à la BDD
+  $bdd = new PDO('mysql:host=localhost;dbname=isnmpweb_espace_membre', 'isnprojet', 'O1cuz98@'); // on se connecte à la BDD
 
-  if (isset($_POST['formchangepassword'])) { // On vérifie si le bouton SUBMIT du formulaire a été cliqué !
+  if (isset($_POST['formchangepassword'])) { // on vérifie si le bouton SUBMIT du formulaire a été cliqué
 
     if(isset($_GET['email'], $_GET['key']) AND !empty($_GET['email']) AND !empty($_GET['key'])) { //On vérifie si les informations de l'URL sont remplies
 
-      $email = htmlspecialchars($_GET['email']); //On sécurise l'email
-      $key = htmlspecialchars($_GET['key']); //On sécurise la clef associé à un utilisateur
+      $email = htmlspecialchars($_GET['email']); //on sécurise l'email
+      $key = htmlspecialchars($_GET['key']); //on sécurise la clef associée à un utilisateur
 
       $reqemail = $bdd->prepare("SELECT * FROM membres WHERE email =  ?"); //On prépare la requête SQL
-      $reqemail->execute(array($email)); // On l'execute avec les bonnes données
-      $emailexist = $reqemail->rowCount(); // On regarde le nombre de ligne dans la BDD qui respecte les conditions de la requête
-      $userinfo = $reqemail->fetch(); //Permet de récupérer les informations de la requête
+      $reqemail->execute(array($email)); // on l'exécute avec les bonnes données
+      $emailexist = $reqemail->rowCount(); // on regarde le nombre de lignes dans la BDD qui respectent les conditions de la requête
+      $userinfo = $reqemail->fetch(); // permet de récupérer les informations de la requête
 
-      $newpassword = htmlspecialchars($_POST['newpassword']); //On sécurise le MDP
+      $newpassword = htmlspecialchars($_POST['newpassword']); //on sécurise le MDP
       $confirmnewpassword = htmlspecialchars($_POST['confirmnewpassword']); // idem
 
-      $newpasswordcrypt = sha1($newpassword); //On crypte le nouveau MDP
-      $lastpassword = $userinfo['password']; //On définie la variable $lastpassword sur le mot de passe oublié de l'utilisateur
+      $newpasswordcrypt = sha1($newpassword); //on crypte le nouveau MDP
+      $lastpassword = $userinfo['password']; //on définit la variable $lastpassword sur le mot de passe oublié de l'utilisateur
 
-      if ($emailexist == 1) {// On vérifie si un utilisateur avec cette email existe
+      if ($emailexist == 1) {// on vérifie si un utilisateur avec cette email existe
 
           if ($newpassword == $confirmnewpassword) { // On vérifie si l'utilisateur a saisi deux fois le même mot de passe
 
@@ -31,10 +31,10 @@
 
               $updateuser = $bdd->prepare("UPDATE membres SET password = ? WHERE email = ? AND confirmkey = ?"); //On prépare la requete SQL
               $updateuser->execute(array($newpasswordcrypt,$email,$key)); // On l'éxécute avec les bonnes valeurs
-              $valid = "Congratulations ! Your password have been changed !"; //On défini le message de validité
+              $valid = "Congratulations ! Your password have been changed !"; //On définit le message de validité
 
             }else {
-              $error = "The new password can't be the same that the last password !"; // On défini le message d'erreur
+              $error = "The new password can't be the same that the last password !"; // On définit le message d'erreur
             }
 
           }else {
@@ -84,12 +84,12 @@
 
     <?php
       if (isset($error) OR isset($_SESSION['error'])) {
-        echo '<span class="errorMessage">'.$error.$_SESSION['error'].'</span>'; // On vérifie si la variable ERROR est SET , si OUI on affiche le message à l'utilisateur !
+        echo '<span class="errorMessage">'.$error.$_SESSION['error'].'</span>'; // On vérifie si la variable ERROR est SET, si OUI on affiche le message à l'utilisateur
         $_SESSION["error"] = null;
       }
 
       if (isset($_SESSION['valid']) or isset($valid)) {
-        echo '<span class="accountCreatedMessage">'.$valid.$_SESSION['valid'].'</span>'; // On vérifie si la variable VALID est SET , si OUI on affiche le message à l'utilisateur !
+        echo '<span class="accountCreatedMessage">'.$valid.$_SESSION['valid'].'</span>'; // On vérifie si la variable VALID est SET, si OUI on affiche le message à l'utilisateur
         $_SESSION['valid'] = null;
       }
     ?>
