@@ -5,49 +5,49 @@
 
   $bdd = new PDO('mysql:host=localhost;dbname=isnmpweb_espace_membre', 'isnprojet', 'O1cuz98@'); // connexion à la BDD
 
-  if (isset($_POST['forminscription'])) { // On vérifie si le bouton SUBMIT du formulaire a été cliqué !
+  if (isset($_POST['forminscription'])) { // on vérifie si le bouton SUBMIT du formulaire a été cliqué
 
     $pseudo = htmlspecialchars($_POST['pseudo']); // on sécurise nos variables et on les simplifie
     $email = htmlspecialchars($_POST['email']);
     $confirmemail = htmlspecialchars($_POST['confirmemail']);
-    $password = sha1($_POST['password']); // On crypte le mot de passe
+    $password = sha1($_POST['password']); // on crypte le mot de passe
     $confirmpassword = sha1($_POST['confirmpassword']);
 
-    if (!empty($_POST['pseudo']) AND !empty($_POST['email']) AND !empty($_POST['confirmemail']) AND !empty($_POST['password']) AND !empty($_POST['confirmpassword'])) { //on vérifie si tout  les champs ont bien été complétés (s'ils ne sont pas vides, différent de vide)
+    if (!empty($_POST['pseudo']) AND !empty($_POST['email']) AND !empty($_POST['confirmemail']) AND !empty($_POST['password']) AND !empty($_POST['confirmpassword'])) { //on vérifie si tous les champs ont bien été complétés (s'ils ne sont pas vides, ils doivent être différents de vide)
 
       $pseudolength = strlen($pseudo);
 
-      if ($pseudolength <= 255) { //On vérifie si le pseudo spécifié est inférieur ou égal à 255 caratères
+      if ($pseudolength <= 255) { // on vérifie si le pseudo spécifié est inférieur ou égal à 255 caratères
 
-        if ($email == $confirmemail) { //On vérifie que les deux mails sont identiques
+        if ($email == $confirmemail) { // on vérifie que les deux mails sont identiques
 
-          if(filter_var($email, FILTER_VALIDATE_EMAIL)){ //On vérifie que l'email est valide
+          if(filter_var($email, FILTER_VALIDATE_EMAIL)){ // on vérifie que l'email est sous une forme valide (@ et .com ; .fr ; etc )
 
-            $reqemail = $bdd->prepare("SELECT * FROM membres WHERE email = ?"); //On prépare la requête SQL
-            $reqemail->execute(array($email)); //On l'execute avec les bonnes valeurs
-            $emailexist = $reqemail->rowCount(); // On regarde le nombre de ligne dans la BDD qui respecte les conditions de la requête
+            $reqemail = $bdd->prepare("SELECT * FROM membres WHERE email = ?"); // on prépare la requête SQL
+            $reqemail->execute(array($email)); // on l'exécute avec les bonnes valeurs
+            $emailexist = $reqemail->rowCount(); // on regarde le nombre de lignes dans la BDD qui respectent les conditions de la requête
 
             $reqpseudo = $bdd->prepare("SELECT * FROM membres WHERE pseudo = ?");
             $reqpseudo->execute(array($pseudo));
             $pseudoexist = $reqpseudo->rowCount();
 
-            if($pseudoexist == 0){ //On vérifie si le pseudo n'est pas déjà utilisé 
+            if($pseudoexist == 0){ // on vérifie si le pseudo n'est pas déjà utilisé 
 
-              if($emailexist == 0){ //On vérifie si un compte n'existe pas déjà avec cette adresse mail
+              if($emailexist == 0){ // on vérifie si un compte n'existe pas déjà avec cette adresse mail
 
-                if ($password == $confirmpassword) { //On vérifie si les deux MDP sont identiques
+                if ($password == $confirmpassword) { // on vérifie si les deux MDP sont identiques
 
-                    $lengthkey = 16; //On définie la taille de la clef
-                    $key = ""; //On initialise la variable key
+                    $lengthkey = 16; // on définit la taille de la clef
+                    $key = ""; // on initialise la variable key
 
                     for ($i=0; $i<$lengthkey; $i++) {
-                      $key.= mt_rand(0,9); //On génère 16 fois un nombre aléatoire entre 0 et 9 et on l'ajoute à la variable $key
+                      $key.= mt_rand(0,9); // on génère 16 fois un nombre aléatoire entre 0 et 9 et on l'ajoute à la variable $key
                     }
 
-                    $insertmembre = $bdd->prepare("INSERT INTO membres(pseudo, email, password, confirmkey) VALUES(?, ?, ?, ?)"); //On prépare la requête SQL
-                    $insertmembre->execute(array($pseudo, $email, $password, $key)); //On l'execute avec les bonnes valeurs (insertion du membre dans la BDD)
+                    $insertmembre = $bdd->prepare("INSERT INTO membres(pseudo, email, password, confirmkey) VALUES(?, ?, ?, ?)"); //on prépare la requête SQL
+                    $insertmembre->execute(array($pseudo, $email, $password, $key)); //on l'exécute avec les bonnes valeurs (insertion du membre dans la BDD)
 
-                    $header="MIME-Version: 1.0\r\n"; //On définie le HEADER du mails
+                    $header="MIME-Version: 1.0\r\n"; // on définit le HEADER du mail
                     $header.='From:"Bet4Gifts"<noreply@bet4gifts.web-edu.fr>'."\n";
                     $header.='Content-Type:text/html; charset="uft-8"'."\n";
                     $header.='Content-Transfer-Encoding: 8bit';
@@ -82,18 +82,18 @@
                             <br><br><br>
                          </body>
                       </html>
-                    '; //On définit le message du mail
-                    mail($email, "Confirm your account !", $message, $header); //On envoie un mail avec les informations précédements définies
+                    '; // on définit le message du mail
+                    mail($email, "Confirm your account !", $message, $header); // on envoie un mail avec les informations précédemment définies
 
-                    $_SESSION['valid'] = "Your account has been created ! Look at your mails to confirm ! (and your spams)"; //On définit un message de validité
-                    header("Location: connexion.php"); //On redirige l'utilisateur vers la page de connexion
+                    $_SESSION['valid'] = "Your account has been created ! Look at your mails to confirm ! (and your spams)"; //on définit un message de validité
+                    header("Location: connexion.php"); //on redirige l'utilisateur vers la page de connexion
 
 
 
                 }
 
                 else {
-                  $error = "The passwords don't match !"; //On définit un message d'erreur
+                  $error = "The passwords don't match !"; //on définit un message d'erreur
                 }
 
               }else {
@@ -160,7 +160,7 @@
 
           <hr>
 
-          <form class="" action="" method="post"> // création du formulaire: variable « form » avec la méthode « post » qui permet de récupérer  les données entrés dans le champ de formulaire par l'utilisateur.
+          <form class="" action="" method="post"> // création du formulaire: variable form avec la méthode post qui permet de récupérer les données entrées dans le champ de formulaire par l'utilisateur
 
             <label for="pseudo"> Username :
                 <input type="text" name="pseudo" value="<?php if(isset($pseudo)) {echo $pseudo;} ?>" id="pseudo" placeholder="Your Username">
@@ -188,12 +188,12 @@
 
           <?php
             if (isset($error) OR isset($_SESSION['error'])) { // message d'erreur si tous les champs ne sont pas complétés
-              echo '<span class="errorMessage">'.$error.$_SESSION['error'].'</span>'; // On vérifie si la variable ERROR est SET , si OUI on affiche le message à l'utilisateur !
+              echo '<span class="errorMessage">'.$error.$_SESSION['error'].'</span>'; // on vérifie si la variable ERROR est SET , si OUI on affiche le message à l'utilisateur
               $_SESSION["error"] = null;
             }
 
             if (isset($_SESSION['valid'])) {
-              echo '<span class="accountCreatedMessage">'.$_SESSION['valid'].'</span>'; // On vérifie si la variable VALID est SET , si OUI on affiche le message à l'utilisateur !
+              echo '<span class="accountCreatedMessage">'.$_SESSION['valid'].'</span>'; // on vérifie si la variable VALID est SET , si OUI on affiche le message à l'utilisateur
               $_SESSION['valid'] = null;
             }
           ?>
