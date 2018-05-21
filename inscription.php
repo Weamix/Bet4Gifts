@@ -160,14 +160,14 @@
 
           <hr>
 
-          <form class="" action="" method="post"> // test
+          <form class="" action="" method="post"> // <!--test-->
             <label for="pseudo"> Username :
                 <input type="text" name="pseudo" value="<?php if(isset($pseudo)) {echo $pseudo;} ?>" id="pseudo" placeholder="Your Username">
             </label>
 
 
             <label for="email"> Email : </label>
-              <input type="email" name="email" value="<?php if(isset($email)) {echo $email;} ?>" id="email" placeholder="Your Email"> // élément HTML qui permet à l'utilisateur de rentrer des données dans une case
+              <input type="email" name="email" value="<?php if(isset($email)) {echo $email;} ?>" id="email" placeholder="Your Email"> <!--  élément HTML qui permet à l'utilisateur de rentrer des données dans une case -->
 
             <label for="confirmemail"> Confirm email : </label>
               <input type="email" name="confirmemail" value="<?php if(isset($confirmemail)) {echo $confirmemail;} ?>" id="confirmemail" placeholder="Confirm email">
