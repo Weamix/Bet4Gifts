@@ -1,6 +1,6 @@
 html, body{ margin: 0; padding: 0; font-family: 'Lato', sans-serif;}
 
-.container_bet_available{
+.container_bet{
 
   width: 50%;
   height: auto;
@@ -9,7 +9,7 @@ html, body{ margin: 0; padding: 0; font-family: 'Lato', sans-serif;}
 
 }
 
-.container_bet_available span{
+.container_bet span{
 
   display: block;
 
@@ -48,7 +48,7 @@ html, body{ margin: 0; padding: 0; font-family: 'Lato', sans-serif;}
     color: #444;
     cursor: pointer;
     padding: 18px;
-    width: 100%;
+    width: 50%;
     border: none;
     text-align: left;
     outline: none;
@@ -70,7 +70,6 @@ html, body{ margin: 0; padding: 0; font-family: 'Lato', sans-serif;}
 }
 
 .panel {
-    padding: 0 18px;
     display: none;
     background-color: white;
     overflow: hidden;

@@ -62,7 +62,7 @@
               $match_start = date('d-m-Y H:i', strtotime($date)); // On définit le format de la DATE
 
             ?>
-              <div class="container_bet_available">
+              <div class="container_bet">
                 <span><?php echo $matchavaible['team_one']; ?> VS <?php echo $matchavaible['team_two']; ?></span>
                 <br>
                 <br>
@@ -91,7 +91,7 @@
 
         ?>
 
-        <div class="container_bet_available">
+        <div class="container_bet">
           <span><?php echo $matchbetupcoming['team_one']; ?> VS <?php echo $matchbetupcoming['team_two']; ?></span>
           <br>
           <br>
@@ -122,7 +122,7 @@
 
         ?>
 
-        <div class="container_bet_available">
+        <div class="container_bet">
           <span><?php echo $matchbetinprogress['team_one']; ?> VS <?php echo $matchbetinprogress['team_two']; ?></span>
           <br>
           <br>
@@ -224,7 +224,6 @@ var i;
 
 for (i = 0; i < acc.length; i++) {
     acc[i].addEventListener("click", function() {
-        this.classList.toggle("active");
         var panel = this.nextElementSibling;
         if (panel.style.display === "block") {
             panel.style.display = "none";
