@@ -41,7 +41,9 @@
 
       <div class="bet">
 
-        <h2>Matches available</h2>
+        <button class="accordion">Matchs available</button>
+
+        <div class="panel">
 
         <?php
 
@@ -71,7 +73,11 @@
               </div>
         <?php } } ?>
 
-        <h2>Matchs bet upcoming</h2>
+        </div>
+
+        <button class="accordion">Matchs bet upcoming</button>
+
+        <div class="panel">
 
         <?php
 
@@ -98,7 +104,11 @@
 
         <?php } ?>
 
-        <h2>Matchs bet in progress</h2>
+        </div>
+
+        <button class="accordion">Matchs bet in progress</button>
+
+        <div class="panel">
 
         <?php
 
@@ -125,7 +135,11 @@
 
         <?php } ?>
 
-        <h2>Matchs bet finished</h2>
+        </div>
+
+        <button class="accordion">Matchs bet finished</button>
+
+        <div class="panel">
 
         <?php
 
@@ -156,7 +170,7 @@
 
               }
 
-        ?>
+            ?>
 
               <div class="container_bet_available">
                 <span><?php echo $matchbetfinished['team_one']; ?> VS <?php echo $matchbetfinished['team_two']; ?></span>
@@ -172,7 +186,7 @@
                 <span>Vous avez gagné !</span>
               </div>
 
-      <?php }elseif ($matchbetfinished['bet'] != $matchresult['result']) { ?>
+            <?php }elseif ($matchbetfinished['bet'] != $matchresult['result']) { ?>
 
               <div class="container_bet_available">
                 <span><?php echo $matchbetfinished['team_one']; ?> VS <?php echo $matchbetfinished['team_two']; ?></span>
@@ -191,7 +205,9 @@
 
         <?php } ?>
 
-    <?php } ?>
+        <?php } ?>
+
+        </div>
 
 
       </div>
