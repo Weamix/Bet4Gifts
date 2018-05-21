@@ -39,7 +39,7 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8">
-    <title>Bet4Gifts - Connexion</title>
+    <title>Bet4Gifts - Login</title>
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/connexionstyle.css">
@@ -54,19 +54,19 @@
 
     <div class="container_form_connexion">
 
-    <h2>Sign in</h2>
+    <h2>Login</h2>
 
     <hr>
 
     <form class="" action="" method="post">
 
-      <label for="emailconnect"> Email : </label> <input type="email" name="emailconnect" value="" id="emailconnect" placeholder="Your email">
+      <label for="emailconnect"> Email Address : </label> <input type="email" name="emailconnect" value="" id="emailconnect" placeholder="Your email">
       <label for="passwordconnect"> Password :</label> <input type="password" name="passwordconnect" value="" id="passwordconnect" placeholder="Your password">
       <br>
-      <input type="submit" name="formconnexion" value="Sign up">
+      <input type="submit" name="formconnexion" value="LOG IN">
 
-      <span>No account ? <a href="inscription.php">Sign up!</a></span>
-      <span>Forgotten password ? <a href="forgottenpassword.php">Change it !</a></span>
+      <span>Don't have an account? <a href="inscription.php">Create an account</a></span>
+      <span>Forgot your password? <a href="forgottenpassword.php">Reset password</a></span>
 
     </form>
 

@@ -27,15 +27,15 @@
           <ul class="navbar">
             <li> <a href="#">Home</a> </li>
             <li> <a href="#">About</a> </li>
-            <li style="float:right;"> <a href="inscription.php">Sign up</a> </li>
-            <li style="float:right;"> <a href="connexion.php">Sign in</a> </li>
+            <li style="float:right;"> <a href="inscription.php">Register</a> </li>
+            <li style="float:right;"> <a href="connexion.php">Login</a> </li>
           </ul>
 
           <div class="header_information">
 
               <h2>Bet4Gifts</h2>
               <hr>
-              <p>ISN project in development on free sport forecasts: <br> accumulate points and win prizes! <br>Follow the evolution of the project on Twitter <a href="https://twitter.com/Bet4Gifts" target="_blank">@Bet4Gifts</a></p>
+              <p>ISN project to develop free sport-bets: <br> earn points and win prizes! <br>Follow the evolution of the project on Twitter <a href="https://twitter.com/Bet4Gifts" target="_blank">@Bet4Gifts</a></p>
 
           </div>
 

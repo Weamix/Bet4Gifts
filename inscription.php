@@ -31,7 +31,7 @@
             $reqpseudo->execute(array($pseudo));
             $pseudoexist = $reqpseudo->rowCount();
 
-            if($pseudoexist == 0){ //On vérifie si le pseudo n'est pas déjà utilisé
+            if($pseudoexist == 0){ //On vérifie si le pseudo n'est pas déjà utilisé 
 
               if($emailexist == 0){ //On vérifie si un compte n'existe pas déjà avec cette adresse mail
 
@@ -141,7 +141,7 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8">
-    <title>Bet4Gifts - Sign up</title>
+    <title>Bet4Gifts - Create account</title>
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/inscriptionstyle.css">
@@ -156,7 +156,7 @@
 
       <div class="container_form_inscription">
 
-          <h2>Sign up</h2>
+          <h2>Create account</h2>
 
           <hr>
 
@@ -180,9 +180,9 @@
             <input type="password" name="confirmpassword" value="" id="confirmpassword" placeholder="Confirm password">
 
             <br>
-            <input type="submit" name="forminscription" value="I join!">
+            <input type="submit" name="forminscription" value="Create your account!">
 
-            <span>You have already an account ? <a href="connexion.php">Sign in</a> !</span>
+            <span>Already have an account? <a href="connexion.php">Sign in</a> !</span>
 
           </form>
 

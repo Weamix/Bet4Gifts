@@ -112,7 +112,7 @@
       <label for="emailconnect"> Email : </label> <input type="email" name="email" value="" id="emailconnect" placeholder="Your email">
       <label for="passwordconnect"> Confirm email :</label> <input type="email" name="confirmemail" value="" id="emailconnect" placeholder="Confirm email">
       <br>
-      <input type="submit" name="formforgottenpassword" value="Send mail !">
+      <input type="submit" name="formforgottenpassword" value="RESET PASSWORD">
 
     </form>
 
