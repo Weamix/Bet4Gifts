@@ -49,22 +49,22 @@
 
         <?php
 
-            $reqmatchavaible = $bdd->prepare("SELECT * FROM matches WHERE categories = ? AND match_start > CURRENT_TIMESTAMP");
-            $reqmatchavaible->execute(array("football"));
+            $reqmatchavaible = $bdd->prepare("SELECT * FROM matches WHERE categories = ? AND match_start > CURRENT_TIMESTAMP"); //On effectue un requête SQL pour récupérer les matchs disponibles
+            $reqmatchavaible->execute(array("football")); //On l'execute avec les bonnes valeurs
 
-            while ($matchavaible = $reqmatchavaible->fetch()) {
+            while ($matchavaible = $reqmatchavaible->fetch()) { //On prendre 1 par 1 chaque valeur du tableau
 
-              $reqalreadybet = $bdd->prepare("SELECT * FROM bets WHERE match_id = ? AND team_one = ? AND team_two = ?");
+              $reqalreadybet = $bdd->prepare("SELECT * FROM bets WHERE match_id = ? AND team_one = ? AND team_two = ?"); //On effectue un requête SQL pour vérifié si le joueur n'a pas déjà parié sur ce match
               $reqalreadybet->execute(array($matchavaible['id'], $matchavaible['team_one'], $matchavaible['team_two']));
               $alreadybet = $reqalreadybet->rowCount();
 
-              if ($alreadybet != 1) {
+              if ($alreadybet != 1) { //On vérifie si l'utilisateur n'a pas déjà parié sur le match, si non alors on l'affiche à l'écran
 
               $date = $matchavaible['match_start'];
               $match_start = date('d-m-Y H:i', strtotime($date)); // On définit le format de la DATE
 
             ?>
-              <div class="container_bet">
+              <div class="container_bet"> <!-- Partie HTML où l'on affiche chaque match de sa section -->
                 <span><?php echo $matchavaible['team_one']; ?> VS <?php echo $matchavaible['team_two']; ?></span>
                 <br>
                 <br>
@@ -83,7 +83,7 @@
 
         <?php
 
-          $reqmatchbetincoming = $bdd->prepare('SELECT * FROM bets WHERE author_id = ? AND match_start > CURRENT_TIMESTAMP');
+          $reqmatchbetincoming = $bdd->prepare('SELECT * FROM bets WHERE author_id = ? AND match_start > CURRENT_TIMESTAMP'); //On effectue un requête SQL pour récupérer les matchs à venir que l'utilisateur a parié
           $reqmatchbetincoming->execute(array($userinfo['id']));
 
           while ($matchbetupcoming = $reqmatchbetincoming->fetch()) {
@@ -114,7 +114,7 @@
 
         <?php
 
-          $reqmatchbetinprogress = $bdd->prepare('SELECT * FROM bets WHERE author_id = ? AND match_start < CURRENT_TIMESTAMP AND match_end > CURRENT_TIMESTAMP');
+          $reqmatchbetinprogress = $bdd->prepare('SELECT * FROM bets WHERE author_id = ? AND match_start < CURRENT_TIMESTAMP AND match_end > CURRENT_TIMESTAMP'); //On effectue un requête SQL pour récupérer les matchs en cours que l'utilisateur a parié
           $reqmatchbetinprogress->execute(array($userinfo['id']));
 
           while ($matchbetinprogress = $reqmatchbetinprogress->fetch()) {
@@ -145,12 +145,12 @@
 
         <?php
 
-          $reqmatchbetfinished = $bdd->prepare('SELECT * FROM bets WHERE author_id = ? AND match_end <= CURRENT_TIMESTAMP');
+          $reqmatchbetfinished = $bdd->prepare('SELECT * FROM bets WHERE author_id = ? AND match_end <= CURRENT_TIMESTAMP'); //On effectue un requête SQL pour récupérer les matchs terminés que l'utilisateur a parié
           $reqmatchbetfinished->execute(array($userinfo['id']));
 
           while ($matchbetfinished = $reqmatchbetfinished->fetch()) {
 
-            $reqmatchresult = $bdd->prepare("SELECT result FROM matches WHERE id = ?");
+            $reqmatchresult = $bdd->prepare("SELECT result FROM matches WHERE id = ?"); //On effectue un requête SQL pour récupérer le resultat du match
             $reqmatchresult->execute(array(intval($matchbetfinished['match_id'])));
             $matchresult = $reqmatchresult->fetch();
 
@@ -164,10 +164,10 @@
 
               if ($matchbetfinished['pointrecup'] == 0) { //On vérifie que le joueur n'a pas encore récupéré ses points
 
-                $reqaddpoints = $bdd->prepare('UPDATE membres SET points = ? WHERE id = ? AND pseudo = ?');
+                $reqaddpoints = $bdd->prepare('UPDATE membres SET points = ? WHERE id = ? AND pseudo = ?'); //On effectue un requête SQL pour récupérer mettre à jour les points de l'utilisateur
                 $reqaddpoints->execute(array($newPointsvalue, $userinfo['id'], $userinfo['pseudo']));
 
-                $reqsetrecuppoints = $bdd->prepare('UPDATE bets SET pointrecup = ? WHERE author_id = ? AND team_one = ? AND team_two = ?');
+                $reqsetrecuppoints = $bdd->prepare('UPDATE bets SET pointrecup = ? WHERE author_id = ? AND team_one = ? AND team_two = ?');//On effectue un requête SQL pour définir pointrecup sur 1 ( pour dire que l'utilisateur a récupéré ces points !)
                 $reqsetrecuppoints->execute(array(1 ,$userinfo['id'], $matchbetfinished['team_one'], $matchbetfinished['team_two']));
 
               }
