@@ -93,12 +93,15 @@
 
           while ($matchbetupcoming = $reqmatchbetincoming->fetch()) {
 
+            $restedivision = $nb%2;
+            $nb++;
+
             $date = $matchbetupcoming['match_start'];
             $match_start = date('d-m-Y H:i', strtotime($date));
 
         ?>
 
-        <div class="container_bet">
+        <div class="container_bet_<?php echo $restedivision; ?>">
           <span><?php echo $matchbetupcoming['team_one']; ?> VS <?php echo $matchbetupcoming['team_two']; ?></span>
           <br>
           <br>
@@ -124,12 +127,15 @@
 
           while ($matchbetinprogress = $reqmatchbetinprogress->fetch()) {
 
+            $restedivision = $nb%2;
+            $nb++;
+
             $date = $matchbetinprogress['match_start'];
             $match_start = date('d-m-Y H:i', strtotime($date));
 
         ?>
 
-        <div class="container_bet">
+        <div class="container_bet_<?php echo $restedivision; ?>">
           <span><?php echo $matchbetinprogress['team_one']; ?> VS <?php echo $matchbetinprogress['team_two']; ?></span>
           <br>
           <br>
@@ -155,6 +161,9 @@
 
           while ($matchbetfinished = $reqmatchbetfinished->fetch()) {
 
+            $restedivision = $nb%2;
+            $nb++;
+
             $reqmatchresult = $bdd->prepare("SELECT result FROM matches WHERE id = ?"); //On effectue un requête SQL pour récupérer le resultat du match
             $reqmatchresult->execute(array(intval($matchbetfinished['match_id'])));
             $matchresult = $reqmatchresult->fetch();
@@ -179,7 +188,7 @@
 
             ?>
 
-              <div class="container_bet">
+              <div class="container_bet_<?php echo $restedivision; ?>">
                 <span><?php echo $matchbetfinished['team_one']; ?> VS <?php echo $matchbetfinished['team_two']; ?></span>
                 <br>
                 <br>
@@ -195,7 +204,7 @@
 
             <?php }elseif ($matchbetfinished['bet'] != $matchresult['result']) { ?>
 
-              <div class="container_bet">
+              <div class="container_bet_<?php echo $restedivision; ?>">
                 <span><?php echo $matchbetfinished['team_one']; ?> VS <?php echo $matchbetfinished['team_two']; ?></span>
                 <br>
                 <br>
