@@ -49,8 +49,8 @@
 
         <?php
 
-            $reqmatchavaible = $bdd->prepare("SELECT * FROM matches WHERE categories = ? AND match_start > CURRENT_TIMESTAMP"); //On effectue un requête SQL pour récupérer les matchs disponibles
-            $reqmatchavaible->execute(array("football")); //On l'execute avec les bonnes valeurs
+            $reqmatchavaible = $bdd->prepare("SELECT * FROM matches WHERE match_start > CURRENT_TIMESTAMP"); //On effectue un requête SQL pour récupérer les matchs disponibles
+            $reqmatchavaible->execute(); //On l'execute avec les bonnes valeurs
 
             while ($matchavaible = $reqmatchavaible->fetch()) { //On prendre 1 par 1 chaque valeur du tableau
 
@@ -58,7 +58,7 @@
               $reqalreadybet->execute(array($matchavaible['id'], $matchavaible['team_one'], $matchavaible['team_two'], $userinfo['id']));
               $alreadybet = $reqalreadybet->rowCount();
 
-              echo 'Debug : '.$alreadybet;
+              echo 'Debug : '
 
               if ($alreadybet != 1) { //On vérifie si l'utilisateur n'a pas déjà parié sur le match, si non alors on l'affiche à l'écran
 
