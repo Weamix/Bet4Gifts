@@ -72,12 +72,14 @@
 
     <?php
       if (isset($error) OR isset($_SESSION['error'])) {
-        echo '<span class="errorMessage">'.$error.$_SESSION['error'].'</span>'; // On vérifie si la variable ERROR est SET , si OUI on affiche le message à l'utilisateur
+        echo '<span class="errorMessage">'.$error.$_SESSION['error'].'</span>'; // On vérifie si la variable ERROR est SET, 
+                                                                               // si OUI on affiche le message à l'utilisateur
         $_SESSION["error"] = null;
       }
 
       if (isset($_SESSION['valid'])) {
-        echo '<span class="accountCreatedMessage">'.$_SESSION['valid'].'</span>'; // On vérifie si la variable VALID est SET , si OUI on affiche le message à l'utilisateur
+        echo '<span class="accountCreatedMessage">'.$_SESSION['valid'].'</span>'; // On vérifie si la variable VALID est SET, 
+                                                                                 // si OUI on affiche le message à l'utilisateur
         $_SESSION['valid'] = null;
       }
     ?>
