@@ -19,8 +19,8 @@
     $reqmatch->execute(array($matchid, $matchteamone, $matchteamtwo));
     $matchinfo = $reqmatch->fetch();
 
-    $reqalreadybet = $bdd->prepare("SELECT * FROM bets WHERE match_id = ? AND team_one = ? AND team_two = ?"); //On effectue un requête SQL pour vérifier que l'utilisateur n'a pas déjà parié sur le match
-    $reqalreadybet->execute(array($matchinfo['id'], $matchinfo['team_one'], $matchinfo['team_two']));
+    $reqalreadybet = $bdd->prepare("SELECT * FROM bets WHERE match_id = ? AND team_one = ? AND team_two = ? AND author_id = ?"); //On effectue un requête SQL pour vérifier que l'utilisateur n'a pas déjà parié sur le match
+    $reqalreadybet->execute(array($matchinfo['id'], $matchinfo['team_one'], $matchinfo['team_two'], $userinfo['id']));
     $alreadybet = $reqalreadybet->rowCount();
 
     if ($alreadybet == 0) { //On vérifie si l'utilisateur a déjà parié sur ce match

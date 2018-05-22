@@ -54,8 +54,8 @@
 
             while ($matchavaible = $reqmatchavaible->fetch()) { //On prendre 1 par 1 chaque valeur du tableau
 
-              $reqalreadybet = $bdd->prepare("SELECT * FROM bets WHERE match_id = ? AND team_one = ? AND team_two = ?"); //On effectue un requête SQL pour vérifié si le joueur n'a pas déjà parié sur ce match
-              $reqalreadybet->execute(array($matchavaible['id'], $matchavaible['team_one'], $matchavaible['team_two']));
+              $reqalreadybet = $bdd->prepare("SELECT * FROM bets WHERE match_id = ? AND team_one = ? AND team_two = ? AND author_id = ?"); //On effectue un requête SQL pour vérifié si le joueur n'a pas déjà parié sur ce match
+              $reqalreadybet->execute(array($matchavaible['id'], $matchavaible['team_one'], $matchavaible['team_two'], $userinfo['id']));
               $alreadybet = $reqalreadybet->rowCount();
 
               if ($alreadybet != 1) { //On vérifie si l'utilisateur n'a pas déjà parié sur le match, si non alors on l'affiche à l'écran
