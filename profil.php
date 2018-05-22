@@ -58,6 +58,8 @@
               $reqalreadybet->execute(array($matchavaible['id'], $matchavaible['team_one'], $matchavaible['team_two'], $userinfo['id']));
               $alreadybet = $reqalreadybet->rowCount();
 
+              echo 'Debug : '.$alreadybet;
+
               if ($alreadybet != 1) { //On vérifie si l'utilisateur n'a pas déjà parié sur le match, si non alors on l'affiche à l'écran
 
               $date = $matchavaible['match_start'];
