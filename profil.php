@@ -49,10 +49,15 @@
 
         <?php
 
+            $nb = 2;
+
             $reqmatchavaible = $bdd->prepare("SELECT * FROM matches WHERE match_start > CURRENT_TIMESTAMP"); //On effectue un requête SQL pour récupérer les matchs disponibles
             $reqmatchavaible->execute(); //On l'execute avec les bonnes valeurs
 
             while ($matchavaible = $reqmatchavaible->fetch()) { //On prendre 1 par 1 chaque valeur du tableau
+
+              $restedivision = $nb%2;
+              $nb++;
 
               $reqalreadybet = $bdd->prepare("SELECT * FROM bets WHERE match_id = ? AND team_one = ? AND team_two = ? AND author_id = ?"); //On effectue un requête SQL pour vérifié si le joueur n'a pas déjà parié sur ce match
               $reqalreadybet->execute(array($matchavaible['id'], $matchavaible['team_one'], $matchavaible['team_two'], $userinfo['id']));
@@ -64,7 +69,7 @@
               $match_start = date('d-m-Y H:i', strtotime($date)); // On définit le format de la DATE
 
             ?>
-              <div class="container_bet"> <!-- Partie HTML où l'on affiche chaque match de sa section -->
+              <div class="container_bet_<?php echo $restedivision; ?>"> <!-- Partie HTML où l'on affiche chaque match de sa section -->
                 <span><?php echo $matchavaible['team_one']; ?> VS <?php echo $matchavaible['team_two']; ?></span>
                 <br>
                 <br>
