@@ -104,3 +104,5 @@
 }
 
 .profil_information_pseudo{ font-size: 30px; }
+.profil_information_email{ color: rgba(39, 60, 117,1.0); }
+.profil_information_email::before { content: 'Email: '; position: relative; color: rgba(243, 156, 18,1.0);}
