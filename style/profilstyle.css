@@ -104,5 +104,5 @@
 }
 
 .profil_information_pseudo{ font-size: 30px; }
-.profil_information_email{ color: rgba(41, 128, 185,1.0); }
-.profil_information_email::before { content: 'Email: '; position: relative; color: rgba(39, 60, 117,1.0);}
+.profil_information_email{ color: rgba(41, 128, 185,1.0); font-size: 20px;}
+.profil_information_email::before { content: 'Email: '; position: relative; color: rgba(39, 60, 117,1.0); font-size: 20px;}
