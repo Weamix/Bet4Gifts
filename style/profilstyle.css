@@ -86,9 +86,18 @@
 
 .profil_information{
 
+  position: absolute;
+  top: 0;
+  left: 0;
   display: block;
   width: 100%;
   margin: 0 50px;
   background-color: #dcdde1;
+
+}
+
+.profil_information span{
+
+  display: block;
 
 }
