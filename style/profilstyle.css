@@ -92,11 +92,18 @@
   width: 100%;
   padding: 10px 10px;
   background-color: #dcdde1;
+  text-align: center;
 
 }
 
 .profil_information span{
 
   display: block;
+
+}
+
+.profil_information_pseudo{
+
+  font-size: 30px;
 
 }
