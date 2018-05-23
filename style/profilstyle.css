@@ -29,6 +29,7 @@ body{  background-color: rgba(245, 246, 250,0.5); }
 .container_bet_0 a, .container_bet_1 a{
 
   color: rgba(39, 60, 117,1.0);
+  text-decoration: none;
 
 
 }
