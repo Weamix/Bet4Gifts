@@ -25,7 +25,7 @@
 
 }
 
-.container_form_inscription hr{
+.container_form_inscription hr{ // cases du formulaire
 
   position: relative;
   left: 50%;
