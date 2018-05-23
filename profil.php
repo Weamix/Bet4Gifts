@@ -29,7 +29,6 @@
 
       <div class="profil_information">
 
-        <span class="profil_information_logo"> <img src="images/logouser.png" alt=""> </span>
         <span class="profil_information_pseudo">Your profile <?php echo $userinfo['pseudo']; ?></span> <!-- On affiche les informations du joueur -->
         <span class="profil_information_email">Email : <?php echo $userinfo['email']; ?></span>
         <span class="profil_information_point">Points : <?php echo $userinfo['points']; ?></span>
