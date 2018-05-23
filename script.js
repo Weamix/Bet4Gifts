@@ -1,6 +1,6 @@
 
 
-function resizeHeaderHeight(){
+function resizeHeaderHeight(){ // image aléatoire du background de l'index
 
 	var random = Math.ceil(Math.random()*3);
 
