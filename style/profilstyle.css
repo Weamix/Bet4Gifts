@@ -99,11 +99,13 @@
 .profil_information span{
 
   display: block;
+  margin: 0 0 10px 0;
 
 }
 
 .profil_information_pseudo{
 
   font-size: 30px;
+
 
 }
