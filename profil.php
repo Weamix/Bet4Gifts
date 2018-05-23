@@ -57,7 +57,6 @@
             while ($matchavaible = $reqmatchavaible->fetch()) { //On prendre 1 par 1 chaque valeur du tableau
 
               $restedivision = $nb%2;
-              $nb++;
 
               $reqalreadybet = $bdd->prepare("SELECT * FROM bets WHERE match_id = ? AND team_one = ? AND team_two = ? AND author_id = ?"); //On effectue un requête SQL pour vérifié si le joueur n'a pas déjà parié sur ce match
               $reqalreadybet->execute(array($matchavaible['id'], $matchavaible['team_one'], $matchavaible['team_two'], $userinfo['id']));
@@ -65,6 +64,7 @@
 
               if ($alreadybet != 1) { //On vérifie si l'utilisateur n'a pas déjà parié sur le match, si non alors on l'affiche à l'écran
 
+              $nb++;
               $date = $matchavaible['match_start'];
               $match_start = date('d-m-Y H:i', strtotime($date)); // On définit le format de la DATE
 
