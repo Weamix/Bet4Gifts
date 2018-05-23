@@ -118,5 +118,5 @@ body{  background-color: rgba(245, 246, 250,0.5); }
 .profil_information_email{ color: rgba(41, 128, 185,1.0); font-size: 20px;}
 .profil_information_email::before { content: 'Email: '; position: relative; color: rgba(39, 60, 117,1.0); font-size: 20px;}
 .profil_information_point{ color: rgba(41, 128, 185,1.0); font-size: 20px;}
-.profil_information_point::before { content: 'Email: '; position: relative; color: rgba(39, 60, 117,1.0); font-size: 20px;}
+.profil_information_point::before { content: 'Points: '; position: relative; color: rgba(39, 60, 117,1.0); font-size: 20px;}
 .profil_information_deco{ color: rgba(41, 128, 185,1.0); font-size: 20px; text-decoration: none;}
