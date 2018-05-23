@@ -109,6 +109,7 @@
           <span>Date: <?php echo $match_start; ?></span>
           <br>
           <span>Résultat parié : <?php echo $matchbetupcoming['bet']; ?></span>
+          <span>Montant parié : <?php echo $matchbetupcoming['amount']; ?></span>
         </div>
 
 
@@ -143,6 +144,7 @@
           <span>En cours !</span>
           <br>
           <span>Résultat parié : <?php echo $matchbetinprogress['bet']; ?></span>
+          <span>Montant parié : <?php echo $matchbetinprogress['amount']; ?></span>
         </div>
 
 
@@ -197,6 +199,7 @@
                 <br>
                 <span>Résultat: <?php echo $matchresult['result'] ?></span>
                 <span>Résultat parié : <?php echo $matchbetfinished['bet']; ?></span>
+                <span>Montant parié : <?php echo $matchbetfinished['amount']; ?></span>
                 <span>Gain : <?php echo $gain; ?></span>
                 <br>
                 <span>Vous avez gagné !</span>
@@ -213,6 +216,7 @@
                 <br>
                 <span>Résultat: <?php echo $matchresult['result'] ?></span>
                 <span>Résultat parié : <?php echo $matchbetfinished['bet']; ?></span>
+                <span>Montant parié : <?php echo $matchbetfinished['amount']; ?></span>
                 <span>Gain : 0</span>
                 <br>
                 <span>Vous avez perdu !</span>
