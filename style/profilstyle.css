@@ -4,7 +4,7 @@ body{  background-color: rgba(245, 246, 250,0.5); }
 
 .container_bet_0{
 
-  width: 50%;
+  width: 100%;
   height: auto;
   padding: 10px;
   background-color: #ccc;
@@ -13,7 +13,7 @@ body{  background-color: rgba(245, 246, 250,0.5); }
 
 .container_bet_1{
 
-  width: 50%;
+  width: 100%;
   height: auto;
   padding: 10px;
   background-color: #FFF;
@@ -59,7 +59,7 @@ body{  background-color: rgba(245, 246, 250,0.5); }
     color: #444;
     cursor: pointer;
     padding: 18px;
-    width: 50%;
+    width: 100%;
     border: none;
     text-align: left;
     font-size: 15px;
