@@ -76,7 +76,7 @@
                 <span>Categorie : <?php echo $matchavaible['categories']; ?></span>
                 <span>Date: <?php echo $match_start; ?></span>
                 <br>
-                <a href="<?php echo 'bets.php?user='.$userinfo['id'].'&tone='.$matchavaible['team_one'].'&ttwo='.$matchavaible['team_two'].'&id='.$matchavaible['id']; ?>">Pariez !</a>
+                <a href="<?php echo 'bets.php?user='.$userinfo['id'].'&tone='.$matchavaible['team_one'].'&ttwo='.$matchavaible['team_two'].'&id='.$matchavaible['id']; ?>">Bet !</a>
               </div>
         <?php } } ?>
 
