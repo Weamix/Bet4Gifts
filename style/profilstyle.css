@@ -61,7 +61,7 @@ body{  background-color: rgba(245, 246, 250,0.5); }
     padding: 18px;
     width: 100%;
     border: none;
-    text-align: left;
+    text-align: center;
     font-size: 15px;
     transition: 1s;
 }
@@ -83,6 +83,7 @@ body{  background-color: rgba(245, 246, 250,0.5); }
     display: none;
     background-color: white;
     overflow: hidden;
+
 }
 
 .profil_information{
