@@ -32,7 +32,7 @@
         <span class="profil_information_pseudo">Welcome, <?php echo $userinfo['pseudo']; ?> !</span> <!-- On affiche les informations du joueur -->
         <span class="profil_information_email"><?php echo $userinfo['email']; ?></span>
         <span class="profil_information_point"><?php echo $userinfo['points']; ?></span>
-        <a href="deconnexion.php" class="profil_information_deco">Sign out</a>
+        <a href="deconnexion.php" class="profil_information_deco">> Sign out <</a>
       </div>
 
       <div class="bet">
