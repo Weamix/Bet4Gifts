@@ -83,3 +83,12 @@
     background-color: white;
     overflow: hidden;
 }
+
+.profil_information{
+
+  display: block;
+  width: 100%;
+  margin: 0 50px;
+  background-color: #dcdde1;
+
+}

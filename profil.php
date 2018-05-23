@@ -29,16 +29,11 @@
 
       <div class="profil_information">
 
-        <h2>Your profile <?php echo $userinfo['pseudo']; ?></h2> <!-- On affiche les informations du joueur -->
-        <br>
-        <span>Username : <?php echo $userinfo['pseudo']; ?></span>
-        <br>
-        <span>Email : <?php echo $userinfo['email']; ?></span>
-        <br>
-          <span>Points : <?php echo $userinfo['points']; ?></span>
-        <br>
-        <a href="deconnexion.php">Sign out</a>
-
+        <span class="profil_information_logo"> <img src="images/logouser.png" alt=""> </span>
+        <span class="profil_information_pseudo">Your profile <?php echo $userinfo['pseudo']; ?></span> <!-- On affiche les informations du joueur -->
+        <span class="profil_information_email">Email : <?php echo $userinfo['email']; ?></span>
+        <span class="profil_information_point">Points : <?php echo $userinfo['points']; ?></span>
+        <a href="deconnexion.php" class="profil_information_deco">Sign out</a>
       </div>
 
       <div class="bet">
@@ -64,20 +59,20 @@
 
               if ($alreadybet != 1) { //On vérifie si l'utilisateur n'a pas déjà parié sur le match, si non alors on l'affiche à l'écran
 
-              $nb++;
-              $date = $matchavaible['match_start'];
-              $match_start = date('d-m-Y H:i', strtotime($date)); // On définit le format de la DATE
+                $nb++;
+                $date = $matchavaible['match_start'];
+                $match_start = date('d-m-Y H:i', strtotime($date)); // On définit le format de la DATE
 
             ?>
-              <div class="container_bet_<?php echo $restedivision; ?>"> <!-- Partie HTML où l'on affiche chaque match de sa section -->
-                <span><?php echo $matchavaible['team_one']; ?> VS <?php echo $matchavaible['team_two']; ?></span>
-                <br>
-                <br>
-                <span>Categorie : <?php echo $matchavaible['categories']; ?></span>
-                <span>Date: <?php echo $match_start; ?></span>
-                <br>
-                <a href="<?php echo 'bets.php?user='.$userinfo['id'].'&tone='.$matchavaible['team_one'].'&ttwo='.$matchavaible['team_two'].'&id='.$matchavaible['id']; ?>">Bet !</a>
-              </div>
+                <div class="container_bet_<?php echo $restedivision; ?>"> <!-- Partie HTML où l'on affiche chaque match de sa section -->
+                  <span><?php echo $matchavaible['team_one']; ?> VS <?php echo $matchavaible['team_two']; ?></span>
+                  <br>
+                  <br>
+                  <span>Categorie : <?php echo $matchavaible['categories']; ?></span>
+                  <span>Date: <?php echo $match_start; ?></span>
+                  <br>
+                  <a href="<?php echo 'bets.php?user='.$userinfo['id'].'&tone='.$matchavaible['team_one'].'&ttwo='.$matchavaible['team_two'].'&id='.$matchavaible['id']; ?>">Pariez !</a>
+                </div>
         <?php } } ?>
 
         </div>
